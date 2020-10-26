@@ -21,7 +21,7 @@ Note that on Linux distributions you'll need to install the Ruby Development pac
 1. Clone this repository to your local filesystem (default branch is 'develop'):
 
    ```
-    git clone https://github.com/openMF/community-app.git
+    git clone https://github.com/coamana/community-app
    ```
    
 1. To download the dependencies, and be able to build, first install bower & grunt:

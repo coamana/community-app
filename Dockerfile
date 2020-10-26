@@ -15,5 +15,5 @@ RUN grunt prod
 
 FROM nginx:1.19.2
 COPY --from=builder /usr/src/app/dist/community-app /usr/share/nginx/html
-EXPOSE 80
+EXPOSE $PORT
 CMD ["nginx", "-g", "daemon off;"]
