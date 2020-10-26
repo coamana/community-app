@@ -416,7 +416,6 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-gh-pages')
-
   // Run development server using grunt serve
   grunt.registerTask('serve', ['clean:server', 'copy:server', 'compass:dev', 'connect:livereload', 'watch']);
 
@@ -426,7 +425,7 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['clean', 'jshint', 'copy:dev']);
   grunt.registerTask('prod', ['clean:dist', 'clean:server', 'compass:dist', 'copy:prod', 'copy:tests', 'concat', 'uglify:prod', 'devcode:dist', 'hashres','replace']);
-  grunt.registerTask('dev', ['clean', 'compass:dev', 'copy:dev']);
+  grunt.registerTask('dev', ['clean', 'compass:dev' , 'copy:dev']);
   grunt.registerTask('test', ['karma']);
   grunt.registerTask('deploy', ['prod', 'gh-pages']);
 
