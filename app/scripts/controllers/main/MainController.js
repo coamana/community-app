@@ -172,7 +172,7 @@
                     if (scope.currentSession.user && scope.currentSession.user.userPermissions) {
                         $rootScope.setPermissions(scope.currentSession.user.userPermissions);
                     }
-                    location.path('/home').replace();
+                    location.path('/credit-provider/KADSWEF/home').replace();
                 } else {
                     scope.loggedInUserId = data.userId;
                 }

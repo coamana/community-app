@@ -210,10 +210,10 @@
                 }
             };
             if(routeParams.groupId) {
-                scope.cancel = '#/viewgroup/' + routeParams.groupId
+                scope.cancel = '#/credit-provider/KADSWEF/viewgroup/' + routeParams.groupId
                 scope.groupid = routeParams.groupId;
             }else {
-                scope.cancel = "#/clients"
+                scope.cancel = "#/credit-provider/KADSWEF/clients"
             }
 
             //return input type

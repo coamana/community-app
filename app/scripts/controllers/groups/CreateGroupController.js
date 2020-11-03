@@ -133,10 +133,10 @@
             };
 
             if(routeParams.centerId) {
-            	scope.cancel = '#/viewcenter/' + routeParams.centerId
+            	scope.cancel = '#/credit-provider/KADSWEF/viewcenter/' + routeParams.centerId
             	scope.centerid = routeParams.centerId;
         	}else {
-        		scope.cancel = "#/groups"
+        		scope.cancel = "#/credit-provider/KADSWEF/groups"
         	}
 
             //return input type

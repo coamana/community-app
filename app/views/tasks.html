@@ -316,9 +316,9 @@
                                                 <tr dir-paginate="loan in office.loans | filter:filterText1 | itemsPerPage:itemsPerPage"
                                                     pagination-id="'__' + $index">
                                                     <td><input type="checkbox" ng-model="loanTemplate[loan.id]"></td>
-                                                    <td class="pointer"><a href='#/viewclient/{{loan.clientId}}'>{{loan.clientName}}</a>
+                                                    <td class="pointer"><a href='#/credit-provider/KADSWEF/viewclient/{{loan.clientId}}'>{{loan.clientName}}</a>
                                                     </td>
-                                                    <td class="pointer"><a href='#/viewloanaccount/{{loan.id}}'>{{loan.loanProductName}}({{loan.accountNo}})</a>
+                                                    <td class="pointer"><a href='#/credit-provider/KADSWEF/viewloanaccount/{{loan.id}}'>{{loan.loanProductName}}({{loan.accountNo}})</a>
                                                     </td>
                                                     <td class="pointer">{{loan.principal | number}}</td>
                                                     <td class="pointer">{{loan.loanPurposeName}}</td>
@@ -386,9 +386,9 @@
                                     <tr dir-paginate="loan in loans | filter : {status : { waitingForDisbursal :'true' }}| filter:filterText2 | itemsPerPage: itemsPerPage"
                                         pagination-id="loan-disbursal">
                                         <td><input type="checkbox" ng-model="loanDisbursalTemplate[loan.id]"></td>
-                                        <td><a href="#/viewclient/{{loan.clientId}}">{{loan.clientName}}</a></td>
-                                        <td><a href="#/viewloanaccount/{{loan.id}}">{{loan.accountNo}}</a></td>
-                                        <td><a href="#/viewloanaccount/{{loan.id}}">{{loan.loanProductName}}</a></td>
+                                        <td><a href="#/credit-provider/KADSWEF/viewclient/{{loan.clientId}}">{{loan.clientName}}</a></td>
+                                        <td><a href="#/credit-provider/KADSWEF/viewloanaccount/{{loan.id}}">{{loan.accountNo}}</a></td>
+                                        <td><a href="#/credit-provider/KADSWEF/viewloanaccount/{{loan.id}}">{{loan.loanProductName}}</a></td>
                                         <td>{{loan.principal | number}}</td>
                                     </tr>
                                     </tbody>
@@ -453,9 +453,9 @@
                                       <tr dir-paginate="loanReschedule in loanRescheduleData | filter:filterText2 | itemsPerPage: itemsPerPage"
                                           pagination-id="rescheduleLoan">
                                       <td><input type="checkbox" data-ng-model="checkForBulkLoanRescheduleApprovalData[loanReschedule.id]"/></td>
-                                      <td><a href="#/viewclient/{{loanReschedule.clientId}}">{{loanReschedule.clientName}}</a></td>
-                                      <td><a href="#/loans/{{loanReschedule.loanId}}/viewreschedulerequest/{{loanReschedule.id}}">{{loanReschedule.id}}</a></td>
-                                      <td><a href="#/viewloanaccount/{{loanReschedule.loanId}}">{{loanReschedule.loanAccountNumber}}</a></td>
+                                      <td><a href="#/credit-provider/KADSWEF/viewclient/{{loanReschedule.clientId}}">{{loanReschedule.clientName}}</a></td>
+                                      <td><a href="#/credit-provider/KADSWEF/loans/{{loanReschedule.loanId}}/viewreschedulerequest/{{loanReschedule.id}}">{{loanReschedule.id}}</a></td>
+                                      <td><a href="#/credit-provider/KADSWEF/viewloanaccount/{{loanReschedule.loanId}}">{{loanReschedule.loanAccountNumber}}</a></td>
                                       <td><a>{{loanReschedule.rescheduleFromDate | DateFormat}}</a></td>
                                       <td><a>{{loanReschedule.rescheduleReasonCodeValue.name}}</a></td>
                                     </tr>

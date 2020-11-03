@@ -17,7 +17,7 @@
             scope.officeIdCollection = 1;
 
             scope.switch = function() {
-	        	location.path('/richdashboard');
+	        	location.path('/credit-provider/KADSWEF/richdashboard');
 			}
 
             scope.$on("UserAuthenticationSuccessEvent", function (event, data) {
@@ -34,7 +34,7 @@
                 array.forEach(function (value) {
                     if (scope.uniqueArray.indexOf(value) === -1) {
                     	if (value) {
-                            if (value != '/' && value != '/home' && value != '/richdashboard') {
+                            if (value != '/credit-provider/KADSWEF/' && value != '/credit-provider/KADSWEF/home' && value != '/credit-provider/KADSWEF/richdashboard') {
                             	scope.uniqueArray.push(value);
                             }
                     	}
@@ -78,8 +78,8 @@
             //retrieve last 8 frequent actions
             for (var freq = sortedArray.length - 1; freq > sortedArray.length - 11; freq--) {
                 if (sortedArray[freq]) {
-                    if (sortedArray[freq] != '/') {
-                        if (sortedArray[freq] != '/home') {
+                    if (sortedArray[freq] != '/credit-provider/KADSWEF/') {
+                        if (sortedArray[freq] != '/credit-provider/KADSWEF/home') {
                             scope.frequent.push(sortedArray[freq]);
                         }
                     }
@@ -96,7 +96,7 @@
             scope.collectionPieData = [];
 
             scope.switch = function() {
-	        	location.path('/home');
+	        	location.path('/credit-provider/KADSWEF/home');
 			}
 
             scope.formatdate = function () {

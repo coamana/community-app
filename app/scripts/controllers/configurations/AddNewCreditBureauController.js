@@ -14,7 +14,7 @@
             });
 
             $scope.cancel = function () {
-                location.path('#/externalservicesCB/CreditBureau');
+                location.path('#/credit-provider/KADSWEF/externalservicesCB/CreditBureau');
             };
 
 

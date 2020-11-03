@@ -61,9 +61,9 @@
             } ;
 
             if($routeParams.parent){
-            	scope.cancel = '#/viewglaccount/' + $routeParams.parent
+            	scope.cancel = '#/credit-provider/KADSWEF/viewglaccount/' + $routeParams.parent
         	}else{
-        		scope.cancel = "#/accounting_coa"
+        		scope.cancel = "#/credit-provider/KADSWEF/accounting_coa"
         	}
             
 
