@@ -116,14 +116,14 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
   #eval $NPM_CMD cache clean --force
   echo "Running $NPM_CMD install --production"
-  eval $NPM_CMD install --production
+  eval npm install --production
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
 
 # 4. Install bower components
 if [ -e "$DEPLOYMENT_SOURCE/bower.json" ]; then  
-  eval $NPM_CMD install bower  
+  eval npm install bower  
   exitWithMessageOnError "installing bower failed"  
   ./node_modules/.bin/bower install  
   exitWithMessageOnError "bower failed"  
@@ -131,7 +131,7 @@ fi
 
 # 5. Run grunt  
 if [ -e "$DEPLOYMENT_SOURCE/Gruntfile.js" ]; then  
-  eval $NPM_CMD install grunt-cli  
+  eval npm install grunt-cli  
   exitWithMessageOnError "installing grunt failed"  
   ./node_modules/.bin/grunt --no-color build  
   exitWithMessageOnError "grunt failed"  
