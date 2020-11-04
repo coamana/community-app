@@ -1,6 +1,6 @@
 <div class="content-container" ng-controller="ShareAccountActionsController">
     <ul class="breadcrumb">
-        <li><a href="#/viewshareaccount/{{accountId}}">{{'label.anchor.viewshareaccount' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/viewshareaccount/{{accountId}}">{{'label.anchor.viewshareaccount' | translate}}</a></li>
         <li class="active">{{action}}</li>
     </ul>
     <div class="card">
@@ -40,7 +40,7 @@
                     </div>
 
 
-                    <div class="form-group" ng-show="showDateField">
+                    <div class="form-group" ng-if="showDateField">
                         <label class="control-label col-sm-2" for="modelName">{{labelName | translate}}<span
                                 class="required">*</span></label>
 
@@ -53,7 +53,7 @@
                             </div>
                     </div>
 
-                    <div ng-show="requestedShares">
+                    <div ng-if="requestedShares">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="requestedShares">{{ 'label.input.totalnumberofshares' |
                                 translate}}<span class="required">*</span></label>

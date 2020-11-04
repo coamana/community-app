@@ -35,7 +35,7 @@
 
 				        <div class="col-sm-3">
 				            <input type="text" id="transactionDate" name="transactiondate" datepicker-pop="dd MMMM yyyy"
-				                   ng-model="date.transactionDate" is-open="opened" class="form-control"/>
+				                   ng-model="date.transactionDate" is-open="opened" min="minDate" class="form-control"/>
 				        </div>
 				    </div>
 
@@ -266,7 +266,7 @@
 			    </div>
 				<div class="col-sm-12 col-md-12 paddedtop10">
 				    <div class="col-md-offset-3 paddedtop">
-				        <a  ng-href="#/home" id="cancel" type="reset" class="btn btn-default" >{{'label.button.cancel' |
+				        <a  ng-href="#/credit-provider/KADSWEF/home" id="cancel" type="reset" class="btn btn-default" >{{'label.button.cancel' |
 				            translate}}
 				        </a>
 			            <button class="btn btn-default"

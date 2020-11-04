@@ -1,8 +1,8 @@
 <div ng-controller="ViewSmsCampaignController" class="content-container">
     <div>
         <ul class="breadcrumb">
-            <li><a href="#/organization">{{'label.anchor.organization' | translate}}</a></li>
-            <li><a href="#/smscampaigns">{{'label.anchor.smscampaings' | translate}}</a></li>
+            <li><a href="#/credit-provider/KADSWEF/organization">{{'label.anchor.organization' | translate}}</a></li>
+            <li><a href="#/credit-provider/KADSWEF/smscampaigns">{{'label.anchor.smscampaings' | translate}}</a></li>
             <li class="active">{{campaignData.campaignName}}</li>
         </ul>
     </div>
@@ -20,7 +20,7 @@
                             <h3 class="bolder col-md-12">{{campaignData.campaignName}}
                                 <div class="pull-right">
                                     <div class="btn-group">
-                                        <a href="#/editsmscampaign/{{campaignData.id}}" class="btn btn-primary" has-permission='UPDATE_SMSCAMPAIGN' ng-show="campaignData.campaignStatus.value != 'active'"><i class="icon-edit icon-white"></i>{{'label.button.edit' | translate}}</a>
+                                        <a href="#/credit-provider/KADSWEF/editsmscampaign/{{campaignData.id}}" class="btn btn-primary" has-permission='UPDATE_SMSCAMPAIGN' ng-show="campaignData.campaignStatus.value != 'active'"><i class="icon-edit icon-white"></i>{{'label.button.edit' | translate}}</a>
                                         <a data-ng-click="activateSmsCampaign()" class="btn btn-primary" has-permission='ACTIVATE_SMSCAMPAIGN' ng-show="campaignData.campaignStatus.value === 'Pending'"><i
                                                 class="icon-ok-sign icon-white"></i>{{'label.button.activate' | translate}}</a>
                                         <a data-ng-click="closeSmsCampaign()" class="btn btn-primary" has-permission='CLOSE_SMSCAMPAIGN' ng-show="campaignData.campaignStatus.value != 'closed'"><i
@@ -91,7 +91,7 @@
                                 <label class="control-label col-sm-1" for="fromDate">{{'label.input.fromdate' | translate}}</label>
 
                                 <div class="col-sm-3">
-                                    <input class="form-control" id="fromDate" name="fromDate" type="text" datepicker-pop="dd MMMM yyyy" ng-model="formData.fromDate" is-open="opened" min="minDate" max="'2020-06-22'" placeholder="{{ 'label.input.fromdate' | translate }}"/>
+                                    <input class="form-control" id="fromDate" name="fromDate" type="text" datepicker-pop="dd MMMM yyyy" ng-model="formData.fromDate" is-open="opened" min="minDate"  placeholder="{{ 'label.input.fromdate' | translate }}"/>
                                 </div>
                             </div>
 
@@ -99,7 +99,7 @@
                                 <label class="control-label col-sm-1" for="toDate">{{'label.input.todate' | translate}}</label>
 
                                 <div class="col-sm-3">
-                                    <input class="form-control" id="toDate" name="toDate" type="text" datepicker-pop="dd MMMM yyyy" ng-model="formData.toDate" is-open="opened1" min="minDate" max="'2020-06-22'" placeholder="{{ 'label.input.todate' | translate }}"/>
+                                    <input class="form-control" id="toDate" name="toDate" type="text" datepicker-pop="dd MMMM yyyy" ng-model="formData.toDate" is-open="opened1" min="minDate"  placeholder="{{ 'label.input.todate' | translate }}"/>
                                 </div>
                             </div>
 

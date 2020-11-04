@@ -1,7 +1,7 @@
 <div class="content-container">
     <ul class="breadcrumb">
-        <li><a href="#/organization">{{'label.anchor.organization' | translate}}</a></li>
-        <li><a href="#/holidays">{{'label.anchor.manageholidays' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/organization">{{'label.anchor.organization' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/holidays">{{'label.anchor.manageholidays' | translate}}</a></li>
         <li class="active">{{'label.anchor.createholiday' | translate}}</li>
     </ul>
     <div class="card">
@@ -34,7 +34,7 @@
     		                    <input id="fromDate" name="fromDate" sort type="text" datepicker-pop="dd MMMM yyyy" ng-model="date.first" is-open="opened" min="minDat"
                                 max="'2050-06-22'" class="form-control" required/>
     		                </div>
-                            <div class="col-sm-3">
+                            <div class="">
                                 <span class="error" ng-if="firstError">{{ 'validation.msg.holiday.date.cannot.be.past.date' | translate }}</span>
                                 <form-validate valattributeform="addholidayform" valattribute="fromDate"/>
                             </div>
@@ -45,7 +45,7 @@
 
     		                <div class="col-sm-3">
     		                    <input id="toDate" name="toDate" sort type="text" datepicker-pop="dd MMMM yyyy"
-    		                           ng-model="date.second" is-open="opened1" min="minDate" max="'2020-06-22'"
+    		                           ng-model="date.second" is-open="opened1" min="minDate" 
     		                           class="form-control" required/>
 
                                 <span class="error" ng-if="secondError">{{ 'validation.msg.holiday.date.cannot.be.past.date' | translate }}</span>
@@ -71,7 +71,7 @@
 
     		            <div class="col-sm-3">
     		                <input id="repaymentsRescheduledTo" name="repaymentsRescheduledTo" sort type="text" datepicker-pop="dd MMMM yyyy"
-    		                       ng-model="date.third" is-open="opened2" min="minDate" max="'2020-06-22'" class="form-control"/>
+    		                       ng-model="date.third" is-open="opened2" min="minDate"  class="form-control"/>
     		            </div>
                         <div class="col-sm-3">
                             <span class="error" ng-if="thirdError">{{ 'validation.msg.holiday.date.cannot.be.past.date' | translate }}</span>
@@ -99,7 +99,7 @@
     		            </div>
     		        </div>
     		        <div class="col-md-offset-3">
-    		            <a id="cancel" class="btn btn-default" href="#/holidays">{{'label.button.cancel' | translate}}</a>
+    		            <a id="cancel" class="btn btn-default" href="#/credit-provider/KADSWEF/holidays">{{'label.button.cancel' | translate}}</a>
     		            <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_HOLIDAY'>
     		                {{'label.button.save' | translate}}
     		            </button>

@@ -1,7 +1,7 @@
 <div class="content-container">
     <ul class="breadcrumb">
-        <li><a href="#/system">{{'label.anchor.system' | translate}}</a></li>
-        <li><a href="#/reports">{{'label.anchor.managereports' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/system">{{'label.anchor.system' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/reports">{{'label.anchor.managereports' | translate}}</a></li>
         <li class="active">{{'label.anchor.createreport' | translate}}</li>
     </ul>
     <div class="card">
@@ -127,9 +127,8 @@
                                                 value="{{allowedParameter.id}}">{{allowedParameter.parameterName | translate}}
                                         </option>
                                     </select>
-                                    <a class="btn btn-primary"
-                                            ng-click="parameterSelected(allowedParameterId)"><i class="fa fa-plus "></i>{{
-                                        'label.button.add' | translate }}
+                                    <a class="btn btn-primary" ng-click="parameterSelected(allowedParameterId)"><i class="fa fa-plus "></i>
+                                        &nbsp;&nbsp;{{ 'label.button.add' | translate }}
                                     </a>
                                 </form>
                                 <table data-ng-show="flag" class="table" width="50%">
@@ -143,7 +142,7 @@
                                         <td class="width30">
                                             <input type="text" class="form-control" ng-model="reportParameter.reportParameterName">
                                         </td>
-                                        <td><a ng-click="deleteParameter($index)"><i class="fa fa-times "></i></a></td>
+                                        <td><a ng-click="deleteParameter($index)"><i class="fa fa-times-circle fa-2x"></i></a></td>
                                     </tr>
                                 </table>
                             </td>
@@ -151,7 +150,7 @@
                     </table>
                 </div>
                 <div class="col-md-offset-6">
-                    <a id="cancel" href="#/reports" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
+                    <a id="cancel" href="#/credit-provider/KADSWEF/reports" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
                     <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_REPORT'>{{'label.button.save' | translate}}</button>
                 </div>
             </form>

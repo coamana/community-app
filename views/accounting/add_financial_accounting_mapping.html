@@ -1,7 +1,7 @@
 <div class="content-container">
     <ul class="breadcrumb">
-        <li><a href="#/accounting">{{'label.anchor.accounting' | translate}}</a></li>
-        <li><a href="#/financialactivityaccountmappings">{{'label.anchor.financialactivity.accountmappings' |
+        <li><a href="#/credit-provider/KADSWEF/accounting">{{'label.anchor.accounting' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/financialactivityaccountmappings">{{'label.anchor.financialactivity.accountmappings' |
             translate}}</a></li>
         <li class="active">{{'label.anchor.addfinancialmapping' | translate}}</li>
     </ul>
@@ -37,13 +37,14 @@
                             <select chosen="accountOptions" id="glAccountId" ng-model="formData.glAccountId"
                                     class="form-control"
                                     ng-options="account.id as (account.name +'('+ account.glCode +')') for account in accountOptions"
-                                    value="{{account.id}}">
+                                    value="{{account.id}}" name="glAccountId"required>
                             </select>
                         </div>
+                        <form-validate valattributeform="createfinancialmappingform" valattribute="glAccountId"/>
                     </div>
 
                     <div class="col-md-offset-2">
-                        <a id="cancel" href="#/financialactivityaccountmappings" class="btn btn-default">{{'label.button.cancel'
+                        <a id="cancel" href="#/credit-provider/KADSWEF/financialactivityaccountmappings" class="btn btn-default">{{'label.button.cancel'
                             | translate}}</a>
                         <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_FINANCIALACTIVITYACCOUNT'>
                             {{'label.button.save' | translate}}

@@ -1,7 +1,7 @@
 <div ng-controller="ViewGroupController" class="content-container">
 	<ul class="breadcrumb">
-	    <li><a ng-href="#/viewoffice/{{group.officeId}}">{{group.officeName}}</a></li>
-	    <li ng-show="group.centerName"><a ng-href="#/viewcenter/{{group.centerId}}">{{group.centerName}}</a></li>
+	    <li><a ng-href="#/credit-provider/KADSWEF/viewoffice/{{group.officeId}}">{{group.officeName}}</a></li>
+	    <li ng-show="group.centerName"><a ng-href="#/credit-provider/KADSWEF/viewcenter/{{group.centerId}}">{{group.centerName}}</a></li>
 	    <li>{{group.name}}</li>
 	</ul>
 	<script type="text/ng-template" id="deletegroup.html">
@@ -46,35 +46,41 @@
 						<div class="">
 					    <div class="btn-group pull-right"
 					    	data-ng-hide="group.status.value == 'Closed'">
-					        <a href="#/editgroup/{{group.id}}?managecode=2"
+					        <a href="#/credit-provider/KADSWEF/editgroup/{{group.id}}?managecode=2"
 					        	class="btn btn-primary" has-permission='UPDATE_GROUP'
 					          	data-ng-hide="group.status.value=='Active'"><i class="fa fa-check"></i>
 					          	{{'label.button.activate' | translate }}
 					        </a>
-					        <a href="#/editgroup/{{group.id}}?managecode=1"
+					        <a href="#/credit-provider/KADSWEF/editgroup/{{group.id}}?managecode=1"
 					        	has-permission='UPDATE_GROUP' class="btn btn-primary">
 					        	<i class="fa fa-edit "></i>
 					        	{{'label.button.edit' | translate }}
 					        </a>
 					        <a ng-show="group.active"
-					        	href="#/new_group_saving_application/{{group.id}}" has-permission='CREATE_SAVINGSACCOUNT'
+					        	href="#/credit-provider/KADSWEF/new_group_saving_application/{{group.id}}" has-permission='CREATE_SAVINGSACCOUNT'
 					        	class="btn btn-primary">
 					        	<i class="fa fa-file "></i>
 					        	{{ 'label.button.groupsavingapplication' | translate }}
 					        </a>
+							<a ng-show="group.active" href="#/credit-provider/KADSWEF/new_gsim_application/{{group.id}}" has-permission='CREATE_SAVINGSACCOUNT' class="btn btn-primary"><i
+									class="fa fa-copy "></i>{{ 'label.button.gsimapplication' | translate }}
+							</a>
 					        <a ng-show="group.active"
-					        	href="#/newgrouploanaccount/{{group.id}}"
+					        	href="#/credit-provider/KADSWEF/newgrouploanaccount/{{group.id}}"
 					        	class="btn btn-primary" has-permission='CREATE_LOAN'>
 					        	<i class="fa fa-file "></i>
 					        	{{ 'label.button.grouploanapplication' | translate }}
 					        </a>
 					        <a ng-show="group.active && isGroupMembersAvailable"
-					        	href="#/newjlgloanaccount/{{group.id}}"
+					        	href="#/credit-provider/KADSWEF/newjlgloanaccount/{{group.id}}"
 					        	has-permission='CREATE_LOAN'
 					        	class="btn btn-primary">
 					        	<i class="fa fa-copy "></i>
 					        	{{ 'label.button.bulkjlgloanapplication' | translate }}
 					        </a>
+							<a ng-show="group.active && isGroupMembersAvailable" href="#/credit-provider/KADSWEF/newglimaccount/{{group.id}}" has-permission='CREATE_LOAN' class="btn btn-primary">
+								<i class="fa fa-copy" ></i>{{ 'label.button.glimloanapplication' | translate }}
+							</a>
 		                    <span uib-dropdown class="btn-group" on-toggle="toggled(open)">
 		                      <a class="btn btn-primary "  uib-dropdown-toggle>
 		                          {{ 'label.button.more' | translate}}
@@ -82,12 +88,12 @@
 		                      </a>
 		                      <ul 	class="dropdown-menu dropdown-menu-right">
 			                      <li>
-				                      <a href="#/groupattendance?groupId={{group.id}}&calendarId={{group.collectionMeetingCalendar.id}}" has-permission='SAVEORUPDATEATTENDANCE_MEETING'
+				                      <a href="#/credit-provider/KADSWEF/groupattendance?groupId={{group.id}}&calendarId={{group.collectionMeetingCalendar.id}}" has-permission='SAVEORUPDATEATTENDANCE_MEETING'
 				                      data-ng-show="group.collectionMeetingCalendar">{{'label.button.attendance' | translate }}
 				                      </a>
 			                      </li>
 		                          <li>
-		                              <a href="#/assignstaff/{{group.id}}/groups" data-ng-hide="group.staffId" has-permission='ASSIGNSTAFF_GROUP'>
+		                              <a href="#/credit-provider/KADSWEF/assignstaff/{{group.id}}/groups" data-ng-hide="group.staffId" has-permission='ASSIGNSTAFF_GROUP'>
 		                              {{'label.button.assignstaff' | translate }}
 		                              </a>
 		                          </li>
@@ -102,11 +108,11 @@
 		                              </a>
 		                          </li>
 		                          <li>
-		                              <a href="#/closegroup/{{group.id}}" has-permission='CLOSE_GROUP'>{{ 'label.button.close' | translate }}
+		                              <a href="#/credit-provider/KADSWEF/closegroup/{{group.id}}" has-permission='CLOSE_GROUP'>{{ 'label.button.close' | translate }}
 		                              </a>
 		                          </li>
 		                          <li data-ng-show="group.status.value=='Active'">
-		                              <a href="#/attachmeeting/{{group.id}}/groups" ng-hide="group.centerId || group.collectionMeetingCalendar" has-permission='CREATE_MEETING' data-ng-hide="group.collectionMeetingCalendar">
+		                              <a href="#/credit-provider/KADSWEF/attachmeeting/{{group.id}}/groups" ng-hide="group.centerId || group.collectionMeetingCalendar" has-permission='CREATE_MEETING' data-ng-hide="group.collectionMeetingCalendar">
 		                              {{ 'label.button.attachmeeting' | translate }}
 		                              </a>
 		                          </li>
@@ -129,15 +135,15 @@
 											</div>
 											<div class="panel-body">
 												<div class="list-group">
-													<a href="#/viewgroup/{{group.id}}" ng-repeat="group in center.groupMembers" class="list-group-item">
+													<a href="#/credit-provider/KADSWEF/viewgroup/{{group.id}}" ng-repeat="group in center.groupMembers" class="list-group-item">
 										  				<i uib-tooltip="{{group.status.value}}" class="fa fa-stop {{group.status.code | StatusLookup}}" uib-tooltip=""></i> {{group.name}}
 										  			</a>
 										  			<div class="col-md-12 primarydiv" data-ng-hide="group.status.value == 'Closed'">
-											            <a href="#/addmember?groupId={{group.id}}&officeId={{group.officeId}}" class="btn btn-primary pull-right" has-permission='CREATE_CLIENT'>
+											            <a href="#/credit-provider/KADSWEF/addmember?groupId={{group.id}}&officeId={{group.officeId}}" class="btn btn-primary pull-right" has-permission='CREATE_CLIENT'>
 											                <i class="fa fa-plus-sign-alt "></i>{{ 'label.button.add' | translate }}</a>
-											            <a href="#/membermanage/{{group.id}}" class="btn btn-primary pull-right" has-permission='ASSOCIATECLIENTS_GROUP'>
+											            <a href="#/credit-provider/KADSWEF/membermanage/{{group.id}}" class="btn btn-primary pull-right" has-permission='ASSOCIATECLIENTS_GROUP'>
 											                <i class="fa fa-edit "></i>{{'label.button.managemembers' | translate }}</a>
-											            <a href="#/transferclients/{{group.id}}" class="btn btn-primary pull-right" has-permission='TRANSFERCLIENTS_GROUP'>
+											            <a href="#/credit-provider/KADSWEF/transferclients/{{group.id}}" class="btn btn-primary pull-right" has-permission='TRANSFERCLIENTS_GROUP'>
 											                <i class="fa fa-arrow-right "></i>{{'label.button.transferclients' | translate }}</a>
 											        </div>
 											        <table class="table table-condensed marginbottom0" style="display:inline-table;">
@@ -156,7 +162,7 @@
 												                </td>
 												                <td class="pointer" data-ng-click="routeToMem(member.id)">{{member.displayName}}</td>
 												                </td>
-												                <td><a class="btn btn-primary btn-sm" ng-href="#/newindividualjlgloanaccount/{{group.id}}/{{member.id}}" data-ng-show="isActiveMember(member.status.code)"><i
+												                <td><a class="btn btn-primary btn-sm" ng-href="#/credit-provider/KADSWEF/newindividualjlgloanaccount/{{group.id}}/{{member.id}}" data-ng-show="isActiveMember(member.status.code)"><i
 												                        class="fa fa-plus "></i>{{ 'label.button.jlgloanapplication' | translate }}</a></td>
 												            </tr>
 											            </tbody>
@@ -171,7 +177,7 @@
 							                    <tr>
 									                <th>{{ 'label.heading.nextmeetingon' | translate }}</th>
 									                <td><span class="padded-td">{{group.collectionMeetingCalendar.nextTenRecurringDates[0] | DateFormat}}&nbsp;
-							                            <a href="#/editcalendar/{{entityType | lowercase}}/{{entityId}}/{{group.collectionMeetingCalendar.id}}"
+							                            <a href="#/credit-provider/KADSWEF/editcalendar/{{entityType | lowercase}}/{{entityId}}/{{group.collectionMeetingCalendar.id}}"
 							                               ng-show="group.collectionMeetingCalendar && editMeeting"><i class="fa fa-edit "></i></a>
 							                            <span class="marginleftn7px" data-ng-hide="group.collectionMeetingCalendar.nextTenRecurringDates[0]">{{ 'label.unassigned' | translate }}</span></span>
 									                </td>
@@ -188,6 +194,64 @@
 						                </div>
 				                	</div>
 				                </div>
+								<div>
+									<div class="span gray-head">
+	                            <span class="boldlabel">
+							      <strong>{{ 'label.heading.glimloanaccoverview' | translate }}</strong>
+								</span>
+									</div>
+									<table class="table col-md-5">
+										<thead>
+										<tr class="graybg">
+                                            <th>{{'label.heading.glimId' | translate}}</th>
+											<th>{{'label.heading.accnum' | translate}}</th>
+											<th>{{'label.heading.product' | translate}}</th>
+											<th>{{'label.heading.loanamount' | translate}}</th>
+                                            <th>{{'label.heading.status' | translate}}</th>
+										</tr>
+										</thead>
+										<body>
+										<tr class="pointer-main" ng-repeat="glimloanaccount in groupGLIMAccounts">
+                                           <td class="pointer" data-ng-click="routeToGLIMLoan(glimloanaccount.accountNumber,glimloanaccount.glimId)">{{glimloanaccount.glimId }}</td>
+											<td class="pointer" data-ng-click="routeToGLIMLoan(glimloanaccount.accountNumber,glimloanaccount.glimId)">{{glimloanaccount.accountNumber }}</td>
+											<td class="pointer" data-ng-click="routeToGLIMLoan(glimloanaccount.accountNumber,glimloanaccount.glimId)">{{glimloanaccount.childGLIMAccounts[0].productName }}</td>
+											<td class="pointer" data-ng-click="routeToGLIMLoan(glimloanaccount.accountNumber,glimloanaccount.glimId)">{{glimloanaccount.parentPrincipalAmount}}</td>
+                                            <td class="pointer" data-ng-click="routeToGLIMLoan(glimloanaccount.accountNumber,glimloanaccount.glimId)">{{glimloanaccount.loanStatus}}</td>
+										</tr>
+
+										</body>
+									</table>
+								</div>
+
+								<div>
+									<div class="span gray-head">
+								<span class="boldlabel">
+								      <strong>{{ 'label.heading.gsimoverview' | translate }}</strong>
+								</span>
+									</div>
+									<table class="table" >
+										<thead>
+										<tr class="graybg">
+                                            <th>{{'label.heading.gsimId' | translate}}</th>
+											<th>{{'label.heading.accnum' | translate}}</th>
+											<th>{{'label.heading.product' | translate}}</th>
+											<th>{{'label.heading.balance' | translate}}</th>
+                                            <th>{{'label.heading.status' | translate}}</th>
+
+										</tr>
+										</thead>
+										<body>
+										<tr class="pointer-main" ng-repeat="gsimAccount in groupGSIMAccounts">
+                                           <td class="pointer" data-ng-click="routeToGSIMAccount(gsimAccount.accountNumber)">{{gsimAccount.gsimId}}</td>
+											<td class="pointer" data-ng-click="routeToGSIMAccount(gsimAccount.accountNumber)">{{gsimAccount.accountNumber}}</td>
+											<td class="pointer" data-ng-click="routeToGSIMAccount(gsimAccount.accountNumber)">{{gsimAccount.childGSIMAccounts[0].productName}}</td>
+											<td class="pointer" data-ng-click="routeToGSIMAccount(gsimAccount.accountNumber)">{{gsimAccount.parentBalance}}</td>
+                                            <td class="pointer" data-ng-click="routeToGSIMAccount(gsimAccount.accountNumber)">{{gsimAccount.savingsStatus}}</td>
+										</tr>
+
+										</body>
+									</table>
+								</div>
 							    <div data-ng-show="groupAccounts.loanAccounts">
 							    	<div class="pull-right">
 										<span data-ng-show="groupAccounts.loanAccounts">
@@ -237,17 +301,17 @@
 								                	<i uib-tooltip="{{loanaccount.loanType.value}}" class="fa fa-group fa fa-large"></i>
 								                </td>
 								                <td class="pointer center" ng-if="loanaccount.status.active">
-								                	<a uib-tooltip="{{'label.button.makerepayment' | translate}}" ng-href="#/loanaccount/{{loanaccount.id}}/repayment" class="btn btn-xs btn-primary ng-binding">
+								                	<a uib-tooltip="{{'label.button.makerepayment' | translate}}" ng-href="#/credit-provider/KADSWEF/loanaccount/{{loanaccount.id}}/repayment" class="btn btn-xs btn-primary ng-binding">
 								                		<i class="fa fa-dollar "></i>
 								                	</a>
 								                </td>
 								                <td class="pointer center" ng-if="loanaccount.status.pendingApproval">
-								                	<a uib-tooltip="{{'label.button.approve' | translate}}" ng-href="#/loanaccount/{{loanaccount.id}}/approve" class="btn btn-xs btn-primary ng-binding">
+								                	<a uib-tooltip="{{'label.button.approve' | translate}}" ng-href="#/credit-provider/KADSWEF/loanaccount/{{loanaccount.id}}/approve" class="btn btn-xs btn-primary ng-binding">
 								                		<i class="fa fa-check "></i>
 								                	</a>
 								                </td>
 								                <td class="pointer center" ng-if="!loanaccount.status.pendingApproval && !loanaccount.status.active">
-								                	<a uib-tooltip="{{'label.button.disburse' | translate}}" ng-href="#/loanaccount/{{loanaccount.id}}/disburse" class="btn btn-xs btn-primary ng-binding">
+								                	<a uib-tooltip="{{'label.button.disburse' | translate}}" ng-href="#/credit-provider/KADSWEF/loanaccount/{{loanaccount.id}}/disburse" class="btn btn-xs btn-primary ng-binding">
 								                		<i class="fa fa-flag "></i>
 								                	</a>
 								                </td>
@@ -320,29 +384,29 @@
 							                <td class="pointer" data-ng-click="routeToSaving(savingaccount.id)">{{savingaccount.productName}}</td>
 							                <td class="pointer" data-ng-click="routeToSaving(savingaccount.id)">{{savingaccount.accountBalance | number}}</td>
 							                <td class="pointer" ng-if="savingaccount.status.active">
-							                	<a uib-tooltip="{{'label.button.deposit' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/deposit" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
+							                	<a uib-tooltip="{{'label.button.deposit' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/deposit" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
 							                		<i class="fa fa-arrow-right "></i>
 							                	</a>
-		                                           <a uib-tooltip="{{'label.button.deposit' | translate}}" ng-href="#/recurringdepositaccount/{{savingaccount.id}}/deposit" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '300'">
+		                                           <a uib-tooltip="{{'label.button.deposit' | translate}}" ng-href="#/credit-provider/KADSWEF/recurringdepositaccount/{{savingaccount.id}}/deposit" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '300'">
 		                                               <i class="fa fa-arrow-right "></i>
 		                                           </a>
-							                	<a uib-tooltip="{{'label.button.withdraw' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/withdrawal" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
+							                	<a uib-tooltip="{{'label.button.withdraw' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/withdrawal" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
 							                		<i class="fa fa-arrow-left "></i>
 							                	</a>
-		                                           <a uib-tooltip="{{'label.button.withdraw' | translate}}" ng-href="#/recurringdepositaccount/{{savingaccount.id}}/withdrawal" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '300'">
+		                                           <a uib-tooltip="{{'label.button.withdraw' | translate}}" ng-href="#/credit-provider/KADSWEF/recurringdepositaccount/{{savingaccount.id}}/withdrawal" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '300'">
 		                                               <i class="fa fa-arrow-left "></i>
 		                                           </a>
 							                </td>
 							                <td class="pointer" ng-if="savingaccount.status.submittedAndPendingApproval">
-							                	<a uib-tooltip="{{'label.button.approve' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/approve" class="btn btn-xs btn-primary ng-binding">
+							                	<a uib-tooltip="{{'label.button.approve' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/approve" class="btn btn-xs btn-primary ng-binding">
 							                		<i class="fa fa-check "></i>
 							                	</a>
 							                </td>
 							                <td class="pointer" ng-if="!savingaccount.status.submittedAndPendingApproval && !savingaccount.status.active">
-							                	<a uib-tooltip="{{'label.button.undoapproval' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/undoapproval" class="btn btn-xs btn-primary ng-binding">
+							                	<a uib-tooltip="{{'label.button.undoapproval' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/undoapproval" class="btn btn-xs btn-primary ng-binding">
 							                		<i class="fa fa-undo "></i>
 							                	</a>
-							                	<a uib-tooltip="{{'label.button.activate' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/activate" class="btn btn-xs btn-primary ng-binding">
+							                	<a uib-tooltip="{{'label.button.activate' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/activate" class="btn btn-xs btn-primary ng-binding">
 							                		<i class="fa fa-check-circle-o "></i>
 							                	</a>
 							                </td>
@@ -395,7 +459,7 @@
 								            </tr>
 								            <tr data-ng-show="group.centerName">
 								                <td>{{ 'label.heading.center' | translate }}</td>
-								                <td><span class="padded-td"><a class="list-group-item-text" href="#/viewcenter/{{group.centerId}}">{{group.centerName}}</a></span>
+								                <td><span class="padded-td"><a class="list-group-item-text" href="#/credit-provider/KADSWEF/viewcenter/{{group.centerId}}">{{group.centerName}}</a></span>
 								                </td>
 								            </tr>
 						                </table>
@@ -466,7 +530,7 @@
 				<uib-tab heading="{{ 'label.heading.committee' | translate }}">
 					    <div class="">
 					        <div class="" data-ng-hide="group.status.value == 'Closed'">
-					        <a href="#/addrole/{{group.id}}" has-permission='ASSIGNROLE_GROUP' class="btn btn-primary pull-right">
+					        <a href="#/credit-provider/KADSWEF/addrole/{{group.id}}" has-permission='ASSIGNROLE_GROUP' class="btn btn-primary pull-right">
 					        <i class="fa fa-plus-sign-alt "></i>
 					        {{ 'label.button.add' | translate }}</a>
 					        </div>
@@ -482,7 +546,7 @@
 					            <tbody>
 					            <tr ng-repeat="grouprole in group.groupRoles">
 					                <td>{{grouprole.role.name}}</td>
-					                <td><a href="#/viewclient/{{grouprole.clientId}}">{{grouprole.clientName}}</a></td>
+					                <td><a href="#/credit-provider/KADSWEF/viewclient/{{grouprole.clientId}}">{{grouprole.clientName}}</a></td>
 					                <td>{{grouprole.clientId}}</td>
 					                <td>
 					                    <button type="button" class="btn btn-primary" data-ng-hide="group.status.value == 'Closed'" has-permission='UNASSIGNROLE_GROUP'
@@ -506,12 +570,12 @@
 				            	{{'label.button.deleteall' | translate}}
 				            </a>
 				            <a data-ng-show="showDataTableAddButton"
-				               ng-href="#/makedatatableentry/{{groupdatatable.registeredTableName}}/{{group.id}}?fromEntity=group"
+				               ng-href="#/credit-provider/KADSWEF/makedatatableentry/{{groupdatatable.registeredTableName}}/{{group.id}}?fromEntity=group"
 				               class="btn btn-primary" has-permission='CREATE_{{groupdatatable.registeredTableName}}'>
 				               <i class="fa fa-plus "></i>{{'label.button.add' | translate}}
 				            </a>
 				            <a data-ng-show="showDataTableEditButton"
-				               ng-href="#/viewsingledatatableentry/{{groupdatatable.registeredTableName}}/{{group.id}}?mode=edit"
+				               ng-href="#/credit-provider/KADSWEF/viewsingledatatableentry/{{groupdatatable.registeredTableName}}/{{group.id}}?mode=edit"
 				               class="btn btn-primary" has-permission='UPDATE_{{groupdatatable.registeredTableName}}'><i
 				               class="fa fa-edit "></i>{{'label.button.edit' | translate}}
 				            </a>

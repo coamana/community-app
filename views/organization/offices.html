@@ -1,15 +1,17 @@
 <div class="content-container" ng-controller="OfficesController">
     <ul class="breadcrumb">
-        <li><a href="#/organization">{{'label.anchor.organization' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/organization">{{'label.anchor.organization' | translate}}</a></li>
         <li class="active">{{'label.anchor.manageoffices' | translate}}</li>
     </ul>
     <div class="card">
         <div class="content">
             <div class="toolbar">
                 <div class="pull-right">
-                    <a ng-show="isTreeView" ng-click="isTreeView=!isTreeView" class="btn btn-primary"><i class="fa fa-list "></i>{{'label.button.listview' | translate}}</a>
-                    <a ng-hide="isTreeView" ng-click="isTreeView=!isTreeView" class="btn btn-primary"><i class="fa fa-sitemap "></i>{{'label.button.treeview' | translate}}</a>
-                    <a href="#/createoffice" class="btn btn-primary" has-permission='CREATE_OFFICE'><i class="fa fa-plus "></i>{{'label.button.createoffice' | translate}}</a>
+                    <a ng-show="isTreeView" ng-click="isTreeView=!isTreeView" class="btn btn-primary"><i class="fa fa-list "></i>&nbsp;&nbsp;{{'label.button.listview' | translate}}</a>
+                    <a ng-hide="isTreeView" ng-click="isTreeView=!isTreeView" class="btn btn-primary"><i class="fa fa-sitemap "></i>&nbsp;&nbsp;{{'label.button.treeview' | translate}}</a>
+                    <a href="#/credit-provider/KADSWEF/createoffice" class="btn btn-primary" has-permission='CREATE_OFFICE'><i class="fa fa-plus "></i>&nbsp;&nbsp;{{'label.button.createoffice' | translate}}</a>&nbsp;&nbsp;
+                		<a href="#/credit-provider/KADSWEF/bulkimportoffices" class="btn btn-primary pull-right" has-permission='CREATE_OFFICE'><i
+ +                            class="fa fa-upload"></i>&nbsp;{{'label.button.importoffices' | translate}}</a>
                 </div>
             </div>
             <br>
@@ -26,7 +28,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="pointer-main" ng-repeat="office in offices| orderBy:'name':reverse  | filter:filterText">
+                    <tr class="pointer-main" dir-paginate="office in offices | orderBy:'name':reverse  | filter:filterText |  itemsPerPage: OfficesPerPage">
                         <td class="pointer" data-ng-click="routeTo(office.id)">{{office.name}}</td>
                         <td class="pointer" data-ng-click="routeTo(office.id)">{{office.externalId}}</td>
                         <td class="pointer" data-ng-click="routeTo(office.id)">{{office.parentName}}</td>
@@ -34,6 +36,7 @@
                     </tr>
                     </tbody>
                 </table>
+                <dir-pagination-controls boundary-links="true" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
             </div>
             <div ng-show="isTreeView">
                 <div

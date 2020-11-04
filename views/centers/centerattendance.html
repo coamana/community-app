@@ -1,5 +1,7 @@
 <div class="content-container" ng-controller="CenterAttendanceController">
     <ul class="breadcrumb">
+        <li><a href="#/credit-provider/KADSWEF/centers">{{'label.anchor.centers' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/viewcenter/{{centerId}}">{{center.name}}</a></li>
         <li class="active">attendance</li>
     </ul>
     <div class="card">
@@ -17,7 +19,7 @@
 
                             <div class="col-sm-3">
                                 <input type="text" datepicker-pop="dd MMMM yyyy" id="date" name="date" ng-model="first.date" is-open="opened"
-                                       min="minDate" max="'2020-06-22'" class="form-control" required late-Validate />
+                                       min="minDate"  class="form-control" required late-Validate />
                                 <span class="col-sm-12">
                                     <form-validate valattributeform="centerattendanceform" valattribute="date"/>
                                 </span>
@@ -48,7 +50,7 @@
                             </div>
                         </div>
                         <div class="col-md-offset-2 paddedleft120">
-                            <a id="cancel" href="#/viewcenter/{{center.id}}" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
+                            <a id="cancel" href="#/credit-provider/KADSWEF/viewcenter/{{center.id}}" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
                             <button id="save" type="button" class="btn btn-primary" data-ng-click="attendanceUpdate(meeting.id)" has-permission='CREATE_MEETING'>
                                 {{'label.button.save' | translate}}
                             </button>

@@ -1,6 +1,6 @@
 <div class="content-container" ng-controller="ViewLoanTransactionController">
     <ul class="breadcrumb">
-        <li><a href="#/viewloanaccount/{{transaction.accountId}}">{{'label.anchor.viewloanaccount' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/viewloanaccount/{{transaction.accountId}}">{{'label.anchor.viewloanaccount' | translate}}</a></li>
         <li class="active">{{ 'label.anchor.viewtransaction' | translate}}</li>
     </ul>
     <script type="text/ng-template" id="undotransaction.html">
@@ -19,7 +19,7 @@
             <div class="toolbar">
                 <h4>{{ 'label.heading.details' | translate}}</h4>
                 <div ng-hide="transaction.type.contra" class="btn-group pull-right">
-                    <a href="#/loanaccount/{{transaction.accountId}}/modifytransaction?transactionId={{transaction.id}}"
+                    <a href="#/credit-provider/KADSWEF/loanaccount/{{transaction.accountId}}/modifytransaction?transactionId={{transaction.id}}"
                     class="btn btn-primary" has-permission='ADJUST_LOAN'><i class="fa fa-pencil "></i>{{ 'label.button.edit' | translate}}</a>
                     <a ng-click="undo(transaction.accountId, transaction.id)" class="btn btn-danger" has-permission='ADJUST_LOAN'><i
                     class="fa fa-trash "></i>{{ 'label.button.undo' | translate}}</a>
@@ -49,6 +49,20 @@
                     </tr>
                     <tr class="span2"></tr>
                 </table>
+              <div ng-show="transaction.type.repayment">
+                <h3>{{ 'label.heading.transactiondetails' | translate}}</h3>
+                <div class="row span"  >
+                  <div class="col-sm-6 col-md-6">
+                    <table class="table table-striped table-bordered" >
+                      <tr ng-repeat="detail in details">
+                        <th class="table-bold-loan" ng-style="detail.boldTitle && {'font-weight' : 'bold' , 'text-align' : detail.align}">{{detail.description | translate}}</th>
+                        <td ng-show="detail.containsAmount"><span class="padded-td" ng-style="detail.boldTitle && {'font-weight' : 'bold' }">{{transaction.currency.displaySymbol}} {{detail.amount}}</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
                 <table width="100%" ng-show="transaction.paymentDetailData">
                     <tr>
                         <td width="20%"><strong>{{ 'label.heading.paymentdetails' | translate}}</strong></td>

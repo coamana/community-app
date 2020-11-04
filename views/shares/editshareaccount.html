@@ -1,6 +1,6 @@
 <div class="content-container" ng-controller="EditShareAccountController">
     <ul class="breadcrumb">
-        <li ng-show="clientName"><a href="#/viewclient/{{clientId}}"><strong>'{{clientName}}'</strong></a></li>
+        <li ng-show="clientName"><a href="#/credit-provider/KADSWEF/viewclient/{{clientId}}"><strong>'{{clientName}}'</strong></a></li>
         <li class="active">{{'label.anchor.sharesapplication' | translate}}</li>
     </ul>
 <api-validate></api-validate>
@@ -197,7 +197,7 @@
                            ng-model="charge.amountOrPercentage" number-format
                            placeholder="{{'label.input.amount' | translate}}"/></td>
                 <td>{{charge.chargeTimeType.value}}</td>
-                <td><a ng-click="deleteCharge($index)"><i class="fa fa-times "></i></a></td>
+                <td><a ng-click="deleteCharge($index)"><i class="fa fa-times-circle fa-2x"></i></a></td>
             </tr>
         </table>
         </div>

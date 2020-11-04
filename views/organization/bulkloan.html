@@ -1,6 +1,6 @@
 <div class="content-container">
     <ul class="breadcrumb">
-        <li><a href="#/organization">{{'label.anchor.organization' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/organization">{{'label.anchor.organization' | translate}}</a></li>
         <li class="active">{{'label.anchor.bulkloanreassignment' | translate}}</li>
     </ul>
     <div class="card">
@@ -28,7 +28,7 @@
     	
     	                        <div class="col-sm-3">
     	                            <input id="assignmentDate" type="text" datepicker-pop="dd MMMM yyyy" ng-model="first.date"
-    	                                   is-open="opened" min="minDate" max="'2020-06-22'"
+    	                                   is-open="opened" min="minDate" 
     	                                   date-disabled="disabled(date, mode)" class="form-control" required late-Validate/>
     	                        </div>
     	                    </div>
@@ -105,7 +105,7 @@
                 </div>
             </div>
     	        <div class="col-md-offset-3">
-    	            <a href="#/offices">
+    	            <a href="#/credit-provider/KADSWEF/organization">
     	                <button type="reset" class="btn btn-default">{{'label.button.cancel' | translate}}</button>
     	            </a>
     	            <button type="submit" class="btn btn-primary" has-permission='BULKREASSIGN_LOAN'>{{'label.button.save' | translate}}</button>

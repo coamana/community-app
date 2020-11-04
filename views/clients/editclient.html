@@ -1,8 +1,8 @@
 <form name="editclientform" novalidate="" class="content-container form-horizontal" ng-controller="EditClientController"
       rc-submit="submit()">
         <ul class="breadcrumb">
-            <li><a href="#/clients">{{'label.anchor.clients' | translate}}</a></li>
-            <li><a href="#/viewclient/{{clientId}}">{{'label.anchor.viewclient' | translate}}</a></li>
+            <li><a href="#/credit-provider/KADSWEF/clients">{{'label.anchor.clients' | translate}}</a></li>
+            <li><a href="#/credit-provider/KADSWEF/viewclient/{{clientId}}">{{'label.anchor.viewclient' | translate}}</a></li>
             <li class="active">{{'label.anchor.editclient' | translate}}</li>
         </ul>
     <api-validate></api-validate>
@@ -166,7 +166,7 @@
 
 						<div class="col-sm-3">
 							<input id="incorpValidityTillDate" type="text" name="incorpValidityTillDate" datepicker-pop="dd MMMM yyyy"
-								   ng-model="date.incorpValidityTillDate" is-open="opened1" max="'2020-06-22'"  class="form-control"/>
+								   ng-model="date.incorpValidityTillDate" is-open="opened1"   class="form-control"/>
 						</div>
 					</div>
 				</div>
@@ -266,7 +266,7 @@
 	            </div>
 	        </div>
 	        <div class="col-md-offset-3">
-	            <a id="cancel" href="#/viewclient/{{clientId}}">
+	            <a id="cancel" href="#/credit-provider/KADSWEF/viewclient/{{clientId}}">
 	                <button type="reset" class="btn btn-default">{{'label.button.cancel' | translate}}</button>
 	            </a>
 	            <button id="save" type="submit" class="btn btn-primary" has-permission='UPDATE_CLIENT'>{{'label.button.save' | translate}}</button>

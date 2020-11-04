@@ -1,6 +1,6 @@
 <div class="content-container" ng-controller="AssignSavingsOfficerController">
     <ul class="breadcrumb">
-        <li><a href="#/viewsavingaccount/{{accountNo}}">{{'label.anchor.viewsavingsaccount' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/viewsavingaccount/{{accountNo}}">{{'label.anchor.viewsavingsaccount' | translate}}</a></li>
         <li class="active">{{'label.anchor.assignsavingsofficer' | translate}}</li>
     </ul>
     <div class="card">
@@ -29,7 +29,7 @@
 
                         <div class="col-sm-3">
                             <input class="form-control" sort id="assignmentDate" type="text" datepicker-pop="dd MMMM yyyy"
-                                   ng-model="formData.assignmentDate" is-open="opened" min="minDate" max="'2020-06-22'"/>
+                                   ng-model="formData.assignmentDate" is-open="opened" min="minDate" />
                         </div>
                     </div>
                     <div class="col-md-offset-3">
