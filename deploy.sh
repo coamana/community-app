@@ -67,7 +67,7 @@ fi
 # Node Helpers
 # ------------
 
-NPM_CMD="node /opt/nodejs/10.1.0/bin/npm"
+NPM_CMD="node /opt/nodejs/10.14.2/bin/npm"
 
 # selectNodeVersion () {
 #   if [[ -n "$KUDU_SELECT_NODE_VERSION_CMD" ]]; then
