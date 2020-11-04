@@ -117,6 +117,7 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   #eval $NPM_CMD cache clean --force
   echo "Running $NPM_CMD install --production"
   eval npm install --production
+  eval npm audit fix
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
