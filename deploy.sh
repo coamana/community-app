@@ -132,9 +132,11 @@ fi
 
 # 5. Run grunt  
 if [ -e "$DEPLOYMENT_SOURCE/Gruntfile.js" ]; then  
+    echo "Running $NPM_CMD install --production"
+
   eval npm install grunt-cli  
   exitWithMessageOnError "installing grunt failed"  
-  ./node_modules/.bin/grunt --no-color prod  
+  ./node_modules/.bin/grunt prod  
   exitWithMessageOnError "grunt failed"  
 fi  
 
