@@ -6,8 +6,8 @@ set -e
 # sudo apt-get install npm nodejs-legacy
 # npm config set prefix ~
 
-#npm install -g grunt-cli
-#npm install -g bower
+npm install -g grunt-cli
+npm install -g bower
 bower install
 npm install
 
