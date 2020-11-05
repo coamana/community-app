@@ -6,6 +6,15 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    //azure deployment settings
+    azureDeploy: {
+    options: {
+      credential_file: process.env['HOME']+'/.azure/creds.json' // the location and name of your Azure credentials stored as JSON
+    },
+    directory: 'dist/community-app', // the directory of data you wish to deploy
+    website_name: 'amanamarketmf' // your Azure Website name
+     },
     // Project settings
     mifosx: {
       // configurable paths
@@ -414,6 +423,8 @@ module.exports = function(grunt) {
       }
 
   });
+
+  grunt.loadNpmTasks('grunt-azure-deploy');
 
   grunt.loadNpmTasks('grunt-gh-pages')
   // Run development server using grunt serve
