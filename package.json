@@ -50,7 +50,7 @@
     "test": "grunt test --verbose"
   },
   "engines": {
-    "node": "14.0.0"
+    "node": ">=0.8.0"
   },
   "repository": {
     "type": "git",
