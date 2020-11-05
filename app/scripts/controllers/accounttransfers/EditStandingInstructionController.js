@@ -55,7 +55,7 @@
                  this.formData.monthDayFormat = 'dd MMMM';
                 }
                 resourceFactory.standingInstructionResource.update({standingInstructionId: scope.standingInstructionId},this.formData, function (data) {
-                    location.path('/viewstandinginstruction/' + scope.standingInstructionId);
+                    location.path('/credit-provider/KADSWEF/viewstandinginstruction/' + scope.standingInstructionId);
                 });
             };
 
@@ -68,11 +68,11 @@
             }
 
             scope.viewstandinginstruction = function () {
-                location.path('/viewstandinginstruction/'+ scope.standingInstructionId);
+                location.path('/credit-provider/KADSWEF/viewstandinginstruction/'+ scope.standingInstructionId);
             };
 
             scope.viewliststandinginstruction = function () {
-                location.path('/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
+                location.path('/credit-provider/KADSWEF/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
             };
         }
     });

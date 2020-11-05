@@ -25,7 +25,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.joiningDate = joiningDate;
                 resourceFactory.employeeResource.save(this.formData, function (data) {
-                    location.path('/viewemployee/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewemployee/' + data.resourceId);
                 });
             };
         }

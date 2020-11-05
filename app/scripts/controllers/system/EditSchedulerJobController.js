@@ -11,12 +11,12 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewschedulerjob/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewschedulerjob/' + routeParams.id);
             }
 
             scope.submit = function () {
                 resourceFactory.jobsResource.update({jobId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewschedulerjob/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewschedulerjob/' + data.resourceId);
                 });
             };
         }

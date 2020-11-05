@@ -591,7 +591,7 @@
                 }
 
                 resourceFactory.loanProductResource.put({loanProductId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewloanproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewloanproduct/' + data.resourceId);
                 });
             }
         }

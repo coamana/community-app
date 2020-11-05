@@ -23,7 +23,7 @@
                 $scope.formData.locale='en';
 
                 resourceFactory.addCreditBureauLoanProductMapping.save({cb_id: $scope.creditBureauId},this.formData, function (data) {
-                    location.path('/externalservicesCB/CreditBureau');
+                    location.path('/credit-provider/KADSWEF/externalservicesCB/CreditBureau');
                 });
 
             };

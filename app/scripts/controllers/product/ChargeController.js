@@ -4,7 +4,7 @@
             scope.charges = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewcharge/' + id);
+                location.path('/credit-provider/KADSWEF/viewcharge/' + id);
             };
 
             if (!scope.searchCriteria.charges) {

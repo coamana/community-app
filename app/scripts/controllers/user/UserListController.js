@@ -4,7 +4,7 @@
             scope.users = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewuser/' + id);
+                location.path('/credit-provider/KADSWEF/viewuser/' + id);
             };
 
             /* -----Throws error on test-----

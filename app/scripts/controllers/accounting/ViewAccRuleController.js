@@ -15,7 +15,7 @@
                 $scope.delete = function () {
                     resourceFactory.accountingRulesResource.delete({accountingRuleId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/accounting_rules');
+                        location.path('/credit-provider/KADSWEF/accounting_rules');
                     });
                 };
                 $scope.cancel = function () {

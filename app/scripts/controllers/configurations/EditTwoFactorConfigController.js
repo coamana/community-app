@@ -28,7 +28,7 @@
             });
 
             scope.cancel = function () {
-                location.path('/twofactorconfig');
+                location.path('/credit-provider/KADSWEF/twofactorconfig');
             };
 
             scope.submit = function () {
@@ -38,7 +38,7 @@
                     formData[config.name] = config.value;
                 }
                 resourceFactory.twoFactorConfigResource.put(formData, function (data) {
-                    location.path('/twofactorconfig');
+                    location.path('/credit-provider/KADSWEF/twofactorconfig');
                 });
             };
 

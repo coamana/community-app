@@ -64,7 +64,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.extendTermForDailyRepayments = scope.extendTermForDailyRepayments;
                 resourceFactory.workingDaysResource.put(this.formData, function(data){
-                    location.path('/organization/');
+                    location.path('/credit-provider/KADSWEF/organization/');
                 })
 
             }

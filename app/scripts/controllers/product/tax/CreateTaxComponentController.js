@@ -54,7 +54,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.startDate = reqDate;
                 resourceFactory.taxcomponent.save(this.formData, function (data) {
-                    location.path('/viewtaxcomponent/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtaxcomponent/' + data.resourceId);
                 });
             };
         }

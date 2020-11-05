@@ -15,7 +15,7 @@
             scope.formData = {};
 
             scope.routeTo = function (id) {
-                location.path('/viewtransactions/' + id);
+                location.path('/credit-provider/KADSWEF/viewtransactions/' + id);
             };
 
             resourceFactory.accountCoaResource.getAllAccountCoas({

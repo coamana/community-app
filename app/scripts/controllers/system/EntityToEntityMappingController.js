@@ -205,7 +205,7 @@
 
 
             scope.routeTo = function(id, relationId) {
-                location.path('/editentitymapping/'+id + '/' +relationId);
+                location.path('/credit-provider/KADSWEF/editentitymapping/'+id + '/' +relationId);
             }
 
 

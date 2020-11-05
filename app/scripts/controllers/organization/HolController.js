@@ -6,7 +6,7 @@
             scope.formData = {};
 
             scope.routeTo = function (id) {
-                location.path('/viewholiday/' + id);
+                location.path('/credit-provider/KADSWEF/viewholiday/' + id);
             };
 
             if (!scope.searchCriteria.holidays) {

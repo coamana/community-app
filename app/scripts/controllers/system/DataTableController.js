@@ -2,7 +2,7 @@
     mifosX.controllers = _.extend(module, {
         DataTableController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewdatatable/' + id);
+                location.path('/credit-provider/KADSWEF/viewdatatable/' + id);
             };
 
             if (!scope.searchCriteria.datatables) {

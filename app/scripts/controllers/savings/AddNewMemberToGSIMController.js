@@ -123,7 +123,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountId);
             }
 
             scope.clientsNotPresentInGSIM=[];
@@ -202,7 +202,7 @@
                 }
 
                 resourceFactory.savingsResource.update({'accountId': scope.accountId}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                 });
             };
         }

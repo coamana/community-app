@@ -26,7 +26,7 @@
                 $scope.approve = function () {
                     resourceFactory.checkerInboxResource.save({templateResource: routeParams.id, command: action}, {}, function (data) {
                         $uibModalInstance.close('approve');
-                        location.path('/checkeractionperformed');
+                        location.path('/credit-provider/KADSWEF/checkeractionperformed');
                     });
                 };
                 $scope.cancel = function () {
@@ -49,7 +49,7 @@
                 $scope.reject = function () {
                     resourceFactory.checkerInboxResource.save({templateResource: routeParams.id, command: action}, {}, function (data) {
                         $uibModalInstance.close('reject');
-                        location.path('/checkeractionperformed');
+                        location.path('/credit-provider/KADSWEF/checkeractionperformed');
                     });
                 };
                 $scope.cancel = function () {
@@ -66,7 +66,7 @@
                 $scope.delete = function () {
                     resourceFactory.checkerInboxResource.delete({templateResource: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/checkeractionperformed');
+                        location.path('/credit-provider/KADSWEF/checkeractionperformed');
                     });
                 };
                 $scope.cancel = function () {

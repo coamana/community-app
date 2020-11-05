@@ -14,20 +14,20 @@
             scope.editMeeting = false;
             scope.isGroupMembersAvailable = false;
             scope.routeToLoan = function (id) {
-                location.path('/viewloanaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + id);
             };
             scope.routeToSaving = function (id) {
-                location.path('/viewsavingaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + id);
             };
             scope.routeToGLIMLoan = function (glimAccountNumber, glimId) {
-                location.path('/viewglimaccount/' +scope.groupId +'/'+glimAccountNumber +'/'+glimId);
+                location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId +'/'+glimAccountNumber +'/'+glimId);
             };
 
             scope.routeToGSIMAccount = function (gsimAccountNumber) {
-                location.path('/viewgsimaccount/' + scope.groupId+'/'+gsimAccountNumber);
+                location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.groupId+'/'+gsimAccountNumber);
             };
             scope.routeToMem = function (id) {
-                location.path('/viewclient/' + id);
+                location.path('/credit-provider/KADSWEF/viewclient/' + id);
             };
             resourceFactory.groupResource.get({groupId: routeParams.id, associations: 'all'}, function (data) {
                 scope.group = data;
@@ -96,7 +96,7 @@
                 $scope.delete = function () {
                     resourceFactory.groupResource.delete({groupId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/groups');
+                        location.path('/credit-provider/KADSWEF/groups');
                     });
                 };
                 $scope.cancel = function () {

@@ -398,7 +398,7 @@
                 scope.submissionData.paramValue = scope.paramValues;
 
                 resourceFactory.smsCampaignResource.save(scope.submissionData, function(data) {
-                    location.path('/viewsmscampaign/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsmscampaign/' + data.resourceId);
                 });
 
             };

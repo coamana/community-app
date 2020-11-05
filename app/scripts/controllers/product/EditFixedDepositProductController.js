@@ -198,7 +198,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewfixeddepositproduct/' + routeParams.productId);
+                location.path('/credit-provider/KADSWEF/viewfixeddepositproduct/' + routeParams.productId);
             };
 
             scope.submit = function () {
@@ -252,7 +252,7 @@
                 this.formData.charts.push(copyChartData(scope.chart));//add chart details
                 this.formData = removeEmptyValues(this.formData);
                 resourceFactory.fixedDepositProductResource.update({productId: routeParams.productId}, this.formData, function (data) {
-                    location.path('/viewfixeddepositproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositproduct/' + data.resourceId);
                 });
             }
 

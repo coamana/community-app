@@ -13,7 +13,7 @@
                 scope.codes = data.rescheduleReasons;
             });
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
@@ -27,7 +27,7 @@
                 this.formData.rescheduleReasonComment = scope.comments;
                 resourceFactory.loanRescheduleResource.put(this.formData, function (data) {
                     scope.requestId = data.resourceId;
-                    location.path('/loans/' + scope.loanId + '/viewreschedulerequest/'+ data.resourceId);
+                    location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/viewreschedulerequest/'+ data.resourceId);
                 });
             };
 

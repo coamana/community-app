@@ -125,7 +125,7 @@
                 }
 
                 resourceFactory.journalEntriesResource.save(jeTransaction, function (data) {
-                    location.path('/viewtransactions/' + data.transactionId);
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + data.transactionId);
                 });
             }
         }

@@ -7,7 +7,7 @@
             scope.rates = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewrate/' + id);
+                location.path('/credit-provider/KADSWEF/viewrate/' + id);
             };
 
             if (!scope.searchCriteria.rates) {

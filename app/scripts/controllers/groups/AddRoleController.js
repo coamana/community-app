@@ -12,7 +12,7 @@
 
             scope.addrole = function () {
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'assignRole'}, this.formData, function (data) {
-                    location.path('/viewgroup/' + data.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.groupId);
                 });
             };
 

@@ -84,12 +84,12 @@
                     }
                 }
                 resourceFactory.sharesAccount.save(this.formData, function (data) {
-                    location.path('/viewshareaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewshareaccount/' + data.resourceId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewclient/' + scope.clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
             }
         }
     });

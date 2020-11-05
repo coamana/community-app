@@ -193,17 +193,17 @@
 
 
                 resourceFactory.recurringDepositAccountResource.save(this.formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                 });
             };
 
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 } else if (scope.centerEntity) {
-                    location.path('/viewcenter/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + scope.groupId);
                 } else {
-                    location.path('/viewgroup/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.groupId);
                 }
             }
 

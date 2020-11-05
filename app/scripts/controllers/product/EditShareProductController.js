@@ -74,7 +74,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/shareproducts');
+                location.path('/credit-provider/KADSWEF/shareproducts');
             };
 
             scope.submit = function () {
@@ -94,7 +94,7 @@
                 this.formData.locale = scope.optlang.code;
 
                 resourceFactory.shareProduct.put({shareProductId: scope.product.id}, this.formData, function (data) {
-                    location.path('/viewshareproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewshareproduct/' + data.resourceId);
                 });
             }
         }

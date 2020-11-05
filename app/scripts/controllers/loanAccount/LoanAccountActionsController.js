@@ -465,7 +465,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + routeParams.id);
             };
 
             scope.addTrancheAmounts = function(){
@@ -524,25 +524,25 @@
                     }
                     params.loanId = scope.accountId;
                     resourceFactory.loanTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "waivecharge") {
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'waive'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "paycharge") {
                     this.formData.transactionDate = dateFilter(this.formData.transactionDate, scope.df);
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'pay'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editcharge") {
                     this.formData.dueDate = dateFilter(this.formData.dueDate, scope.df);
                     resourceFactory.LoanAccountResource.update({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editdisbursedate") {
                     this.formData.expectedDisbursementDate = dateFilter(this.formData.expectedDisbursementDate, scope.df);
@@ -565,7 +565,7 @@
                         });
                     }
                     resourceFactory.LoanEditDisburseResource.update({loanId: routeParams.id, disbursementId: routeParams.disbursementId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }else if(scope.action === "adddisbursedetails" || scope.action === "deletedisbursedetails") {
                     this.formData.disbursementData = [];
@@ -580,18 +580,18 @@
 
                     this.formData.expectedDisbursementDate = dateFilter(scope.form.expectedDisbursementDate, scope.df);
                     resourceFactory.LoanAddTranchesResource.update({loanId: routeParams.id}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
                 else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else {
                     params.loanId = scope.accountId;
                     resourceFactory.LoanAccountResource.save(params, this.formData, function (data) {
 
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
             };

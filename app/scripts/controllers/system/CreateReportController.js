@@ -51,7 +51,7 @@
                 }
                 this.formData.reportParameters = scope.temp;
                 resourceFactory.reportsResource.save(this.formData, function (data) {
-                    location.path('/system/viewreport/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/system/viewreport/' + data.resourceId);
                 });
             };
         }

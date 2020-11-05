@@ -343,7 +343,7 @@
                 this.formData.dateFormat = scope.df;
                 scope.formData.exceptions = constructRequestData() ;
                 resourceFactory.variableinstallments.addVariations({loanId: routeParams.accountId}, scope.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
         }

@@ -23,7 +23,7 @@
             };
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
@@ -33,7 +33,7 @@
                     this.formData.dueDate = dateFilter(this.first.date, scope.df);
                 }
                 resourceFactory.loanResource.save({resourceType: 'charges', loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 

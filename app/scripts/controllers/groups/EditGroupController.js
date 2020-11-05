@@ -127,7 +127,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 resourceFactory.groupResource.update({groupId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewgroup/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.id);
                 });
             };
 
@@ -183,7 +183,7 @@
                 newActivation.locale = scope.optlang.code;
                 newActivation.dateFormat = scope.df;
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'activate'}, newActivation, function (data) {
-                    location.path('/viewgroup/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.id);
                 });
             };
         }

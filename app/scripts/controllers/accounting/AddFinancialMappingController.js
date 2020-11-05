@@ -22,7 +22,7 @@
 
             scope.submit = function () {
                 resourceFactory.officeToGLAccountMappingResource.create(this.formData, function (data) {
-                    location.path('/viewfinancialactivitymapping/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfinancialactivitymapping/' + data.resourceId);
                 });
             };
 

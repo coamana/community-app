@@ -234,7 +234,7 @@
                 }
 
                 resourceFactory.smsCampaignResource.update({campaignId: routeParams.campaignId}, scope.submissionData, function(data) {
-                    location.path('/viewsmscampaign/' + routeParams.campaignId);
+                    location.path('/credit-provider/KADSWEF/viewsmscampaign/' + routeParams.campaignId);
                 });
 
             };

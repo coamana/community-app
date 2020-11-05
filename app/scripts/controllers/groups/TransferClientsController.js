@@ -72,7 +72,7 @@
                 }
                 this.formData.inheritDestinationGroupLoanOfficer = this.formData.inheritDestinationGroupLoanOfficer || false;
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'transferClients'}, this.formData, function (data) {
-                    location.path('/viewgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.resourceId);
                 });
             };
 

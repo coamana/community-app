@@ -45,7 +45,7 @@
             })
             $scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
 
@@ -125,7 +125,7 @@
                 $scope.formData.addressId=addressId;
                 resourceFactory.clientAddress.put({'clientId': clientId},$scope.formData,function (data) {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
                 });
             }
 

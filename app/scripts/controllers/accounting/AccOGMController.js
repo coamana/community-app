@@ -2,7 +2,7 @@
     mifosX.controllers = _.extend(module, {
         AccOGMController: function (scope, resourceFactory, paginatorService,routeParams, location,$uibModal) {
             scope.routeTo = function (id) {
-                location.path('/viewofficeglmapping/' + id);
+                location.path('/credit-provider/KADSWEF/viewofficeglmapping/' + id);
             };
 
             var fetchFunction = function () {

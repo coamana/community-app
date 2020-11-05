@@ -31,7 +31,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 resourceFactory.centerResource.update({centerId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewcenter/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.id);
                 });
             };
             scope.activate = function () {
@@ -41,7 +41,7 @@
                 newActivation.locale = scope.optlang.code;
                 newActivation.dateFormat = scope.df;
                 resourceFactory.centerResource.save({centerId: routeParams.id, command: 'activate'}, newActivation, function (data) {
-                    location.path('/viewcenter/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.id);
                 });
             };
         }

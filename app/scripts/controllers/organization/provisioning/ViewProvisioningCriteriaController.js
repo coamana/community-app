@@ -32,7 +32,7 @@
                 $scope.delete = function () {
                     resourceFactory.provisioningcriteria.delete({criteriaId: scope.criteriaId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewallprovisionings/');
+                        location.path('/credit-provider/KADSWEF/viewallprovisionings/');
                     });
                 };
                 $scope.cancel = function () {

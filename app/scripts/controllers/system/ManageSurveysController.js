@@ -95,17 +95,17 @@
             scope.createSurvey = function(){
                 scope.updateSequenceNumber();
                 resourceFactory.surveyResource.save(scope.formData,function(data){
-                    location.path('/viewsurvey/'+data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsurvey/'+data.resourceId);
                 });
             }
 
             scope.routeTo = function(id){
-                location.path('/viewsurvey/'+id);
+                location.path('/credit-provider/KADSWEF/viewsurvey/'+id);
             };
 
             scope.activateOrDeactivateSurvey = function(id, commandParam){
                 resourceFactory.surveyResource.activateOrDeactivate({surveyId: id, command:commandParam},function(data){
-                    location.path('/surveys');
+                    location.path('/credit-provider/KADSWEF/surveys');
                 });
             };
         }

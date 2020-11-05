@@ -7,7 +7,7 @@
             scope.searchResults = [];
             scope.showClosed = false;
             scope.routeTo = function (id) {
-                location.path('/viewcenter/' + id);
+                location.path('/credit-provider/KADSWEF/viewcenter/' + id);
             };
 
             if (!scope.searchCriteria.centers) {

@@ -8,7 +8,7 @@
             });
 
             scope.showEdit = function(id){
-                location.path('/editPaymentType/' + id);
+                location.path('/credit-provider/KADSWEF/editPaymentType/' + id);
             }
 
            var PaymentTypeDeleteCtrl = function ($scope, $uibModalInstance,paymentTypeId) {

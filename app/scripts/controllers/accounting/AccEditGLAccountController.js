@@ -46,7 +46,7 @@
 
             scope.submit = function () {
                 resourceFactory.accountCoaResource.update({'glAccountId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewglaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewglaccount/' + data.resourceId);
                 });
             };
         }

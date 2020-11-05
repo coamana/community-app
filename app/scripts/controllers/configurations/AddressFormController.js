@@ -33,7 +33,7 @@
             })
             $scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
           
@@ -61,7 +61,7 @@
                 $scope.formData.locale="en";
                 resourceFactory.clientAddress.put({'clientId': routeParams.id,'type':$scope.addressTypeId},$scope.formData,function (data) {
 
-                    location.path('/viewclient/'+routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+routeParams.id);
                 });
             }
 
@@ -69,7 +69,7 @@
 
                 resourceFactory.clientAddress.save({'clientId': routeParams.id,'type':$scope.addressTypeId},$scope.formData,function (data) {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
                 });
 
             };

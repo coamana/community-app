@@ -17,7 +17,7 @@
             scope.formParams.limit = scope.entityDatatableChecksPerPage;
 
             scope.routeTo = function (id) {
-                location.path('/viewentitydatatablecheck/' + id);
+                location.path('/credit-provider/KADSWEF/viewentitydatatablecheck/' + id);
             };
 
             if (!scope.searchCriteria.criterias) {

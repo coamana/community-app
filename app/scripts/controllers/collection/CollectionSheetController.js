@@ -30,7 +30,7 @@
                         }
                     }
                     scope.meetingDate = dateFilter(scope.date.transactionDate, scope.df);
-                    location.path('/productivesheet/' + scope.officeId + '/' + scope.officeName + '/' + scope.meetingDate + '/' + scope.loanOfficerId);
+                    location.path('/credit-provider/KADSWEF/productivesheet/' + scope.officeId + '/' + scope.officeName + '/' + scope.meetingDate + '/' + scope.loanOfficerId);
                 } else {
                     scope.collectionsheetform.office.$valid = true;
                     scope.collectionsheetform.office.$error.req = true;

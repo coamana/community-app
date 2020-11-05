@@ -2,7 +2,7 @@
   mifosX.controllers = _.extend(module, {
     InterestRateChartController: function(scope, routeParams, resourceFactory, location,$uibModal) {
         scope.edit = function(id){
-            location.path('/editinterestratechart/' + id);
+            location.path('/credit-provider/KADSWEF/editinterestratechart/' + id);
         };
         scope.productName = routeParams.productName;
         scope.productId = routeParams.productId;

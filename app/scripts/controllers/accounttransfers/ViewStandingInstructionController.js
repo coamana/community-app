@@ -18,7 +18,7 @@
             });
             
             scope.cancel = function(){
-                location.path('/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
+                location.path('/credit-provider/KADSWEF/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
             }
 
         }

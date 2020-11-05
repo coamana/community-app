@@ -6,7 +6,7 @@
             scope.requestId = routeParams.requestId;
 
             scope.cancel = function () {
-                location.path('/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
             };
             scope.reject = function(){
                 this.formData.dateFormat = scope.df;
@@ -14,7 +14,7 @@
                 this.formData.rejectedOnDate = dateFilter(this.formData.rejectedOnDate, scope.df);
 
                 resourceFactory.loanRescheduleResource.reject({scheduleId:scope.requestId},this.formData,function (data) {
-                    location.path('/viewloanaccount/' + scope.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                 });
             };
         }

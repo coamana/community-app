@@ -4,7 +4,7 @@
             scope.floatingrates = [];
 
             scope.routeTo = function (floatingRateId) {
-                location.path('/viewfloatingrate/' + floatingRateId);
+                location.path('/credit-provider/KADSWEF/viewfloatingrate/' + floatingRateId);
             };
 
             resourceFactory.floatingrates.getAll(function (data) {

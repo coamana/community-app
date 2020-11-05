@@ -35,7 +35,7 @@
                 this.formData.calendarId = id;
                 this.formData.meetingDate = reqDate;
                 resourceFactory.groupMeetingResource.save({groupId: routeParams.groupId, calenderId: routeParams.calendarId}, this.formData, function (data) {
-                    location.path('/viewgroup/' + routeParams.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.groupId);
                 });
             };
         }

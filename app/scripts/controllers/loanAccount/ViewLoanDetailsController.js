@@ -13,7 +13,7 @@
             scope.routeTo = function (loanId, transactionId, transactionTypeId) {
                 if (transactionTypeId == 2 || transactionTypeId == 4 || transactionTypeId == 1) {
                     $rootScope.rates = scope.loandetails.rates;
-                    location.path('/viewloantrxn/' + loanId + '/trxnId/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewloantrxn/' + loanId + '/trxnId/' + transactionId);
                 };
             };
 
@@ -32,26 +32,26 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "addloancharge":
-                        location.path('/addloancharge/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addloancharge/' + accountId);
                         break;
                     case "addcollateral":
-                        location.path('/addcollateral/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addcollateral/' + accountId);
                         break;
                     case "assignloanofficer":
                     case "changeloanofficer":
-                        location.path('/assignloanofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignloanofficer/' + accountId);
                         break;
                     case "modifyapplication":
-                        location.path('/editloanaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editloanaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/loanaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/loanaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/reject');
                         break;
                     case "withdrawnbyclient":
-                        location.path('/loanaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.LoanAccountResource.delete({loanId: accountId}, {}, function (data) {
@@ -61,63 +61,63 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/loanaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/undoapproval');
                         break;
                     case "disburse":
-                        location.path('/loanaccount/' + accountId + '/disburse');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/disburse');
                         break;
                     case "disbursetosavings":
-                        location.path('/loanaccount/' + accountId + '/disbursetosavings');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/disbursetosavings');
                         break;
                     case "undodisbursal":
-                        location.path('/loanaccount/' + accountId + '/undodisbursal');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/undodisbursal');
                         break;
                     case "makerepayment":
-                        location.path('/loanaccount/' + accountId + '/repayment');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/repayment');
                         break;
                     case "prepayment":
-                        location.path('/loanaccount/' + accountId + '/prepayloan');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/prepayloan');
                         break;
                     case "waiveinterest":
-                        location.path('/loanaccount/' + accountId + '/waiveinterest');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/waiveinterest');
                         break;
                     case "writeoff":
-                        location.path('/loanaccount/' + accountId + '/writeoff');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/writeoff');
                         break;
                     case "recoverypayment":
-                        location.path('/loanaccount/' + accountId + '/recoverypayment');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverypayment');
                         break;
                     case "close-rescheduled":
-                        location.path('/loanaccount/' + accountId + '/close-rescheduled');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close-rescheduled');
                         break;
                     case "transferFunds":
                         if (scope.loandetails.clientId) {
-                            location.path('/accounttransfers/fromloans/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromloans/' + accountId);
                         }
                         break;
                     case "close":
-                        location.path('/loanaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close');
                         break;
                     case "createguarantor":
-                        location.path('/guarantor/' + accountId);
+                        location.path('/credit-provider/KADSWEF/guarantor/' + accountId);
                         break;
                     case "listguarantor":
-                        location.path('/listguarantors/' + accountId);
+                        location.path('/credit-provider/KADSWEF/listguarantors/' + accountId);
                         break;
                     case "recoverguarantee":
-                        location.path('/loanaccount/' + accountId + '/recoverguarantee');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverguarantee');
                         break;
                     case "unassignloanofficer":
-                        location.path('/loanaccount/' + accountId + '/unassignloanofficer');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/unassignloanofficer');
                         break;
                     case "loanscreenreport":
-                        location.path('/loanscreenreport/' + accountId);
+                        location.path('/credit-provider/KADSWEF/loanscreenreport/' + accountId);
                         break;
                     case "reschedule":
-                        location.path('/loans/' +accountId + '/reschedule');
+                        location.path('/credit-provider/KADSWEF/loans/' +accountId + '/reschedule');
                         break;
                     case "adjustrepaymentschedule":
-                        location.path('/adjustrepaymentschedule/'+accountId) ;
+                        location.path('/credit-provider/KADSWEF/adjustrepaymentschedule/'+accountId) ;
                         break ;
                     case "foreclosure":
                         location.path('loanforeclosure/' + accountId);
@@ -545,7 +545,7 @@
             };
 
             scope.viewLoanCollateral = function (collateralId){
-                location.path('/loan/'+scope.loandetails.id+'/viewcollateral/'+collateralId).search({status:scope.loandetails.status.value});
+                location.path('/credit-provider/KADSWEF/loan/'+scope.loandetails.id+'/viewcollateral/'+collateralId).search({status:scope.loandetails.status.value});
             };
 
             scope.viewDataTable = function (registeredTableName,data){
@@ -557,7 +557,7 @@
             };
 
             scope.viewLoanChargeDetails = function (chargeId) {
-                location.path('/loan/'+scope.loandetails.id+'/viewcharge/'+chargeId).search({loanstatus:scope.loandetails.status.value});
+                location.path('/credit-provider/KADSWEF/loan/'+scope.loandetails.id+'/viewcharge/'+chargeId).search({loanstatus:scope.loandetails.status.value});
             };
 
             scope.viewprintdetails = function () {
@@ -611,10 +611,10 @@
             scope.viewloantransactionjournalentries = function(transactionId){
                 var transactionId = "L" + transactionId;
                 if(scope.loandetails.clientId != null && scope.loandetails.clientId != ""){
-                    location.path('/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,clientId: scope.loandetails.clientId,
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,clientId: scope.loandetails.clientId,
                         accountNo: scope.loandetails.accountNo,clientName: scope.loandetails.clientName});
                 }else{
-                    location.path('/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,accountNo: scope.loandetails.accountNo,
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,accountNo: scope.loandetails.accountNo,
                         groupId :scope.loandetails.group.id,groupName :scope.loandetails.group.name});
 
                 }

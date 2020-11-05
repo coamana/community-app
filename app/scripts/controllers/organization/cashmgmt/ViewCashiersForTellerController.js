@@ -18,27 +18,27 @@
 
             var idToNodeMap = {};
             scope.routeTo = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + '/cashiers/' + cashierId);
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + '/cashiers/' + cashierId);
             };
 
             scope.delete = function (tellerId, cashierId) {
                 resourceFactory.tellerCashierResource.delete({tellerId: tellerId, cashierId: cashierId}, function (data) {
-                    location.path('/tellers/' + tellerId + '/cashiers/');
+                    location.path('/credit-provider/KADSWEF/tellers/' + tellerId + '/cashiers/');
                 });
             };
 
             scope.routeToView = function (tellerId, cashierId) {
-                    location.path('/tellers/' + tellerId + "/cashiers/" + cashierId);
+                    location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId);
             };
 
             scope.allocate = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/allocate/");
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/allocate/");
             };
             scope.settle = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/settle/");
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/settle/");
             };
             scope.transactions = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + "/cashiers/" + cashierId + "/txns/" + scope.currencyCode );
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId + "/txns/" + scope.currencyCode );
             };
 
             scope.compare = function (x, y) {

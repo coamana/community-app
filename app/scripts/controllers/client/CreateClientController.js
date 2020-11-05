@@ -441,7 +441,7 @@
 
 
                 resourceFactory.clientResource.save(this.formData, function (data) {
-                    location.path('/viewclient/' + data.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                 });
             };
         }

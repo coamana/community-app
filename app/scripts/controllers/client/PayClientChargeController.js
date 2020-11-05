@@ -16,7 +16,7 @@
                     this.formData.transactionDate = dateFilter(scope.paymentDate, scope.df);
                 }
                 resourceFactory.clientChargesResource.save({clientId: routeParams.id , resourceType: routeParams.chargeid ,command: 'paycharge'}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }
