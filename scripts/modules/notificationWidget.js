@@ -110,7 +110,7 @@ angular.module('notificationWidget', [])
                                 return response || $q.when(response);
                             } else {
                                 //redirect if maker checker is enabled
-                                $location.path('/viewMakerCheckerTask/' + response.data.commandId);
+                                $location.path('/credit-provider/KADSWEF/viewMakerCheckerTask/' + response.data.commandId);
                             }
                         } else {
                             //when no maker checker enabled

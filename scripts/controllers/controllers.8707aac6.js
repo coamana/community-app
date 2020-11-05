@@ -8,7 +8,7 @@
             scope.isTreeView = false;
 
             scope.routeTo = function (id) {
-                location.path('/viewglaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewglaccount/' + id);
             };
 
             if (!scope.searchCriteria.acoa) {
@@ -185,7 +185,7 @@
 
             scope.submit = function () {
                 resourceFactory.accountCoaResource.save(this.formData, function (data) {
-                    location.path('/viewglaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewglaccount/' + data.resourceId);
                 });
             };
         }
@@ -304,7 +304,7 @@
                 }
 
                 resourceFactory.accountingRulesResource.save(accountingRule, function (data) {
-                    location.path('/viewaccrule/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewaccrule/' + data.resourceId);
                 });
             }
 
@@ -361,7 +361,7 @@
 
             scope.submit = function () {
                 resourceFactory.accountCoaResource.update({'glAccountId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewglaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewglaccount/' + data.resourceId);
                 });
             };
         }
@@ -521,7 +521,7 @@
                 }
 
                 resourceFactory.accountingRulesResource.update({accountingRuleId: routeParams.id}, accountingRule, function (data) {
-                    location.path('/viewaccrule/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewaccrule/' + data.resourceId);
                 });
             }
 
@@ -657,7 +657,7 @@
                 }
 
                 resourceFactory.journalEntriesResource.save(jeTransaction, function (data) {
-                    location.path('/viewtransactions/' + data.transactionId);
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + data.transactionId);
                 });
             }
         }
@@ -670,7 +670,7 @@
     mifosX.controllers = _.extend(module, {
         AccOGMController: function (scope, resourceFactory, paginatorService,routeParams, location,$uibModal) {
             scope.routeTo = function (id) {
-                location.path('/viewofficeglmapping/' + id);
+                location.path('/credit-provider/KADSWEF/viewofficeglmapping/' + id);
             };
 
             var fetchFunction = function () {
@@ -707,7 +707,7 @@
             });
 
             scope.routeTo = function (id) {
-                location.path('/view_close_accounting/' + id);
+                location.path('/credit-provider/KADSWEF/view_close_accounting/' + id);
             };
 
             scope.submit = function () {
@@ -716,7 +716,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.closingDate = reqDate;
                 resourceFactory.accountingClosureResource.save(this.formData, function (data) {
-                    location.path('/view_close_accounting/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/view_close_accounting/' + data.resourceId);
                 });
             }
 
@@ -744,7 +744,7 @@
     mifosX.controllers = _.extend(module, {
         AccountingRuleController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewaccrule/' + id);
+                location.path('/credit-provider/KADSWEF/viewaccrule/' + id);
             };
             resourceFactory.accountingRulesResource.get(function (data) {
                 scope.rules = data;
@@ -813,7 +813,7 @@
                 $scope.delete = function () {
                     resourceFactory.accountCoaResource.delete({glAccountId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/accounting_coa');
+                        location.path('/credit-provider/KADSWEF/accounting_coa');
                     });
                 };
                 $scope.cancel = function () {
@@ -855,7 +855,7 @@
 
             scope.submit = function () {
                 resourceFactory.officeToGLAccountMappingResource.create(this.formData, function (data) {
-                    location.path('/viewfinancialactivitymapping/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfinancialactivitymapping/' + data.resourceId);
                 });
             };
 
@@ -1056,7 +1056,7 @@
                 if(noErrors){
                     delete scope.errorDetails;
                     resourceFactory.journalEntriesResource.save({command:"defineOpeningBalance"}, this.formData, function (data) {
-                        location.path('/viewtransactions/' + data.transactionId);
+                        location.path('/credit-provider/KADSWEF/viewtransactions/' + data.transactionId);
                     });
                 }
             }
@@ -1159,7 +1159,7 @@
 
             scope.submit = function () {
                 resourceFactory.officeToGLAccountMappingResource.update({mappingId: routeParams.mappingId},this.formData, function (data) {
-                    location.path('/viewfinancialactivitymapping/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfinancialactivitymapping/' + data.resourceId);
                 });
             };
         }
@@ -1177,7 +1177,7 @@
             });
 
             scope.routeTo = function (resourceId){
-                location.path('/viewfinancialactivitymapping/' + resourceId);
+                location.path('/credit-provider/KADSWEF/viewfinancialactivitymapping/' + resourceId);
             };
         }
     });
@@ -1274,7 +1274,7 @@
                 }
 
                 resourceFactory.journalEntriesResource.save(jeTransaction, function (data) {
-                    location.path('/viewtransactions/' + data.transactionId);
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + data.transactionId);
                 });
             }
         }
@@ -1297,7 +1297,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.tillDate = reqDate;
                 resourceFactory.periodicAccrualAccountingResource.run(this.formData, function (data) {
-                    location.path('/accounting');
+                    location.path('/credit-provider/KADSWEF/accounting');
                 });
             }
         }
@@ -1319,7 +1319,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.date = dateFilter(this.submitteddate, scope.df);
                 resourceFactory.provisioningentries.post(this.formData, function (data) {
-                    location.path('/viewprovisioningentry/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewprovisioningentry/' + data.resourceId);
 
                 });
             };
@@ -1334,16 +1334,16 @@
         ViewAllProvisoningEntriesController: function (scope, routeParams, paginatorService, resourceFactory, location, $uibModal) {
 
             scope.routeTo = function (id) {
-                location.path('/viewprovisioningentry/' + id);
+                location.path('/credit-provider/KADSWEF/viewprovisioningentry/' + id);
             };
 
             scope.viewJournals = function (id) {
-                location.path('/viewprovisioningjournalentry/' + id);
+                location.path('/credit-provider/KADSWEF/viewprovisioningjournalentry/' + id);
             };
 
             scope.recreate = function (id) {
                 resourceFactory.provisioningentries.reCreateProvisioningEntries({entryId: id}, this.formData, function (data) {
-                    location.path('/viewprovisioningentry/'+id);
+                    location.path('/credit-provider/KADSWEF/viewprovisioningentry/'+id);
                 });
             };
 
@@ -1428,7 +1428,7 @@
 
             scope.submit = function () {
                 resourceFactory.provisioningentries.createJournals({entryId: routeParams.entryId}, this.formData, function (data) {
-                    location.path('/viewprovisioningentries/');
+                    location.path('/credit-provider/KADSWEF/viewprovisioningentries/');
                 });
             };
         }
@@ -1458,7 +1458,7 @@
 
             scope.submit = function () {
                 resourceFactory.provisioningentries.createJournals({entryId: routeParams.entryId}, this.formData, function (data) {
-                    location.path('/viewprovisioningentries/');
+                    location.path('/credit-provider/KADSWEF/viewprovisioningentries/');
                 });
             };
         }
@@ -1484,7 +1484,7 @@
             scope.formData = {};
 
             scope.routeTo = function (id) {
-                location.path('/viewtransactions/' + id);
+                location.path('/credit-provider/KADSWEF/viewtransactions/' + id);
             };
 
             resourceFactory.accountCoaResource.getAllAccountCoas({
@@ -1631,7 +1631,7 @@
                 $scope.delete = function () {
                     resourceFactory.accountingClosureResource.delete({accId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/accounts_closure');
+                        location.path('/credit-provider/KADSWEF/accounts_closure');
                     });
                 };
                 $scope.cancel = function () {
@@ -1662,7 +1662,7 @@
                 $scope.delete = function () {
                     resourceFactory.accountingRulesResource.delete({accountingRuleId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/accounting_rules');
+                        location.path('/credit-provider/KADSWEF/accounting_rules');
                     });
                 };
                 $scope.cancel = function () {
@@ -1692,7 +1692,7 @@
                 $scope.delete = function () {
                     resourceFactory.officeToGLAccountMappingResource.delete({mappingId: routeParams.mappingId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/financialactivityaccountmappings');
+                        location.path('/credit-provider/KADSWEF/financialactivityaccountmappings');
                     });
                 };
                 $scope.cancel = function () {
@@ -1750,7 +1750,7 @@
                 $scope.transactionnumber = id.transactionId;
                 $scope.redirect = function () {
                     $uibModalInstance.close('delete');
-                    location.path('/viewtransactions/' + id.transactionId);
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + id.transactionId);
                 };
                 $scope.cancel = function () {
                     $uibModalInstance.dismiss('cancel');
@@ -1882,7 +1882,7 @@
                 this.formData.fromClientId = scope.standinginstruction.fromClient.id;
                 this.formData.fromOfficeId = scope.standinginstruction.fromClient.officeId;
                 resourceFactory.standingInstructionResource.save(this.formData, function (data) {
-                    location.path('/viewclient/' + data.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                 });
             };
         }
@@ -1947,7 +1947,7 @@
                  this.formData.monthDayFormat = 'dd MMMM';
                 }
                 resourceFactory.standingInstructionResource.update({standingInstructionId: scope.standingInstructionId},this.formData, function (data) {
-                    location.path('/viewstandinginstruction/' + scope.standingInstructionId);
+                    location.path('/credit-provider/KADSWEF/viewstandinginstruction/' + scope.standingInstructionId);
                 });
             };
 
@@ -1960,11 +1960,11 @@
             }
 
             scope.viewstandinginstruction = function () {
-                location.path('/viewstandinginstruction/'+ scope.standingInstructionId);
+                location.path('/credit-provider/KADSWEF/viewstandinginstruction/'+ scope.standingInstructionId);
             };
 
             scope.viewliststandinginstruction = function () {
-                location.path('/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
+                location.path('/credit-provider/KADSWEF/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
             };
         }
     });
@@ -2153,9 +2153,9 @@
                 this.formData.fromOfficeId = scope.transfer.fromClient.officeId;
                 resourceFactory.accountTransferResource.save(this.formData, function (data) {
                     if (params.fromAccountType == 1) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     } else if (params.fromAccountType == 2) {
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     }
                 });
             };
@@ -2310,7 +2310,7 @@
             });
             
             scope.cancel = function(){
-                location.path('/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
+                location.path('/credit-provider/KADSWEF/liststandinginstructions/'+scope.standinginstruction.fromClient.officeId+'/'+scope.standinginstruction.fromClient.id);
             }
 
         }
@@ -2324,7 +2324,7 @@
             scope.adhocquerys = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewadhocquery/' + id);
+                location.path('/credit-provider/KADSWEF/viewadhocquery/' + id);
             };
             
             resourceFactory.adHocQueryResource.getAllAdHocQuery(function (data) {
@@ -2410,7 +2410,7 @@
         	  // alert(this.formData.email); 
         	   resourceFactory.adHocQueryResource.update({'adHocId': scope.adHocId}, this.formData, function (data) {
                     
-                	location.path('/viewadhocquery/' + data.resourceId);
+                	location.path('/credit-provider/KADSWEF/viewadhocquery/' + data.resourceId);
                 });
             };
         }
@@ -2441,7 +2441,7 @@
                 $scope.delete = function () {
                     resourceFactory.adHocQueryResource.delete({adHocId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/adhocquery');
+                        location.path('/credit-provider/KADSWEF/adhocquery');
                         // added dummy request param because Content-Type header gets removed
                         // if the request does not contain any data (a request body)
                     });
@@ -2582,7 +2582,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.calendarId = id;
                 resourceFactory.centerMeetingResource.save({centerId: routeParams.centerId, calendarId: routeParams.calendarId}, this.formData, function (data) {
-                    location.path('/viewcenter/' + routeParams.centerId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.centerId);
                 }, function(response){
                     if(!response.status) {
                         scope.errorStatus = "Attendance already exist";
@@ -2609,7 +2609,7 @@
             scope.searchResults = [];
             scope.showClosed = false;
             scope.routeTo = function (id) {
-                location.path('/viewcenter/' + id);
+                location.path('/credit-provider/KADSWEF/viewcenter/' + id);
             };
 
             if (!scope.searchCriteria.centers) {
@@ -2726,7 +2726,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 resourceFactory.centerResource.save({centerId: routeParams.id, command: 'close'}, this.formData, function (data) {
-                    location.path('/viewcenter/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + data.resourceId);
                 });
             };
         }
@@ -2821,7 +2821,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.active = this.formData.active || false;
                 resourceFactory.centerResource.save(this.formData, function (data) {
-                    location.path('/viewcenter/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + data.resourceId);
                 });
             };
         }
@@ -2863,7 +2863,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 resourceFactory.centerResource.update({centerId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewcenter/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.id);
                 });
             };
             scope.activate = function () {
@@ -2873,7 +2873,7 @@
                 newActivation.locale = scope.optlang.code;
                 newActivation.dateFormat = scope.df;
                 resourceFactory.centerResource.save({centerId: routeParams.id, command: 'activate'}, newActivation, function (data) {
-                    location.path('/viewcenter/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.id);
                 });
             };
         }
@@ -2969,7 +2969,7 @@
                 }
             });
             scope.routeTo = function (id) {
-                location.path('/viewsavingaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + id);
             };
             resourceFactory.runReportsResource.get({reportSource: 'GroupSummaryCounts', genericResultSet: 'false', R_groupId: routeParams.id}, function (data) {
                 scope.summary = data[0];
@@ -2997,7 +2997,7 @@
                 $scope.delete = function () {
                     resourceFactory.centerResource.delete({centerId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('activate');
-                        location.path('/centers');
+                        location.path('/credit-provider/KADSWEF/centers');
                     });
 
                 };
@@ -3127,7 +3127,7 @@
 
             scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
             scope.addClientMember=function()
@@ -3143,7 +3143,7 @@
                 resourceFactory.familyMembers.post({clientId:clientId},scope.formData,function(data)
                 {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
 
 
                 })
@@ -3186,7 +3186,7 @@
                     this.formData.dueDate = dateFilter(scope.date.specificduedate, scope.df);
                 }
                 resourceFactory.clientChargesResource.save({clientId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }
@@ -3630,7 +3630,7 @@
             };
 
             scope.cancel = function () {
-                location.path('/viewclient/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
             };
 
             scope.submit = function () {
@@ -3642,59 +3642,59 @@
 
                 if (scope.action == "activate") {
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'activate'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "assignstaff") {
                     delete this.formData.locale;
                     delete this.formData.dateFormat;
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'assignStaff'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "unassignstaff") {
                     delete this.formData.locale;
                     delete this.formData.dateFormat;
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'unassignstaff'}, {staffId: routeParams.staffId}, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "close") {
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'close'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "reject") {
 
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'reject'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "withdraw") {
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'withdraw'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "reactivate") {
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'reactivate'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "undoReject") {
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'undoRejection'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "undoWithdrawn") {
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'undoWithdrawal'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "acceptclienttransfer") {
                     delete this.formData.locale;
                     delete this.formData.dateFormat;
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'acceptTransfer'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "rejecttransfer") {
@@ -3702,7 +3702,7 @@
                     delete this.formData.dateFormat;
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'rejectTransfer'}, this.formData, function (data) {
                         resourceFactory.clientResource.save({clientId: routeParams.id, command: 'withdrawTransfer'}, {} ,function (data) {
-                            location.path('/viewclient/' + data.clientId);
+                            location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                         });
                     });
                     
@@ -3711,14 +3711,14 @@
                     delete this.formData.locale;
                     delete this.formData.dateFormat;
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'withdrawTransfer'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
                 if (scope.action == "updatedefaultaccount") {
                     delete this.formData.locale;
                     delete this.formData.dateFormat;
                     resourceFactory.clientResource.save({clientId: routeParams.id, command: 'updateSavingsAccount'}, this.formData, function (data) {
-                        location.path('/viewclient/' + data.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                     });
                 }
             };
@@ -3736,7 +3736,7 @@
             scope.chargesPerPage = 14;
 
             scope.routeToCharge = function (chargeId) {
-                location.path('/viewclient/' + scope.clientId + '/charges/' + chargeId);
+                location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId + '/charges/' + chargeId);
             };
 
             scope.getClientChargeResultsPage = function (pageNumber) {
@@ -3767,7 +3767,7 @@
             scope.searchResults = [];
             scope.showClosed = false;
             scope.routeTo = function (id) {
-                location.path('/viewclient/' + id);
+                location.path('/credit-provider/KADSWEF/viewclient/' + id);
             };
 
             scope.clientsPerPage = 15;
@@ -3870,7 +3870,7 @@
                         if (!scope.$$phase) {
                             scope.$apply();
                         }
-                        location.path('/viewclient/' + scope.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                     });
             };
         }
@@ -3898,7 +3898,7 @@
 
             scope.submit = function () {
                 resourceFactory.clientIdenfierResource.save({clientId: scope.clientId}, this.formData, function (data) {
-                    location.path('/viewclient/' + data.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                 });
             };
 
@@ -4384,7 +4384,7 @@
 
 
                 resourceFactory.clientResource.save(this.formData, function (data) {
-                    location.path('/viewclient/' + data.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                 });
             };
         }
@@ -4531,7 +4531,7 @@
                 }
 
                 resourceFactory.clientResource.update({'clientId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }
@@ -4581,7 +4581,7 @@
 
             scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
             scope.updateClientMember=function()
@@ -4600,7 +4600,7 @@
                 resourceFactory.familyMember.put({clientId:clientId,clientFamilyMemberId:familyMemberId},scope.formData,function(data)
                 {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
 
 
                 })
@@ -4634,7 +4634,7 @@
                     this.formData.transactionDate = dateFilter(scope.paymentDate, scope.df);
                 }
                 resourceFactory.clientChargesResource.save({clientId: routeParams.id , resourceType: routeParams.chargeid ,command: 'paycharge'}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }
@@ -4705,7 +4705,7 @@
                     }
                 }
                 resourceFactory.surveyScorecardResource.post({surveyId: scope.surveyData.id}, this.formData, function (data) {
-                    location.path('/clients/survey/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/clients/survey/' + scope.clientId);
                 });
             };
             scope.isAnyResponse = function(){
@@ -4719,9 +4719,9 @@
 
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/clients/survey/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/clients/survey/' + scope.clientId);
                 } else {
-                    location.path('/clients');
+                    location.path('/credit-provider/KADSWEF/clients');
                 }
             }
 
@@ -4748,7 +4748,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.transferDate = dateFilter(this.formData.transferDate, scope.df);
                 resourceFactory.clientResource.save({clientId: routeParams.id, command: 'proposeTransfer'}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }
@@ -4772,7 +4772,7 @@
                         if (!scope.$$phase) {
                           scope.$apply();
                         }
-                        location.path('/viewclient/' + scope.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                     });
             };
         }
@@ -4804,7 +4804,7 @@
 
             scope.deleteCharge = function(){
                 resourceFactory.clientChargesResource.delete({clientId: routeParams.clientId, resourceType:routeParams.chargeId , associations:'all'}, function (data) {
-                    location.path('/viewclient/'+ scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+ scope.clientId);
                 });
             }
         }
@@ -4889,7 +4889,7 @@
 
             scope.routeTo=function()
             {
-                location.path('/address/'+ routeParams.id);
+                location.path('/credit-provider/KADSWEF/address/'+ routeParams.id);
             }
 
             scope.ChangeAddressStatus=function(id,status,addressId)
@@ -4905,7 +4905,7 @@
 
             scope.routeToEdit=function(clientId,addressId)
             {
-                location.path('/editAddress/'+clientId+'/'+addressId+'/'+ routeParams.id);
+                location.path('/credit-provider/KADSWEF/editAddress/'+clientId+'/'+addressId+'/'+ routeParams.id);
 
 
             }
@@ -4943,14 +4943,14 @@
             scope.editFamilyMember=function(clientFamilyMemberId)
             {
 
-                location.path('/editfamilymember/'+routeParams.id+'/'+clientFamilyMemberId);
+                location.path('/credit-provider/KADSWEF/editfamilymember/'+routeParams.id+'/'+clientFamilyMemberId);
 
 
             }
 
             scope.routeToaddFamilyMember=function()
             {
-                location.path('/addfamilymembers/'+ routeParams.id);
+                location.path('/credit-provider/KADSWEF/addfamilymembers/'+ routeParams.id);
             }
 
 
@@ -4959,7 +4959,7 @@
 
 
             scope.routeToLoan = function (id) {
-                location.path('/viewloanaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + id);
             };
             scope.routeToChargeOverview = function () {
                 location.path(scope.pathToChargeOverview());
@@ -4970,21 +4970,21 @@
             }
 
             scope.routeToCharge = function (chargeId) {
-                location.path('/viewclient/'+ scope.client.id + '/charges/' + chargeId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+ scope.client.id + '/charges/' + chargeId);
             };
 
             scope.routeToSaving = function (id, depositTypeCode) {
                 if (depositTypeCode === "depositAccountType.savingsDeposit") {
-                    location.path('/viewsavingaccount/' + id);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + id);
                 } else if (depositTypeCode === "depositAccountType.fixedDeposit") {
-                    location.path('/viewfixeddepositaccount/' + id);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + id);
                 } else if (depositTypeCode === "depositAccountType.recurringDeposit") {
-                    location.path('/viewrecurringdepositaccount/' + id);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + id);
                 }
             };
 
             scope.routeToShareAccount = function(id) {
-                location.path('/viewshareaccount/'+id)
+                location.path('/credit-provider/KADSWEF/viewshareaccount/'+id)
             } ;
 
             scope.haveFile = [];
@@ -5018,15 +5018,15 @@
 
                         case "deposit":
                             if(savingProductType==100)
-                                location.path('/savingaccount/' + accountId + '/deposit');
+                                location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/deposit');
                             if(savingProductType==300)
-                                location.path('/recurringdepositaccount/' + accountId + '/deposit');
+                                location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/deposit');
                             break;
                         case "withdraw":
                             if(savingProductType==100)
-                                location.path('/savingaccount/' + accountId + '/withdrawal');
+                                location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/withdrawal');
                             if(savingProductType==300)
-                                location.path('/recurringdepositaccount/' + accountId + '/withdrawal');
+                                location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/withdrawal');
                             break;
                     }
                 }
@@ -5288,7 +5288,7 @@
                 $scope.delete = function () {
                     resourceFactory.clientResource.delete({clientId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/clients');
+                        location.path('/credit-provider/KADSWEF/clients');
                     });
                 };
                 $scope.cancel = function () {
@@ -5510,10 +5510,10 @@
             };
 
             scope.viewstandinginstruction = function () {
-                location.path('/liststandinginstructions/' + scope.client.officeId + '/' + scope.client.id);
+                location.path('/credit-provider/KADSWEF/liststandinginstructions/' + scope.client.officeId + '/' + scope.client.id);
             };
             scope.createstandinginstruction = function () {
-                location.path('/createstandinginstruction/' + scope.client.officeId + '/' + scope.client.id + '/fromsavings');
+                location.path('/credit-provider/KADSWEF/createstandinginstruction/' + scope.client.officeId + '/' + scope.client.id + '/fromsavings');
             };
             scope.deleteAll = function (apptableName, entityId) {
                 resourceFactory.DataTablesResource.delete({datatablename: apptableName, entityId: entityId, genericResultSet: 'true'}, {}, function (data) {
@@ -5805,7 +5805,7 @@
             };
 
             scope.routeTo = function(){
-            	location.path('/survey/'+scope.clientId);
+            	location.path('/credit-provider/KADSWEF/survey/'+scope.clientId);
             };
 
         }
@@ -5846,7 +5846,7 @@
                         }
                     }
                     scope.meetingDate = dateFilter(scope.date.transactionDate, scope.df);
-                    location.path('/productivesheet/' + scope.officeId + '/' + scope.officeName + '/' + scope.meetingDate + '/' + scope.loanOfficerId);
+                    location.path('/credit-provider/KADSWEF/productivesheet/' + scope.officeId + '/' + scope.officeName + '/' + scope.meetingDate + '/' + scope.loanOfficerId);
                 } else {
                     scope.collectionsheetform.office.$valid = true;
                     scope.collectionsheetform.office.$error.req = true;
@@ -6677,7 +6677,7 @@
                     }
 
                     if (centerIdArray.length === submittedStaffId.length) {
-                        location.path('/entercollectionsheet');
+                        location.path('/credit-provider/KADSWEF/entercollectionsheet');
                     }
 
                     if (centerIdArray.length-1 === submittedStaffId.length) {
@@ -6723,7 +6723,7 @@
 
                 resourceFactory.addOrgCreditBureau.save({ocbId: $scope.creditBureauId},$scope.formData,function (data) {
 
-                    location.path('/externalservicesCB/CreditBureau');
+                    location.path('/credit-provider/KADSWEF/externalservicesCB/CreditBureau');
                 });
 
             };
@@ -6768,7 +6768,7 @@
             })
             $scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
           
@@ -6796,7 +6796,7 @@
                 $scope.formData.locale="en";
                 resourceFactory.clientAddress.put({'clientId': routeParams.id,'type':$scope.addressTypeId},$scope.formData,function (data) {
 
-                    location.path('/viewclient/'+routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+routeParams.id);
                 });
             }
 
@@ -6804,7 +6804,7 @@
 
                 resourceFactory.clientAddress.save({'clientId': routeParams.id,'type':$scope.addressTypeId},$scope.formData,function (data) {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
                 });
 
             };
@@ -6864,7 +6864,7 @@
             })
             $scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
 
@@ -6944,7 +6944,7 @@
                 $scope.formData.addressId=addressId;
                 resourceFactory.clientAddress.put({'clientId': clientId},$scope.formData,function (data) {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
                 });
             }
 
@@ -6967,13 +6967,13 @@
                 scope.formData = {value: data.value};
             });
             scope.cancel = function () {
-                location.path('/global');
+                location.path('/credit-provider/KADSWEF/global');
             };
 
 
             scope.submit = function () {
                 resourceFactory.configurationResource.update({resourceType: 'configurations', id: scope.configId}, this.formData, function (data) {
-                    location.path('/global');
+                    location.path('/credit-provider/KADSWEF/global');
                 });
             };
 
@@ -7011,14 +7011,14 @@
             });
 
             $scope.cancel = function () {
-                location.path('/externalservices/'+ $scope.externalServicesType);
+                location.path('/credit-provider/KADSWEF/externalservices/'+ $scope.externalServicesType);
             };
 
             $scope.submit = function () {
 
                 //scope.formData1 = {  scope.name : scope.formData.value};
                 resourceFactory.externalServicesResource.put({id: $scope.externalServicesType}, this.formData, function (data) {
-                    location.path('/externalservices' );
+                    location.path('/credit-provider/KADSWEF/externalservices' );
                 });
             };
         }
@@ -7059,7 +7059,7 @@
             });
 
             scope.cancel = function () {
-                location.path('/twofactorconfig');
+                location.path('/credit-provider/KADSWEF/twofactorconfig');
             };
 
             scope.submit = function () {
@@ -7069,7 +7069,7 @@
                     formData[config.name] = config.value;
                 }
                 resourceFactory.twoFactorConfigResource.put(formData, function (data) {
-                    location.path('/twofactorconfig');
+                    location.path('/credit-provider/KADSWEF/twofactorconfig');
                 });
             };
 
@@ -7236,7 +7236,7 @@
                 $scope.formData.locale='en';
 
                 resourceFactory.addCreditBureauLoanProductMapping.save({cb_id: $scope.creditBureauId},this.formData, function (data) {
-                    location.path('/externalservicesCB/CreditBureau');
+                    location.path('/credit-provider/KADSWEF/externalservicesCB/CreditBureau');
                 });
 
             };
@@ -7350,7 +7350,7 @@
             });
 
             $scope.cancel = function () {
-                location.path('/externalservices');
+                location.path('/credit-provider/KADSWEF/externalservices');
             };
 
         }
@@ -7449,7 +7449,7 @@
                     }
                 }
                 resourceFactory.savingsChargeResource.save({accountId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewfixeddepositaccount/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + routeParams.id);
                 });
             };
         }
@@ -7799,17 +7799,17 @@
                 this.formData = removeEmptyValues(this.formData);
 
                 resourceFactory.fixedDepositAccountResource.save(this.formData, function (data) {
-                    location.path('/viewfixeddepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                 });
             };
 
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 } else if (scope.centerEntity) {
-                    location.path('/viewcenter/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + scope.groupId);
                 } else {
-                    location.path('/viewgroup/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.groupId);
                 }
             }
             scope.changeMaturityInstruction = function(){
@@ -8233,7 +8233,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountId);
             }
 
             scope.changeMaturityInstruction = function(){
@@ -8268,7 +8268,7 @@
                 this.formData = removeEmptyValues(this.formData);
 
                 resourceFactory.fixedDepositAccountResource.update({'accountId': scope.accountId}, this.formData, function (data) {
-                    location.path('/viewfixeddepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                 });
             };
 
@@ -8686,7 +8686,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewfixeddepositaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + routeParams.id);
             };
 
             scope.submit = function () {
@@ -8714,7 +8714,7 @@
                     }
                     params.savingsId = scope.accountId;
                     resourceFactory.fixedDepositTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewfixeddepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                     });
                 } else if (scope.action == "editsavingcharge") {
                     if (this.formData.feeOnMonthDayFullDate) {
@@ -8725,12 +8725,12 @@
                     }
                     resourceFactory.savingsResource.update({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewfixeddepositaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "deletesavingcharge") {
                     resourceFactory.savingsResource.delete({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewfixeddepositaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "paycharge" || scope.action == "waive") {
                     params = {accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, command: scope.action};
@@ -8738,7 +8738,7 @@
                         this.formData.dueDate = dateFilter(this.formData.dueDate, scope.df);
                     }
                     resourceFactory.savingsResource.save(params, this.formData, function (data) {
-                        location.path('/viewfixeddepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                     });
                 } else {
                     params.accountId = scope.accountId;
@@ -8789,7 +8789,7 @@
                     }
 
                     resourceFactory.fixedDepositAccountResource.save(params, this.formData, function (data) {
-                        location.path('/viewfixeddepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                     });
                 }
             };
@@ -8821,16 +8821,16 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editfixeddepositaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editfixeddepositaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/fixeddepositaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/fixeddepositaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/reject');
                         break;
                     case "withdrawnbyclient":
-                        location.path('/fixeddepositaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.fixedDepositAccountResource.delete({accountId: accountId}, {}, function (data) {
@@ -8840,13 +8840,13 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/fixeddepositaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/undoapproval');
                         break;
                     case "activate":
-                        location.path('/fixeddepositaccount/' + accountId + '/activate');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/activate');
                         break;
                     case "addcharge":
-                        location.path('/fixeddepositaccount/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/charges');
                         break;
                     case "calculateInterest":
                         resourceFactory.fixedDepositAccountResource.save({accountId: accountId, command: 'calculateInterest'}, {}, function (data) {
@@ -8859,18 +8859,18 @@
                         });
                         break;
                     /*          case "applyAnnualFees":
-                     location.path('/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
+                     location.path('/credit-provider/KADSWEF/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
                      break;
                      case "transferFunds":
                      if (scope.savingaccountdetails.clientId) {
-                     location.path('/accounttransfers/fromsavings/'+accountId);
+                     location.path('/credit-provider/KADSWEF/accounttransfers/fromsavings/'+accountId);
                      }
                      break;*/
                     case "close":
-                        location.path('/fixeddepositaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/close');
                         break;
                     case "prematureClose":
-                        location.path('/fixeddepositaccount/' + accountId + '/prematureClose');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/prematureClose');
                         break;
                     case "enableWithHoldTax":
                         var changes = {
@@ -8893,9 +8893,9 @@
 
             scope.routeTo = function (accountId, transactionId, accountTransfer, transferId) {
                 if (accountTransfer) {
-                    location.path('/viewaccounttransfers/' + transferId);
+                    location.path('/credit-provider/KADSWEF/viewaccounttransfers/' + transferId);
                 } else {
-                    location.path('/viewfixeddepositaccounttrxn/' + accountId + '/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccounttrxn/' + accountId + '/' + transactionId);
                 }
             };
 
@@ -9119,7 +9119,7 @@
             };
 
             scope.modifyTransaction = function (accountId, transactionId) {
-                location.path('/fixeddepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
+                location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
             };
 
             scope.incentives = function(index){
@@ -9167,7 +9167,7 @@
                 var formData = {dateFormat: scope.df, locale: scope.optlang.code, transactionAmount: 0};
                 formData.transactionDate = dateFilter(new Date(), scope.df);
                 resourceFactory.fixedDepositTrxnsResource.save(params, formData, function (data) {
-                    location.path('/viewfixeddepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                 });
             };
         }
@@ -9221,7 +9221,7 @@
                     }
                 }
                 resourceFactory.savingsChargeResource.save({accountId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + routeParams.id);
                 });
             };
         }
@@ -9568,17 +9568,17 @@
 
 
                 resourceFactory.recurringDepositAccountResource.save(this.formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                 });
             };
 
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 } else if (scope.centerEntity) {
-                    location.path('/viewcenter/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + scope.groupId);
                 } else {
-                    location.path('/viewgroup/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.groupId);
                 }
             }
 
@@ -9995,7 +9995,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountId);
             }
 
             scope.submit = function () {
@@ -10027,7 +10027,7 @@
                 this.formData = removeEmptyValues(this.formData);
 
                 resourceFactory.recurringDepositAccountResource.update({'accountId': scope.accountId}, this.formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                 });
             };
 
@@ -10455,7 +10455,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewrecurringdepositaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + routeParams.id);
             };
 
             scope.submit = function () {
@@ -10485,7 +10485,7 @@
                     }
                     params.savingsId = scope.accountId;
                     resourceFactory.recurringDepositTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                     });
                 } else if (scope.action == "editsavingcharge") {
                     if (this.formData.feeOnMonthDayFullDate) {
@@ -10496,12 +10496,12 @@
                     }
                     resourceFactory.savingsResource.update({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "deletesavingcharge") {
                     resourceFactory.savingsResource.delete({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "paycharge" || scope.action == "waive") {
                     params = {accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, command: scope.action};
@@ -10509,7 +10509,7 @@
                         this.formData.dueDate = dateFilter(this.formData.dueDate, scope.df);
                     }
                     resourceFactory.savingsResource.save(params, this.formData, function (data) {
-                        location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                     });
                 } else {
                     params.accountId = scope.accountId;
@@ -10560,7 +10560,7 @@
                     }
 
                     resourceFactory.recurringDepositAccountResource.save(params, this.formData, function (data) {
-                        location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                     });
                 }
             };
@@ -10591,16 +10591,16 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editrecurringdepositaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editrecurringdepositaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/recurringdepositaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/recurringdepositaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/reject');
                         break;
                     case "withdrawnbyclient":
-                        location.path('/recurringdepositaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.recurringDepositAccountResource.delete({accountId: accountId}, {}, function (data) {
@@ -10610,19 +10610,19 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/recurringdepositaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/undoapproval');
                         break;
                     case "activate":
-                        location.path('/recurringdepositaccount/' + accountId + '/activate');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/activate');
                         break;
                     case "deposit":
-                        location.path('/recurringdepositaccount/' + accountId + '/deposit');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/deposit');
                         break;
                     case "withdraw":
-                        location.path('/recurringdepositaccount/' + accountId + '/withdrawal');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/withdrawal');
                         break;
                     case "addcharge":
-                        location.path('/recurringdepositaccount/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/charges');
                         break;
                     case "calculateInterest":
                         resourceFactory.recurringDepositAccountResource.save({accountId: accountId, command: 'calculateInterest'}, {}, function (data) {
@@ -10635,18 +10635,18 @@
                         });
                         break;
                     /*case "applyAnnualFees":
-                        location.path('/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
+                        location.path('/credit-provider/KADSWEF/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
                         break;
                     case "transferFunds":
                         if (scope.savingaccountdetails.clientId) {
-                            location.path('/accounttransfers/fromsavings/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromsavings/' + accountId);
                         }
                         break;*/
                     case "close":
-                        location.path('/recurringdepositaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/close');
                         break;
                     case "prematureClose":
-                        location.path('/recurringdepositaccount/' + accountId + '/prematureClose');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/prematureClose');
                         break;
                     case "enableWithHoldTax":
                         var changes = {
@@ -10892,9 +10892,9 @@
 
             scope.routeTo = function (accountId, transactionId, accountTransfer, transferId) {
                 if (accountTransfer) {
-                    location.path('/viewaccounttransfers/' + transferId);
+                    location.path('/credit-provider/KADSWEF/viewaccounttransfers/' + transferId);
                 } else {
-                    location.path('/viewrecurringdepositaccounttrxn/' + accountId + '/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccounttrxn/' + accountId + '/' + transactionId);
                 }
             };
 
@@ -10936,7 +10936,7 @@
             };
 
             scope.modifyTransaction = function (accountId, transactionId) {
-                location.path('/recurringdepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
+                location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
             };
 
             scope.incentives = function(index){
@@ -10999,7 +10999,7 @@
                 var formData = {dateFormat: scope.df, locale: scope.optlang.code, transactionAmount: 0};
                 formData.transactionDate = dateFilter(new Date(), scope.df);
                 resourceFactory.recurringDepositTrxnsResource.save(params, formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                 });
             };
         }
@@ -11022,7 +11022,7 @@
 
             scope.addrole = function () {
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'assignRole'}, this.formData, function (data) {
-                    location.path('/viewgroup/' + data.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.groupId);
                 });
             };
 
@@ -11251,7 +11251,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'close'}, this.formData, function (data) {
-                    location.path('/viewgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.resourceId);
                 });
             };
         }
@@ -11468,7 +11468,7 @@
                     delete scope.formData.datatables;
                 }
                 resourceFactory.groupResource.save(this.formData, function (data) {
-                    location.path('/viewgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.resourceId);
                 });
             };
         }
@@ -11606,7 +11606,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 resourceFactory.groupResource.update({groupId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewgroup/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.id);
                 });
             };
 
@@ -11662,7 +11662,7 @@
                 newActivation.locale = scope.optlang.code;
                 newActivation.dateFormat = scope.df;
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'activate'}, newActivation, function (data) {
-                    location.path('/viewgroup/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.id);
                 });
             };
         }
@@ -11862,7 +11862,7 @@
                 this.formData.calendarId = id;
                 this.formData.meetingDate = reqDate;
                 resourceFactory.groupMeetingResource.save({groupId: routeParams.groupId, calenderId: routeParams.calendarId}, this.formData, function (data) {
-                    location.path('/viewgroup/' + routeParams.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.groupId);
                 });
             };
         }
@@ -11882,7 +11882,7 @@
             scope.searchResults = [];
             scope.showClosed = false;
             scope.routeTo = function (id) {
-                location.path('/viewgroup/' + id);
+                location.path('/credit-provider/KADSWEF/viewgroup/' + id);
             };
 
             if (!scope.searchCriteria.groups) {
@@ -12118,7 +12118,7 @@
                 }
                 this.formData.inheritDestinationGroupLoanOfficer = this.formData.inheritDestinationGroupLoanOfficer || false;
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'transferClients'}, this.formData, function (data) {
-                    location.path('/viewgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.resourceId);
                 });
             };
 
@@ -12150,20 +12150,20 @@
             scope.editMeeting = false;
             scope.isGroupMembersAvailable = false;
             scope.routeToLoan = function (id) {
-                location.path('/viewloanaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + id);
             };
             scope.routeToSaving = function (id) {
-                location.path('/viewsavingaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + id);
             };
             scope.routeToGLIMLoan = function (glimAccountNumber, glimId) {
-                location.path('/viewglimaccount/' +scope.groupId +'/'+glimAccountNumber +'/'+glimId);
+                location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId +'/'+glimAccountNumber +'/'+glimId);
             };
 
             scope.routeToGSIMAccount = function (gsimAccountNumber) {
-                location.path('/viewgsimaccount/' + scope.groupId+'/'+gsimAccountNumber);
+                location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.groupId+'/'+gsimAccountNumber);
             };
             scope.routeToMem = function (id) {
-                location.path('/viewclient/' + id);
+                location.path('/credit-provider/KADSWEF/viewclient/' + id);
             };
             resourceFactory.groupResource.get({groupId: routeParams.id, associations: 'all'}, function (data) {
                 scope.group = data;
@@ -12232,7 +12232,7 @@
                 $scope.delete = function () {
                     resourceFactory.groupResource.delete({groupId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/groups');
+                        location.path('/credit-provider/KADSWEF/groups');
                     });
                 };
                 $scope.cancel = function () {
@@ -12397,7 +12397,7 @@
             };
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
@@ -12407,7 +12407,7 @@
                     this.formData.dueDate = dateFilter(this.first.date, scope.df);
                 }
                 resourceFactory.loanResource.save({resourceType: 'charges', loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
@@ -12430,13 +12430,13 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
                 this.formData.locale = scope.optlang.code;
                 resourceFactory.loanResource.save({resourceType: 'collaterals', loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/loan/' + data.loanId + '/viewcollateral/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/loan/' + data.loanId + '/viewcollateral/' + data.resourceId);
                 });
             };
 
@@ -12791,7 +12791,7 @@
                 this.formData.dateFormat = scope.df;
                 scope.formData.exceptions = constructRequestData() ;
                 resourceFactory.variableinstallments.addVariations({loanId: routeParams.accountId}, scope.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
         }
@@ -12809,7 +12809,7 @@
             scope.requestId = routeParams.requestId;
 
             scope.cancel = function () {
-                location.path('/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
             };
             scope.approve = function(){
                 this.formData.dateFormat = scope.df;
@@ -12817,7 +12817,7 @@
                 this.formData.approvedOnDate = dateFilter(this.formData.approvedOnDate, scope.df);
 
                 resourceFactory.loanRescheduleResource.approve({scheduleId:scope.requestId},this.formData,function (data) {
-                    location.path('/viewloanaccount/' + scope.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                 });
             };
         }
@@ -12845,7 +12845,7 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
@@ -12854,7 +12854,7 @@
                 this.formData.fromLoanOfficerId = scope.data.loanOfficerId || "";
                 this.formData.assignmentDate = dateFilter(this.formData.assignmentDate, scope.df);
                 resourceFactory.loanResource.save({command: 'assignloanofficer', loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
@@ -13509,12 +13509,12 @@
                     this.formData.allowPartialPeriodInterestCalcualtion = false;
                 }
                 resourceFactory.loanResource.put({loanId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + routeParams.id);
             }
         }
     });
@@ -13533,14 +13533,14 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
 
             scope.submit = function () {
                 this.formData.locale = scope.optlang.code;
                 resourceFactory.loanResource.put({resourceType: 'charges', resourceId: scope.chargeId, loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
@@ -13562,13 +13562,13 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
                 this.formData.locale = scope.optlang.code;
                 resourceFactory.loanResource.put({resourceType: 'collaterals', resourceId: scope.collateralId, loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
@@ -14119,7 +14119,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
             };
 
             scope.addTrancheAmounts = function(){
@@ -14212,25 +14212,25 @@
                     }
                     params.loanId = scope.accountId;
                     resourceFactory.loanTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "waivecharge") {
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'waive'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "paycharge") {
                     this.formData.transactionDate = dateFilter(this.formData.transactionDate, scope.df);
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'pay'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editcharge") {
                     this.formData.dueDate = dateFilter(this.formData.dueDate, scope.df);
                     resourceFactory.LoanAccountResource.update({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editdisbursedate") {
                     this.formData.expectedDisbursementDate = dateFilter(this.formData.expectedDisbursementDate, scope.df);
@@ -14253,7 +14253,7 @@
                         });
                     }
                     resourceFactory.LoanEditDisburseResource.update({loanId: routeParams.id, disbursementId: routeParams.disbursementId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }else if(scope.action === "adddisbursedetails" || scope.action === "deletedisbursedetails") {
                     this.formData.disbursementData = [];
@@ -14268,12 +14268,12 @@
 
                     this.formData.expectedDisbursementDate = dateFilter(scope.expectedDisbursementDate, scope.df);
                     resourceFactory.LoanAddTranchesResource.update({loanId: routeParams.id}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
                 else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }  else if(scope.action == "Approve"){
                     this.formData.expectedDisbursementDate = dateFilter(scope.expectedDisbursementDate, scope.df);
@@ -14295,25 +14295,25 @@
                 else if(scope.action == "glimApprove")
                 {
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:'approve'},this.formData,function (data) {
-                        location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                        location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
                     });
                 }
 
                 else if(scope.action == "glimDisburse"){
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:'disburse'},this.formData,function (data) {
-                        location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                        location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
                     });
                 }else if(scope.action == "undoapproval"){
 
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:'undoapproval'},scope.formData,function (data) {
 
-                        location.path('/viewloanaccount/' + scope.accountId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
                     });
 
                 }else if(scope.action == "undodisbursal"){
 
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:"undodisbursal"},scope.formData,function (data) {
-                        location.path('/viewloanaccount/' + scope.accountId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
                     });
                 }
                 else  if(scope.action=="glimrepayment")
@@ -14335,7 +14335,7 @@
 
                     resourceFactory.glimLoan.save({glimId: scope.glimId,command:'glimrepayment'}, this.formData, function (data) {
 
-                        location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                        location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
 
                     });
                 }
@@ -14343,7 +14343,7 @@
                 {
                     params.glimId = scope.glimId;
                     resourceFactory.glimLoan.save(params, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
             };
@@ -15024,7 +15024,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + routeParams.id);
             };
 
             scope.addTrancheAmounts = function(){
@@ -15083,25 +15083,25 @@
                     }
                     params.loanId = scope.accountId;
                     resourceFactory.loanTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "waivecharge") {
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'waive'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "paycharge") {
                     this.formData.transactionDate = dateFilter(this.formData.transactionDate, scope.df);
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'pay'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editcharge") {
                     this.formData.dueDate = dateFilter(this.formData.dueDate, scope.df);
                     resourceFactory.LoanAccountResource.update({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editdisbursedate") {
                     this.formData.expectedDisbursementDate = dateFilter(this.formData.expectedDisbursementDate, scope.df);
@@ -15124,7 +15124,7 @@
                         });
                     }
                     resourceFactory.LoanEditDisburseResource.update({loanId: routeParams.id, disbursementId: routeParams.disbursementId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }else if(scope.action === "adddisbursedetails" || scope.action === "deletedisbursedetails") {
                     this.formData.disbursementData = [];
@@ -15139,18 +15139,18 @@
 
                     this.formData.expectedDisbursementDate = dateFilter(scope.form.expectedDisbursementDate, scope.df);
                     resourceFactory.LoanAddTranchesResource.update({loanId: routeParams.id}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
                 else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else {
                     params.loanId = scope.accountId;
                     resourceFactory.LoanAccountResource.save(params, this.formData, function (data) {
 
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
             };
@@ -15267,7 +15267,7 @@
                         if (!scope.$$phase) {
                             scope.$apply();
                         }
-                        location.path('/viewloanaccount/' + scope.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                     });
             };
         }
@@ -15344,12 +15344,12 @@
                     note: this.formData.note
                 };
                 resourceFactory.loanTrxnsResource.save({loanId: routeParams.id, command: 'foreclosure'}, scope.foreclosureFormData, function(data) {
-                    location.path('/viewloanaccount/' + scope.accountId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
             };
         }
     });
@@ -15749,7 +15749,7 @@
                     }
 
                     if(scope.response.failed.length === 0 ){
-                        location.path('/viewgroup/' + scope.group.id);
+                        location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);
                     }
                 });
             };
@@ -15757,12 +15757,12 @@
             /* Cancel button action */
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 } else if (scope.centerEntity) {
-                    location.path('/viewcenter/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + scope.groupId);
                 }
                 if (scope.group.id) {
-                    location.path('/viewgroup/' + scope.group.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);
                 }
             };
         } // End of GLIMAccountController
@@ -16030,7 +16030,7 @@
                             }   
 
                         if(scope.response.failed.length === 0 ){
-                            location.path('/viewgroup/' + scope.group.id);    
+                            location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);    
                         }
 
                 });
@@ -16041,7 +16041,7 @@
             /* Cancel button action */
             scope.cancel = function () {
                 if (scope.group.id) {
-                    location.path('/viewgroup/' + scope.group.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);
                 }
             };             
 
@@ -16509,15 +16509,15 @@
                     delete scope.formData.datatables;
                 }
                 resourceFactory.loanResource.save(this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
             scope.cancel = function () {
                 if (scope.groupId) {
-                    location.path('/viewgroup/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.groupId);
                 } else if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 }
             }
         }
@@ -16537,14 +16537,14 @@
                 scope.data = data;
             });
             scope.reject = function(){
-                location.path('/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
             };
             scope.approve = function(){
-                location.path('/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
             };
 
             scope.back = function () {
-                location.path('/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
             };
         }
     });
@@ -16559,7 +16559,7 @@
             scope.requestId = routeParams.requestId;
 
             scope.cancel = function () {
-                location.path('/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
             };
             scope.reject = function(){
                 this.formData.dateFormat = scope.df;
@@ -16567,7 +16567,7 @@
                 this.formData.rejectedOnDate = dateFilter(this.formData.rejectedOnDate, scope.df);
 
                 resourceFactory.loanRescheduleResource.reject({scheduleId:scope.requestId},this.formData,function (data) {
-                    location.path('/viewloanaccount/' + scope.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                 });
             };
         }
@@ -16590,7 +16590,7 @@
                 scope.codes = data.rescheduleReasons;
             });
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
@@ -16604,7 +16604,7 @@
                 this.formData.rescheduleReasonComment = scope.comments;
                 resourceFactory.loanRescheduleResource.put(this.formData, function (data) {
                     scope.requestId = data.resourceId;
-                    location.path('/loans/' + scope.loanId + '/viewreschedulerequest/'+ data.resourceId);
+                    location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/viewreschedulerequest/'+ data.resourceId);
                 });
             };
 
@@ -16624,7 +16624,7 @@
             scope.productName="";
             scope.buttons={};
             scope.routeToLoan = function (id) {
-                location.path('/viewloanaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + id);
             };
 
             var parentglimid=0;
@@ -16715,25 +16715,25 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "addloancharge":
-                        location.path('/addloancharge/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addloancharge/' + accountId);
                         break;
                     case "addcollateral":
-                        location.path('/addcollateral/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addcollateral/' + accountId);
                         break;
                     case "assignloanofficer":
-                        location.path('/assignloanofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignloanofficer/' + accountId);
                         break;
                     case "modifyapplication":
-                        location.path('/editloanaccount/' + parentglimid);
+                        location.path('/credit-provider/KADSWEF/editloanaccount/' + parentglimid);
                         break;
                     case "approve":
-                        location.path('/glimloanaccount/' + routeParams.id + '/glimApprove/'+accountId +'/'+scope.groupId);   //accountid is glimId and  routerparamsid is child loanid
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/glimApprove/'+accountId +'/'+scope.groupId);   //accountid is glimId and  routerparamsid is child loanid
                         break;
                     case "reject":
-                        location.path('/glimloanaccount/' + routeParams.id +'/reject/'+accountId+'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id +'/reject/'+accountId+'/'+scope.groupId);
                         break;
                     case "withdrawnbyclient":
-                        location.path('/loanaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.LoanAccountResource.delete({loanId: accountId}, {}, function (data) {
@@ -16743,63 +16743,63 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/glimloanaccount/' + routeParams.id + '/undoapproval/'+ accountId +'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/undoapproval/'+ accountId +'/'+scope.groupId);
                         break;
                     case "disburse":
-                        location.path('/glimloanaccount/' + routeParams.id + '/glimDisburse/'+accountId+'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/glimDisburse/'+accountId+'/'+scope.groupId);
                         break;
                     case "disbursetosavings":
-                        location.path('/loanaccount/' + accountId + '/disbursetosavings');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/disbursetosavings');
                         break;
                     case "undodisbursal":
-                        location.path('/glimloanaccount/'+ routeParams.id + '/undodisbursal/'+ accountId +'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/'+ routeParams.id + '/undodisbursal/'+ accountId +'/'+scope.groupId);
                         break;
                     case "makerepayment":
-                        location.path('/glimloanaccount/' + routeParams.id + '/glimrepayment/'+accountId+'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/glimrepayment/'+accountId+'/'+scope.groupId);
                         break;
                     case "prepayment":
-                        location.path('/loanaccount/' + accountId + '/prepayloan');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/prepayloan');
                         break;
                     case "waiveinterest":
-                        location.path('/loanaccount/' + accountId + '/waiveinterest');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/waiveinterest');
                         break;
                     case "writeoff":
-                        location.path('/loanaccount/' + accountId + '/writeoff');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/writeoff');
                         break;
                     case "recoverypayment":
-                        location.path('/loanaccount/' + accountId + '/recoverypayment');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverypayment');
                         break;
                     case "close-rescheduled":
-                        location.path('/loanaccount/' + accountId + '/close-rescheduled');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close-rescheduled');
                         break;
                     case "transferFunds":
                         if (scope.loandetails.clientId) {
-                            location.path('/accounttransfers/fromloans/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromloans/' + accountId);
                         }
                         break;
                     case "close":
-                        location.path('/loanaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close');
                         break;
                     case "createguarantor":
-                        location.path('/guarantor/' + accountId);
+                        location.path('/credit-provider/KADSWEF/guarantor/' + accountId);
                         break;
                     case "listguarantor":
-                        location.path('/listguarantors/' + accountId);
+                        location.path('/credit-provider/KADSWEF/listguarantors/' + accountId);
                         break;
                     case "recoverguarantee":
-                        location.path('/loanaccount/' + accountId + '/recoverguarantee');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverguarantee');
                         break;
                     case "unassignloanofficer":
-                        location.path('/loanaccount/' + accountId + '/unassignloanofficer');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/unassignloanofficer');
                         break;
                     case "loanscreenreport":
-                        location.path('/loanscreenreport/' + accountId);
+                        location.path('/credit-provider/KADSWEF/loanscreenreport/' + accountId);
                         break;
                     case "reschedule":
-                        location.path('/loans/' +accountId + '/reschedule');
+                        location.path('/credit-provider/KADSWEF/loans/' +accountId + '/reschedule');
                         break;
                     case "adjustrepaymentschedule":
-                        location.path('/adjustrepaymentschedule/'+accountId) ;
+                        location.path('/credit-provider/KADSWEF/adjustrepaymentschedule/'+accountId) ;
                         break ;
                     case "foreclosure":
                         location.path('loanforeclosure/' + accountId);
@@ -16842,7 +16842,7 @@
                 $scope.delete = function () {
                     resourceFactory.loanResource.delete({ resourceType: 'charges', loanId: scope.loanId, resourceId: scope.chargeId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewloanaccount/' + scope.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                     });
                 };
                 $scope.cancel = function () {
@@ -16851,7 +16851,7 @@
             };
             scope.waiveCharge = function () {
                 resourceFactory.loanResource.save({ resourceType: 'charges', loanId: scope.loanId, resourceId: scope.chargeId}, {}, function (data) {
-                    location.path('/viewloanaccount/' + scope.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                 });
             };
 
@@ -16881,7 +16881,7 @@
                 $scope.delete = function () {
                     resourceFactory.loanResource.delete({ resourceType: 'collaterals', loanId: scope.loanId, resourceId: scope.collateralId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewloanaccount/' + scope.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                     });
                 };
                 $scope.cancel = function () {
@@ -16909,7 +16909,7 @@
             scope.routeTo = function (loanId, transactionId, transactionTypeId) {
                 if (transactionTypeId == 2 || transactionTypeId == 4 || transactionTypeId == 1) {
                     $rootScope.rates = scope.loandetails.rates;
-                    location.path('/viewloantrxn/' + loanId + '/trxnId/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewloantrxn/' + loanId + '/trxnId/' + transactionId);
                 };
             };
 
@@ -16928,26 +16928,26 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "addloancharge":
-                        location.path('/addloancharge/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addloancharge/' + accountId);
                         break;
                     case "addcollateral":
-                        location.path('/addcollateral/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addcollateral/' + accountId);
                         break;
                     case "assignloanofficer":
                     case "changeloanofficer":
-                        location.path('/assignloanofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignloanofficer/' + accountId);
                         break;
                     case "modifyapplication":
-                        location.path('/editloanaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editloanaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/loanaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/loanaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/reject');
                         break;
                     case "withdrawnbyclient":
-                        location.path('/loanaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.LoanAccountResource.delete({loanId: accountId}, {}, function (data) {
@@ -16957,63 +16957,63 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/loanaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/undoapproval');
                         break;
                     case "disburse":
-                        location.path('/loanaccount/' + accountId + '/disburse');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/disburse');
                         break;
                     case "disbursetosavings":
-                        location.path('/loanaccount/' + accountId + '/disbursetosavings');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/disbursetosavings');
                         break;
                     case "undodisbursal":
-                        location.path('/loanaccount/' + accountId + '/undodisbursal');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/undodisbursal');
                         break;
                     case "makerepayment":
-                        location.path('/loanaccount/' + accountId + '/repayment');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/repayment');
                         break;
                     case "prepayment":
-                        location.path('/loanaccount/' + accountId + '/prepayloan');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/prepayloan');
                         break;
                     case "waiveinterest":
-                        location.path('/loanaccount/' + accountId + '/waiveinterest');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/waiveinterest');
                         break;
                     case "writeoff":
-                        location.path('/loanaccount/' + accountId + '/writeoff');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/writeoff');
                         break;
                     case "recoverypayment":
-                        location.path('/loanaccount/' + accountId + '/recoverypayment');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverypayment');
                         break;
                     case "close-rescheduled":
-                        location.path('/loanaccount/' + accountId + '/close-rescheduled');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close-rescheduled');
                         break;
                     case "transferFunds":
                         if (scope.loandetails.clientId) {
-                            location.path('/accounttransfers/fromloans/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromloans/' + accountId);
                         }
                         break;
                     case "close":
-                        location.path('/loanaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close');
                         break;
                     case "createguarantor":
-                        location.path('/guarantor/' + accountId);
+                        location.path('/credit-provider/KADSWEF/guarantor/' + accountId);
                         break;
                     case "listguarantor":
-                        location.path('/listguarantors/' + accountId);
+                        location.path('/credit-provider/KADSWEF/listguarantors/' + accountId);
                         break;
                     case "recoverguarantee":
-                        location.path('/loanaccount/' + accountId + '/recoverguarantee');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverguarantee');
                         break;
                     case "unassignloanofficer":
-                        location.path('/loanaccount/' + accountId + '/unassignloanofficer');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/unassignloanofficer');
                         break;
                     case "loanscreenreport":
-                        location.path('/loanscreenreport/' + accountId);
+                        location.path('/credit-provider/KADSWEF/loanscreenreport/' + accountId);
                         break;
                     case "reschedule":
-                        location.path('/loans/' +accountId + '/reschedule');
+                        location.path('/credit-provider/KADSWEF/loans/' +accountId + '/reschedule');
                         break;
                     case "adjustrepaymentschedule":
-                        location.path('/adjustrepaymentschedule/'+accountId) ;
+                        location.path('/credit-provider/KADSWEF/adjustrepaymentschedule/'+accountId) ;
                         break ;
                     case "foreclosure":
                         location.path('loanforeclosure/' + accountId);
@@ -17441,7 +17441,7 @@
             };
 
             scope.viewLoanCollateral = function (collateralId){
-                location.path('/loan/'+scope.loandetails.id+'/viewcollateral/'+collateralId).search({status:scope.loandetails.status.value});
+                location.path('/credit-provider/KADSWEF/loan/'+scope.loandetails.id+'/viewcollateral/'+collateralId).search({status:scope.loandetails.status.value});
             };
 
             scope.viewDataTable = function (registeredTableName,data){
@@ -17453,7 +17453,7 @@
             };
 
             scope.viewLoanChargeDetails = function (chargeId) {
-                location.path('/loan/'+scope.loandetails.id+'/viewcharge/'+chargeId).search({loanstatus:scope.loandetails.status.value});
+                location.path('/credit-provider/KADSWEF/loan/'+scope.loandetails.id+'/viewcharge/'+chargeId).search({loanstatus:scope.loandetails.status.value});
             };
 
             scope.viewprintdetails = function () {
@@ -17507,10 +17507,10 @@
             scope.viewloantransactionjournalentries = function(transactionId){
                 var transactionId = "L" + transactionId;
                 if(scope.loandetails.clientId != null && scope.loandetails.clientId != ""){
-                    location.path('/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,clientId: scope.loandetails.clientId,
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,clientId: scope.loandetails.clientId,
                         accountNo: scope.loandetails.accountNo,clientName: scope.loandetails.clientName});
                 }else{
-                    location.path('/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,accountNo: scope.loandetails.accountNo,
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + transactionId).search({productName: scope.loandetails.loanProductName,loanId:scope.loandetails.id,accountNo: scope.loandetails.accountNo,
                         groupId :scope.loandetails.group.id,groupName :scope.loandetails.group.name});
 
                 }
@@ -17681,7 +17681,7 @@
                     formData.transactionDate = dateFilter(new Date(), scope.df);
                     resourceFactory.loanTrxnsResource.save(params, formData, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 };
                 $scope.cancel = function () {
@@ -17855,18 +17855,18 @@
             });
 
             scope.reject = function(){
-                location.path('/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
             };
             scope.approve = function(){
-                location.path('/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
             };
 
             scope.cancel = function () {
-                location.path('/loans/' + scope.loanId + '/reschedule/');
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/reschedule/');
             };
 
             scope.submit = function () {
-                location.path('/loans/' + scope.loanId + '/previewloanrepaymentschedule/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/previewloanrepaymentschedule/'+scope.requestId);
             };
 
         }
@@ -18613,7 +18613,7 @@
                 $rootScope.$broadcast("OnUserPreLogout");
                 scope.currentSession = sessionManager.clear();
                 scope.resetPassword = false;
-                location.path('/').replace();
+                location.path('/credit-provider/KADSWEF/').replace();
             };
 
             scope.langs = mifosX.models.Langs;
@@ -18671,37 +18671,37 @@
             };
 
             keyboardManager.bind('ctrl+shift+n', function () {
-                location.path('/nav/offices');
+                location.path('/credit-provider/KADSWEF/nav/offices');
             });
             keyboardManager.bind('ctrl+shift+i', function () {
-                location.path('/tasks');
+                location.path('/credit-provider/KADSWEF/tasks');
             });
             keyboardManager.bind('ctrl+shift+o', function () {
-                location.path('/entercollectionsheet');
+                location.path('/credit-provider/KADSWEF/entercollectionsheet');
             });
             keyboardManager.bind('ctrl+shift+c', function () {
-                location.path('/createclient');
+                location.path('/credit-provider/KADSWEF/createclient');
             });
             keyboardManager.bind('ctrl+shift+g', function () {
-                location.path('/creategroup');
+                location.path('/credit-provider/KADSWEF/creategroup');
             });
             keyboardManager.bind('ctrl+shift+q', function () {
-                location.path('/createcenter');
+                location.path('/credit-provider/KADSWEF/createcenter');
             });
             keyboardManager.bind('ctrl+shift+f', function () {
-                location.path('/freqposting');
+                location.path('/credit-provider/KADSWEF/freqposting');
             });
             keyboardManager.bind('ctrl+shift+e', function () {
-                location.path('/accounts_closure');
+                location.path('/credit-provider/KADSWEF/accounts_closure');
             });
             keyboardManager.bind('ctrl+shift+j', function () {
-                location.path('/journalentry');
+                location.path('/credit-provider/KADSWEF/journalentry');
             });
             keyboardManager.bind('ctrl+shift+a', function () {
-                location.path('/accounting');
+                location.path('/credit-provider/KADSWEF/accounting');
             });
             keyboardManager.bind('ctrl+shift+r', function () {
-                location.path('/reports/all');
+                location.path('/credit-provider/KADSWEF/reports/all');
             });
             keyboardManager.bind('ctrl+s', function () {
                 document.getElementById('save').click();
@@ -20220,7 +20220,7 @@
                 $scope.approve = function () {
                     resourceFactory.checkerInboxResource.save({templateResource: routeParams.id, command: action}, {}, function (data) {
                         $uibModalInstance.close('approve');
-                        location.path('/checkeractionperformed');
+                        location.path('/credit-provider/KADSWEF/checkeractionperformed');
                     });
                 };
                 $scope.cancel = function () {
@@ -20243,7 +20243,7 @@
                 $scope.reject = function () {
                     resourceFactory.checkerInboxResource.save({templateResource: routeParams.id, command: action}, {}, function (data) {
                         $uibModalInstance.close('reject');
-                        location.path('/checkeractionperformed');
+                        location.path('/credit-provider/KADSWEF/checkeractionperformed');
                     });
                 };
                 $scope.cancel = function () {
@@ -20260,7 +20260,7 @@
                 $scope.delete = function () {
                     resourceFactory.checkerInboxResource.delete({templateResource: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/checkeractionperformed');
+                        location.path('/credit-provider/KADSWEF/checkeractionperformed');
                     });
                 };
                 $scope.cancel = function () {
@@ -20569,7 +20569,7 @@
                         newholiday.offices.push(temp);
                     }
                     resourceFactory.holValueResource.save(newholiday, function (data) {
-                        location.path('/holidays');
+                        location.path('/credit-provider/KADSWEF/holidays');
                     });
                 }
             };
@@ -20803,7 +20803,7 @@
             scope.cashierTransactions = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewcashiertxns/' + id);
+                location.path('/credit-provider/KADSWEF/viewcashiertxns/' + id);
             };
 
             scope.routeToAllocate = function () {
@@ -20816,7 +20816,7 @@
 
             scope.routeToTxn = function(){
                 route.reload();
-                location.path('/tellers/' + routeParams.tellerId + "/cashiers/" + routeParams.cashierId  +"/txns/" +  scope.formData.currencyCode);
+                location.path('/credit-provider/KADSWEF/tellers/' + routeParams.tellerId + "/cashiers/" + routeParams.cashierId  +"/txns/" +  scope.formData.currencyCode);
 
             };
 
@@ -20948,7 +20948,7 @@
                 this.formData.startDate = reqDate;
                 this.formData.endDate = endDate;
                 resourceFactory.tellerResource.save(this.formData, function (data) {
-                    location.path('/viewtellers/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtellers/' + data.resourceId);
 
                 });
             };
@@ -21016,7 +21016,7 @@
                 this.formData.startDate = reqDate;
                 this.formData.endDate = endDate;
                 resourceFactory.tellerCashierResource.update({'tellerId': routeParams.tellerId,'cashierId':routeParams.id}, this.formData, function (data) {
-                    location.path('/tellers/' + scope.cashier.tellerId+'/cashiers');
+                    location.path('/credit-provider/KADSWEF/tellers/' + scope.cashier.tellerId+'/cashiers');
 
                 });
             };
@@ -21073,7 +21073,7 @@
                 this.formData.startDate = reqDate;
                 this.formData.endDate = endDate;
                 resourceFactory.tellerResource.update({'tellerId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewtellers/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtellers/' + data.resourceId);
 
                 });
             };
@@ -21096,15 +21096,15 @@
             });
 
             scope.routeTo = function (id) {
-                location.path('/viewtellers/' + id);
+                location.path('/credit-provider/KADSWEF/viewtellers/' + id);
             };
 
             scope.routeToEdit = function (id) {
-                location.path('/viewtellers/' + id);
+                location.path('/credit-provider/KADSWEF/viewtellers/' + id);
             };
 
             scope.routeToCashiers = function (id) {
-                location.path('/tellers/' + id + '/cashiers/');
+                location.path('/credit-provider/KADSWEF/tellers/' + id + '/cashiers/');
             };
 
             scope.routeToDelete = function(id){
@@ -21113,12 +21113,12 @@
                         resourceFactory.tellerResource.getAllTellers(function (data) {
                             scope.tellers = data;
                         });
-                        location.path('/tellers');
+                        location.path('/credit-provider/KADSWEF/tellers');
                     });
             };
             /*scope.delete = function (tellerId, cashierId) {
                 resourceFactory.tellerCashierResource.delete({tellerId: tellerId, cashierId: cashierId}, function (data) {
-                    location.path('/tellers/' + tellerId + "/cashiers/");
+                    location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/");
                 });
 
             };*/
@@ -21183,27 +21183,27 @@
 
             var idToNodeMap = {};
             scope.routeTo = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + '/cashiers/' + cashierId);
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + '/cashiers/' + cashierId);
             };
 
             scope.delete = function (tellerId, cashierId) {
                 resourceFactory.tellerCashierResource.delete({tellerId: tellerId, cashierId: cashierId}, function (data) {
-                    location.path('/tellers/' + tellerId + '/cashiers/');
+                    location.path('/credit-provider/KADSWEF/tellers/' + tellerId + '/cashiers/');
                 });
             };
 
             scope.routeToView = function (tellerId, cashierId) {
-                    location.path('/tellers/' + tellerId + "/cashiers/" + cashierId);
+                    location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId);
             };
 
             scope.allocate = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/allocate/");
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/allocate/");
             };
             scope.settle = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/settle/");
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId + "/actions/settle/");
             };
             scope.transactions = function (tellerId, cashierId) {
-                location.path('/tellers/' + tellerId + "/cashiers/" + cashierId + "/txns/" + scope.currencyCode );
+                location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/" + cashierId + "/txns/" + scope.currencyCode );
             };
 
             scope.compare = function (x, y) {
@@ -21278,7 +21278,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.joiningDate = joiningDate;
                 resourceFactory.employeeResource.save(this.formData, function (data) {
-                    location.path('/viewemployee/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewemployee/' + data.resourceId);
                 });
             };
         }
@@ -21315,7 +21315,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.openingDate = reqDate;
                 resourceFactory.officeResource.save(this.formData, function (data) {
-                    location.path('/viewoffice/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewoffice/' + data.resourceId);
                 });
             };
         }
@@ -21335,7 +21335,7 @@
             scope.submit = function () {
                 this.formData.isCashPayment = this.formData.isCashPayment || false;
                 resourceFactory.paymentTypeResource.save(this.formData, function (data) {
-                    location.path('/viewpaymenttype/');
+                    location.path('/credit-provider/KADSWEF/viewpaymenttype/');
                 });
             };
 
@@ -21432,7 +21432,7 @@
                     scope.formData.roles.push(scope.selectedRoles[i].id) ;
                 }
                 resourceFactory.userListResource.save(this.formData, function (data) {
-                    location.path('/viewuser/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewuser/' + data.resourceId);
                 });
             };
         }
@@ -21532,7 +21532,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.joiningDate = joiningDate;
                 resourceFactory.employeeResource.update({'staffId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewemployee/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewemployee/' + data.resourceId);
                 });
             };
         }
@@ -21607,7 +21607,7 @@
                 this.formData.reschedulingType = rescheduleId;
 
                 resourceFactory.holValueResource.update({holId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewholiday/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewholiday/' + routeParams.id);
                 });
             };
         }
@@ -21646,7 +21646,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.openingDate = reqDate;
                 resourceFactory.officeResource.update({'officeId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewoffice/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewoffice/' + data.resourceId);
                 });
             };
         }
@@ -21670,7 +21670,7 @@
 
             scope.submit = function(){
                 resourceFactory.passwordPrefResource.put(scope.formData, function(data){
-                    location.path('/organization/');
+                    location.path('/credit-provider/KADSWEF/organization/');
                 });
             }
         }
@@ -21694,7 +21694,7 @@
             scope.submit = function () {
                 this.formData.isCashPayment = this.formData.isCashPayment || false;
                 resourceFactory.paymentTypeResource.update({paymentTypeId: routeParams.id},this.formData, function (data) {
-                    location.path('/viewpaymenttype/');
+                    location.path('/credit-provider/KADSWEF/viewpaymenttype/');
                 });
             };
 
@@ -21793,7 +21793,7 @@
                     scope.formData.roles.push(scope.selectedRoles[i].id) ;
                 }
                 resourceFactory.userListResource.update({'userId': scope.userId}, this.formData, function (data) {
-                    location.path('/viewuser/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewuser/' + data.resourceId);
                 });
             };
         }
@@ -21868,7 +21868,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.extendTermForDailyRepayments = scope.extendTermForDailyRepayments;
                 resourceFactory.workingDaysResource.put(this.formData, function(data){
-                    location.path('/organization/');
+                    location.path('/credit-provider/KADSWEF/organization/');
                 })
 
             }
@@ -21884,7 +21884,7 @@
         EmployeeController: function (scope, resourceFactory, location) {
             scope.employees = [];
             scope.routeTo = function (id) {
-                location.path('/viewemployee/' + id);
+                location.path('/credit-provider/KADSWEF/viewemployee/' + id);
             };
 
             if (!scope.searchCriteria.employees) {
@@ -21927,7 +21927,7 @@
             scope.formParams.limit = scope.entityDatatableChecksPerPage;
 
             scope.routeTo = function (id) {
-                location.path('/viewentitydatatablecheck/' + id);
+                location.path('/credit-provider/KADSWEF/viewentitydatatablecheck/' + id);
             };
 
             if (!scope.searchCriteria.criterias) {
@@ -22074,7 +22074,7 @@
             scope.formData = {};
 
             scope.routeTo = function (id) {
-                location.path('/viewholiday/' + id);
+                location.path('/credit-provider/KADSWEF/viewholiday/' + id);
             };
 
             if (!scope.searchCriteria.holidays) {
@@ -22210,7 +22210,7 @@
               {
                 scope.funderror[id] = false;
                 resourceFactory.fundsResource.update({fundId: id}, {'name': this.formData[id]}, function (data) {
-                    location.path('/managefunds');
+                    location.path('/credit-provider/KADSWEF/managefunds');
                 });
               } else {
                 scope.funderror[id] = true;
@@ -22220,7 +22220,7 @@
                 if (scope.newfund != undefined) {
                     scope.addfunderror = false;
                     resourceFactory.fundsResource.save({'name': scope.newfund}, function (data) {
-                        location.path('/managefunds');
+                        location.path('/credit-provider/KADSWEF/managefunds');
                     });
                 } else {
                     scope.addfunderror = true;
@@ -22243,7 +22243,7 @@
             var idToNodeMap = {};
 
             scope.routeTo = function (id) {
-                location.path('/viewoffice/' + id);
+                location.path('/credit-provider/KADSWEF/viewoffice/' + id);
             };
 
             if (!scope.searchCriteria.offices) {
@@ -22362,7 +22362,7 @@
                 this.formData.loanProducts = scope.selectedloanproducts ;
                 this.formData.definitions = scope.definitions ;
                 resourceFactory.provisioningcriteria.post(this.formData, function (data) {
-                    location.path('/viewprovisioningcriteria/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewprovisioningcriteria/' + data.resourceId);
                 });
             };
 
@@ -22437,7 +22437,7 @@
                 this.formData.loanProducts = scope.selectedloanproducts ;
                 this.formData.definitions = scope.definitions;
                 resourceFactory.provisioningcriteria.put({criteriaId: routeParams.criteriaId}, this.formData, function (data) {
-                    location.path('/viewprovisioningcriteria/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewprovisioningcriteria/' + data.resourceId);
                 });
             };
         }
@@ -22460,7 +22460,7 @@
             scope.criterias = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewprovisioningcriteria/' + id);
+                location.path('/credit-provider/KADSWEF/viewprovisioningcriteria/' + id);
             };
 
             if (!scope.searchCriteria.criterias) {
@@ -22518,7 +22518,7 @@
                 $scope.delete = function () {
                     resourceFactory.provisioningcriteria.delete({criteriaId: scope.criteriaId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewallprovisionings/');
+                        location.path('/credit-provider/KADSWEF/viewallprovisionings/');
                     });
                 };
                 $scope.cancel = function () {
@@ -22537,7 +22537,7 @@
         RoleController: function (scope, resourceFactory, location) {
             scope.roles = [];
             scope.routeTo = function (id) {
-                location.path('/admin/viewrole/' + id);
+                location.path('/credit-provider/KADSWEF/admin/viewrole/' + id);
             };
 
             scope.RolesPerPage = 15;
@@ -22965,7 +22965,7 @@
                 scope.submissionData.paramValue = scope.paramValues;
 
                 resourceFactory.smsCampaignResource.save(scope.submissionData, function(data) {
-                    location.path('/viewsmscampaign/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsmscampaign/' + data.resourceId);
                 });
 
             };
@@ -23226,7 +23226,7 @@
                 }
 
                 resourceFactory.smsCampaignResource.update({campaignId: routeParams.campaignId}, scope.submissionData, function(data) {
-                    location.path('/viewsmscampaign/' + routeParams.campaignId);
+                    location.path('/credit-provider/KADSWEF/viewsmscampaign/' + routeParams.campaignId);
                 });
 
             };
@@ -23272,7 +23272,7 @@
             scope.formParams.limit = scope.smsCampaignsPerPage;
 
             scope.routeTo = function (id) {
-                location.path('/viewsmscampaign/' + id);
+                location.path('/credit-provider/KADSWEF/viewsmscampaign/' + id);
             };
 
             if (!scope.searchCriteria.criterias) {
@@ -23438,7 +23438,7 @@
                 $scope.delete = function () {
                     resourceFactory.smsCampaignResource.delete({campaignId: routeParams.campaignId}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/smscampaigns');
+                        location.path('/credit-provider/KADSWEF/smscampaigns');
                     });
                 };
                 $scope.cancel = function () {
@@ -23599,7 +23599,7 @@
             });
 
             scope.showEdit = function(id){
-                location.path('/editPaymentType/' + id);
+                location.path('/credit-provider/KADSWEF/editPaymentType/' + id);
             }
 
            var PaymentTypeDeleteCtrl = function ($scope, $uibModalInstance,paymentTypeId) {
@@ -23880,7 +23880,7 @@
             scope.charges = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewcharge/' + id);
+                location.path('/credit-provider/KADSWEF/viewcharge/' + id);
             };
 
             if (!scope.searchCriteria.charges) {
@@ -24043,7 +24043,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.monthDayFormat = 'dd MMM';
                 resourceFactory.chargeResource.save(this.formData, function (data) {
-                    location.path('/viewcharge/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcharge/' + data.resourceId);
                 });
             };
         }
@@ -24187,7 +24187,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/fixeddepositproducts');
+                location.path('/credit-provider/KADSWEF/fixeddepositproducts');
             };
 
             scope.submit = function () {
@@ -24241,7 +24241,7 @@
                 this.formData.charts.push(copyChartData(scope.chart));//add chart details
 
                 resourceFactory.fixedDepositProductResource.save(this.formData, function (data) {
-                    location.path('/viewfixeddepositproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositproduct/' + data.resourceId);
                 });
             }
 
@@ -24564,7 +24564,7 @@
 
             //back to deposit product view
             scope.cancel = function () {
-                location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + routeParams.productType);
+                location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + routeParams.productType);
             };
 
             /**
@@ -24580,16 +24580,16 @@
                 //update deposit product with new chart
                 if (routeParams.productType === 'fixeddepositproduct') {
                     resourceFactory.fixedDepositProductResource.update({productId: routeParams.productId}, scope.formData, function (data) {
-                        location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
+                        location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
                     });
                 } else if (routeParams.productType === 'recurringdepositproduct') {
                     resourceFactory.recurringDepositProductResource.update({productId: routeParams.productId}, scope.formData, function (data) {
-                        location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
+                        location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
                     });
                 }
 
                 //resourceFactory.interestRateChartResource.save(chartData, function (data) {
-                //  location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName);
+                //  location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName);
                 //});
             }
 
@@ -25008,7 +25008,7 @@
             };
 
             scope.cancel = function () {
-                location.path('/loanproducts');
+                location.path('/credit-provider/KADSWEF/loanproducts');
             };
 
 
@@ -25188,7 +25188,7 @@
                     delete this.formData.recalculationRestFrequencyNthDayType;
                 }
                 resourceFactory.loanProductResource.save(this.formData, function (data) {
-                    location.path('/viewloanproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewloanproduct/' + data.resourceId);
                 });
             };
         }
@@ -25222,7 +25222,7 @@
             scope.submit = function () {
                 this.formData.locale = scope.optlang.code;
                 resourceFactory.rateResource.save(this.formData, function (data) {
-                    location.path('/rates/');
+                    location.path('/credit-provider/KADSWEF/rates/');
                 },function(error){
                     scope.rateError = true;
 
@@ -25369,7 +25369,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/recurringdepositproducts');
+                location.path('/credit-provider/KADSWEF/recurringdepositproducts');
             };
 
             scope.submit = function () {
@@ -25423,7 +25423,7 @@
                 this.formData.charts.push(copyChartData(scope.chart));//add chart details
 
                 resourceFactory.recurringDepositProductResource.save(this.formData, function (data) {
-                    location.path('/viewrecurringdepositproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + data.resourceId);
                 });
             }
 
@@ -25770,7 +25770,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/savingproducts');
+                location.path('/credit-provider/KADSWEF/savingproducts');
             };
 
             scope.submit = function () {
@@ -25822,7 +25822,7 @@
                 this.formData.locale = scope.optlang.code;
 
                 resourceFactory.savingProductResource.save(this.formData, function (data) {
-                    location.path('/viewsavingproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsavingproduct/' + data.resourceId);
                 });
             }
         }
@@ -25904,7 +25904,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/shareproducts');
+                location.path('/credit-provider/KADSWEF/shareproducts');
             };
 
             scope.submit = function () {
@@ -25922,7 +25922,7 @@
                 this.formData.locale = scope.optlang.code;
 
                 resourceFactory.shareProduct.post(this.formData, function (data) {
-                    location.path('/viewshareproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewshareproduct/' + data.resourceId);
                 });
             }
         }
@@ -26084,7 +26084,7 @@
                 this.formData.active = this.formData.active || false;
                 this.formData.penalty = this.formData.penalty || false;
                 resourceFactory.chargeResource.update({chargeId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewcharge/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcharge/' + data.resourceId);
                 });
             };
         }
@@ -26293,7 +26293,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewfixeddepositproduct/' + routeParams.productId);
+                location.path('/credit-provider/KADSWEF/viewfixeddepositproduct/' + routeParams.productId);
             };
 
             scope.submit = function () {
@@ -26347,7 +26347,7 @@
                 this.formData.charts.push(copyChartData(scope.chart));//add chart details
                 this.formData = removeEmptyValues(this.formData);
                 resourceFactory.fixedDepositProductResource.update({productId: routeParams.productId}, this.formData, function (data) {
-                    location.path('/viewfixeddepositproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositproduct/' + data.resourceId);
                 });
             }
 
@@ -26724,7 +26724,7 @@
 
             //back to deposit product view
             scope.cancel = function () {
-                location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + routeParams.productType);
+                location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + routeParams.productType);
             };
 
             /**
@@ -26737,16 +26737,16 @@
 
                 if (routeParams.productType === 'fixeddepositproduct') {
                     resourceFactory.fixedDepositProductResource.update({productId: routeParams.productId}, scope.formData, function (data) {
-                        location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
+                        location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
                     });
                 } else if (routeParams.productType === 'recurringdepositproduct') {
                     resourceFactory.recurringDepositProductResource.update({productId: routeParams.productId}, scope.formData, function (data) {
-                        location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
+                        location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
                     });
                 }
 
                 //resourceFactory.interestRateChartResource.update({chartId: routeParams.chartId}, chartData, function (data) {
-                //  location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName);
+                //  location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName);
                 //});
 
             }
@@ -27516,7 +27516,7 @@
                 }
 
                 resourceFactory.loanProductResource.put({loanProductId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewloanproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewloanproduct/' + data.resourceId);
                 });
             }
         }
@@ -27558,7 +27558,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.active = this.formData.active || false;
                 resourceFactory.rateResource.update({rateId: routeParams.rateId}, this.formData, function (data) {
-                    location.path('/viewrate/' + routeParams.rateId);
+                    location.path('/credit-provider/KADSWEF/viewrate/' + routeParams.rateId);
                 });
             };
         }
@@ -27767,7 +27767,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewrecurringdepositproduct/' + routeParams.productId);
+                location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + routeParams.productId);
             };
 
             scope.submit = function () {
@@ -27821,7 +27821,7 @@
                 this.formData.charts.push(copyChartData(scope.chart));//add chart details
                 this.formData = removeEmptyValues(this.formData);
                 resourceFactory.recurringDepositProductResource.update({productId: routeParams.productId}, this.formData, function (data) {
-                    location.path('/viewrecurringdepositproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + data.resourceId);
                 });
             }
 
@@ -28251,7 +28251,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingproduct/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewsavingproduct/' + routeParams.id);
             };
 
             scope.submit = function () {
@@ -28303,7 +28303,7 @@
                 this.formData.locale = scope.optlang.code;
 
                 resourceFactory.savingProductResource.update({savingProductId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewsavingproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsavingproduct/' + data.resourceId);
                 });
             }
         }
@@ -28388,7 +28388,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/shareproducts');
+                location.path('/credit-provider/KADSWEF/shareproducts');
             };
 
             scope.submit = function () {
@@ -28408,7 +28408,7 @@
                 this.formData.locale = scope.optlang.code;
 
                 resourceFactory.shareProduct.put({shareProductId: scope.product.id}, this.formData, function (data) {
-                    location.path('/viewshareproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewshareproduct/' + data.resourceId);
                 });
             }
         }
@@ -28421,7 +28421,7 @@
     mifosX.controllers = _.extend(module, {
         FixedDepositProductController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewfixeddepositproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewfixeddepositproduct/' + id);
             };
 
             if (!scope.searchCriteria.fdp) {
@@ -28471,7 +28471,7 @@
                 }
 
                 resourceFactory.floatingrates.save(this.formData, function (data) {
-                    location.path('/viewfloatingrate/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfloatingrate/' + data.resourceId);
                 });
             } ;
         }
@@ -28537,7 +28537,7 @@
                 }
 
                 resourceFactory.floatingrates.put({floatingRateId: routeParams.floatingRateId}, this.formData, function (data) {
-                    location.path('/viewfloatingrate/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfloatingrate/' + data.resourceId);
                 });
             } ;
         }
@@ -28552,7 +28552,7 @@
             scope.floatingrates = [];
 
             scope.routeTo = function (floatingRateId) {
-                location.path('/viewfloatingrate/' + floatingRateId);
+                location.path('/credit-provider/KADSWEF/viewfloatingrate/' + floatingRateId);
             };
 
             resourceFactory.floatingrates.getAll(function (data) {
@@ -28587,7 +28587,7 @@
   mifosX.controllers = _.extend(module, {
     InterestRateChartController: function(scope, routeParams, resourceFactory, location,$uibModal) {
         scope.edit = function(id){
-            location.path('/editinterestratechart/' + id);
+            location.path('/credit-provider/KADSWEF/editinterestratechart/' + id);
         };
         scope.productName = routeParams.productName;
         scope.productId = routeParams.productId;
@@ -28647,7 +28647,7 @@
             scope.products = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewloanproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewloanproduct/' + id);
             };
 
             if (!scope.searchCriteria.loanP) {
@@ -28737,7 +28737,7 @@
                 }
                 final.restrictedProducts = temp;
                 resourceFactory.loanProductResource.save({loanProductId: productId, resourceType: 'productmix'}, final, function (data) {
-                    location.path('/viewproductmix/' + data.productId);
+                    location.path('/credit-provider/KADSWEF/viewproductmix/' + data.productId);
                 });
             };
 
@@ -28755,7 +28755,7 @@
         ProductMixController: function (scope, resourceFactory, location) {
             scope.productmixes = [];
             scope.routeTo = function (id) {
-                location.path('/viewproductmix/' + id);
+                location.path('/credit-provider/KADSWEF/viewproductmix/' + id);
             };
             resourceFactory.loanProductResource.getAllLoanProducts({associations: 'productMixes'}, function (data) {
                 scope.productmixes = data;
@@ -28789,7 +28789,7 @@
                 $scope.delete = function () {
                     resourceFactory.loanProductResource.delete({loanProductId: routeParams.id, resourceType: 'productmix'}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/productmix');
+                        location.path('/credit-provider/KADSWEF/productmix');
                     });
                 };
                 $scope.cancel = function () {
@@ -28846,7 +28846,7 @@
                 }
                 final.restrictedProducts = temp;
                 resourceFactory.loanProductResource.put({loanProductId: routeParams.id, resourceType: 'productmix'}, final, function (data) {
-                    location.path('/viewproductmix/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewproductmix/' + routeParams.id);
                 });
             };
 
@@ -28866,7 +28866,7 @@
             scope.rates = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewrate/' + id);
+                location.path('/credit-provider/KADSWEF/viewrate/' + id);
             };
 
             if (!scope.searchCriteria.rates) {
@@ -28893,7 +28893,7 @@
     mifosX.controllers = _.extend(module, {
         RecurringDepositProductController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewrecurringdepositproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + id);
             };
 
             if (!scope.searchCriteria.rdp) {
@@ -28922,7 +28922,7 @@
             scope.products = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewsavingproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewsavingproduct/' + id);
             };
 
             if (!scope.searchCriteria.savingP) {
@@ -28975,7 +28975,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/dividends/' + routeParams.productId);
+                location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId);
             };
 
             scope.submit = function () {
@@ -28987,7 +28987,7 @@
                         this.formData.dividendPeriodEndDate = dateFilter(this.formData.dividendPeriodEndDate, scope.df);
                     }
                     resourceFactory.shareproductdividendresource.save({productId: routeParams.productId},this.formData, function (data) {
-                        location.path('/dividends/' + routeParams.productId);
+                        location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId);
                     });
             };
         }
@@ -29002,7 +29002,7 @@
             scope.shareproducts = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewshareproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewshareproduct/' + id);
             };
 
             if (!scope.searchCriteria.savingP) {
@@ -29038,7 +29038,7 @@
             });
 
             scope.routeTo = function (id, status) {
-                location.path('/dividends/' + routeParams.productId+'/dividend/'+id+"/"+status);
+                location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId+'/dividend/'+id+"/"+status);
                 scope.saveSC();
             };
 
@@ -29125,7 +29125,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.startDate = reqDate;
                 resourceFactory.taxcomponent.save(this.formData, function (data) {
-                    location.path('/viewtaxcomponent/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtaxcomponent/' + data.resourceId);
                 });
             };
         }
@@ -29171,7 +29171,7 @@
                 scope.copyForSubmit();
                 this.formData.dateFormat = scope.df;
                 resourceFactory.taxgroup.save(this.formData, function (data) {
-                    location.path('/viewtaxgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtaxgroup/' + data.resourceId);
                 });
             };
         }
@@ -29206,7 +29206,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.startDate = reqDate;
                 resourceFactory.taxcomponent.put({taxComponentId: routeParams.taxComponentId},this.formData, function (data) {
-                    location.path('/viewtaxcomponent/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtaxcomponent/' + data.resourceId);
                 });
             };
         }
@@ -29284,7 +29284,7 @@
                 scope.copyForSubmit();
                 this.formData.dateFormat = scope.df;
                 resourceFactory.taxgroup.put({taxGroupId: routeParams.taxGroupId}, this.formData, function (data) {
-                    location.path('/viewtaxgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtaxgroup/' + data.resourceId);
                 });
             };
         }
@@ -29299,7 +29299,7 @@
             scope.taxcomponents = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewtaxcomponent/' + id);
+                location.path('/credit-provider/KADSWEF/viewtaxcomponent/' + id);
             };
 
 
@@ -29317,7 +29317,7 @@
             scope.taxgroups = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewtaxgroup/' + id);
+                location.path('/credit-provider/KADSWEF/viewtaxgroup/' + id);
             };
 
 
@@ -29376,7 +29376,7 @@
                 $scope.delete = function () {
                     resourceFactory.chargeResource.delete({chargeId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/charges');
+                        location.path('/credit-provider/KADSWEF/charges');
                     });
                 };
                 $scope.cancel = function () {
@@ -29598,7 +29598,7 @@
 
             scope.postDividends = function () {
                 resourceFactory.shareproductdividendresource.approve({productId: routeParams.productId, dividendId: routeParams.dividendId}, function (data) {
-                    location.path('/dividends/' + routeParams.productId);
+                    location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId);
                 });
             };
 
@@ -30035,7 +30035,7 @@
             scope.type = typeReport;
 
             scope.routeTo = function (report) {
-                location.path('/run_report/' + report.report_name).search({reportId: report.report_id, type: report.report_type});
+                location.path('/credit-provider/KADSWEF/run_report/' + report.report_name).search({reportId: report.report_id, type: report.report_type});
             };
 
             if (!scope.searchCriteria.reports) {
@@ -30217,7 +30217,7 @@
                         var parser = new DOMParser();
                         var xmlDoc = parser.parseFromString(data, "text/xml");
                         $rootScope.xmlData = xmlDoc;
-                        location.path('/xbrlreport');
+                        location.path('/credit-provider/KADSWEF/xbrlreport');
                     }) .catch( function onError(response) {
                         console.log("Error Detected: ", response.data)
                     });
@@ -30400,7 +30400,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountId);
             }
 
             scope.clientsNotPresentInGSIM=[];
@@ -30479,7 +30479,7 @@
                 }
 
                 resourceFactory.savingsResource.update({'accountId': scope.accountId}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                 });
             };
         }
@@ -30535,7 +30535,7 @@
                     }
                 }
                 resourceFactory.savingsChargeResource.save({accountId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + routeParams.id);
                 });
             };
         }
@@ -30565,7 +30565,7 @@
 
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.data.accountNo);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.data.accountNo);
             };
 
             scope.submit = function () {
@@ -30574,7 +30574,7 @@
                 this.formData.fromSavingsOfficerId = scope.data.fieldOfficerId || "";
                 this.formData.assignmentDate = dateFilter(this.formData.assignmentDate, scope.df);
                 resourceFactory.savingsResource.save({accountId: routeParams.id, command: 'assignSavingsOfficer'}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + scope.data.accountNo);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.data.accountNo);
                 });
             };
 
@@ -31041,17 +31041,17 @@
                 }
 
                 resourceFactory.gsimResource.save(this.formData, function (data) {
-                    location.path('/viewgroup/'+ scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/'+ scope.groupId);
                 });
             };
 
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 } else if (scope.centerEntity) {
-                    location.path('/viewcenter/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + scope.groupId);
                 } else {
-                    location.path('/viewgroup/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.groupId);
                 }
             }
         }
@@ -31322,17 +31322,17 @@
                 }
 
                 resourceFactory.savingsResource.save(this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                 });
             };
 
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 } else if (scope.centerEntity) {
-                    location.path('/viewcenter/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + scope.groupId);
                 } else {
-                    location.path('/viewgroup/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.groupId);
                 }
             }
         }
@@ -31468,7 +31468,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
+                location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
             }
 
             scope.submit = function () {
@@ -31495,7 +31495,7 @@
                 }
 
                 resourceFactory.gsimResource.update({'parentAccountId':  scope.parentAccountId}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                 });
             };
         }
@@ -31633,7 +31633,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountId);
             }
 
             scope.submit = function () {
@@ -31663,7 +31663,7 @@
                 }
 
                 resourceFactory.savingsResource.update({'accountId': scope.accountId}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                 });
             };
         }
@@ -31919,7 +31919,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
+                location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
             };
 
             scope.submit = function () {
@@ -31961,7 +31961,7 @@
                     this.formData.childAccounts=scope.childAccounts;
 
                     resourceFactory.savingsTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewgsimaccount/' + scope.parentGSIM.groupId+'/'+scope.parentGSIM.accountNumber);
+                        location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.parentGSIM.groupId+'/'+scope.parentGSIM.accountNumber);
 
                     });
                 }
@@ -31992,7 +31992,7 @@
                     params.savingsId = scope.accountId;
 
                     resourceFactory.savingsTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     });
                 } else if (scope.action == "editsavingcharge") {
                     if (this.formData.feeOnMonthDayFullDate) {
@@ -32003,12 +32003,12 @@
                     }
                     resourceFactory.savingsResource.update({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewsavingaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "deletesavingcharge") {
                     resourceFactory.savingsResource.delete({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewsavingaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "paycharge" || scope.action == "waive" || scope.action == "inactivate") {
                     params = {accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, command: scope.action};
@@ -32018,7 +32018,7 @@
                         this.formData.inactivationOnDate = dateFilter(this.formData.inactivationOnDate, scope.df);
                     }
                     resourceFactory.savingsResource.save(params, this.formData, function (data) {
-                        location.path('/viewgsimaccount/' + scope.parentGSIM.groupId+'/'+scope.parentGSIM.accountNumber);
+                        location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.parentGSIM.groupId+'/'+scope.parentGSIM.accountNumber);
                     });
                 } else {
                     params.parentAccountId = scope.parentAccountId;
@@ -32054,7 +32054,7 @@
                     }
 
                     resourceFactory.gsimCommandsResource.save(params, this.formData, function (data) {
-                        location.path('/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
                     });
                 }
             };
@@ -32421,7 +32421,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + routeParams.id);
             };
 
             scope.submit = function () {
@@ -32456,7 +32456,7 @@
                     params.savingsId = scope.accountId;
 
                     resourceFactory.savingsTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     });
                 } else if (scope.action == "editsavingcharge") {
                     if (this.formData.feeOnMonthDayFullDate) {
@@ -32467,12 +32467,12 @@
                     }
                     resourceFactory.savingsResource.update({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewsavingaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "deletesavingcharge") {
                     resourceFactory.savingsResource.delete({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewsavingaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "paycharge" || scope.action == "waive" || scope.action == "inactivate") {
                     params = {accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, command: scope.action};
@@ -32482,7 +32482,7 @@
                         this.formData.inactivationOnDate = dateFilter(this.formData.inactivationOnDate, scope.df);
                     }
                     resourceFactory.savingsResource.save(params, this.formData, function (data) {
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     });
                 } else {
                     params.accountId = scope.accountId;
@@ -32515,7 +32515,7 @@
                     }
 
                     resourceFactory.savingsResource.save(params, this.formData, function (data) {
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     });
                 }
             };
@@ -32584,7 +32584,7 @@
             });*/
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountNo);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountNo);
             };
 
             scope.submit = function () {
@@ -32593,7 +32593,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.unassignedDate = dateFilter(this.formData.unassignedDate, scope.df);
                 resourceFactory.savingsResource.save({accountId: routeParams.id, command:'unassignSavingsOfficer'}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + scope.accountNo);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountNo);
                 });
 
             };
@@ -32721,7 +32721,7 @@
             });
 
             scope.routeToSaving = function (id) {
-                location.path('/viewsavingaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + id);
             };
             console.log("outer"+parentGSIMId);
 
@@ -32729,16 +32729,16 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editgsimaccount/' + parentGSIMId+'/'+gsimChildAccountId+'/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/editgsimaccount/' + parentGSIMId+'/'+gsimChildAccountId+'/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "approve":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/approve/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/approve/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "reject":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/reject/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/reject/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "withdrawnbyclient":
-                        location.path('/savingaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.savingsResource.delete({accountId: accountId}, {}, function (data) {
@@ -32748,19 +32748,19 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/undoapproval/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/undoapproval/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "activate":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/activate/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/activate/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "deposit":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimDeposit/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimDeposit/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "withdraw":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimWithdrawal/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimWithdrawal/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "addcharge":
-                        location.path('/savingaccounts/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/savingaccounts/' + accountId + '/charges');
                         break;
                     case "calculateInterest":
                         resourceFactory.savingsResource.save({accountId: accountId, command: 'calculateInterest'}, {}, function (data) {
@@ -32773,21 +32773,21 @@
                         });
                         break;
                     case "applyAnnualFees":
-                        location.path('/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
+                        location.path('/credit-provider/KADSWEF/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
                         break;
                     case "transferFunds":
                         if (scope.savingaccountdetails.clientId) {
-                            location.path('/accounttransfers/fromsavings/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromsavings/' + accountId);
                         }
                         break;
                     case "close":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/close');
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/close');
                         break;
                     case "assignSavingsOfficer":
-                        location.path('/assignsavingsofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignsavingsofficer/' + accountId);
                         break;
                     case "unAssignSavingsOfficer":
-                        location.path('/unassignsavingsofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/unassignsavingsofficer/' + accountId);
                         break;
                     case "enableWithHoldTax":
                         var changes = {
@@ -32806,7 +32806,7 @@
                         });
                         break;
                     case "postInterestAsOn":
-                        location.path('/savingaccount/' + accountId + '/postInterestAsOn');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/postInterestAsOn');
                         break;
                 }
             };
@@ -32852,7 +32852,7 @@
                 $scope.delete = function () {
                     resourceFactory.savingsResource.delete({ resourceType: 'charges', accountId: scope.savingId, chargeId: scope.chargeId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewsavingaccount/' + scope.savingId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.savingId);
                     });
                 };
                 $scope.cancel = function () {
@@ -32861,7 +32861,7 @@
             };
             scope.waiveCharge = function () {
                 resourceFactory.savingsResource.save({ resourceType: 'charges', accountId: scope.savingId, chargeId: scope.chargeId}, {}, function (data) {
-                    location.path('/viewsavingaccount/' + scope.savingId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.savingId);
                 });
             };
 
@@ -32889,9 +32889,9 @@
 
             scope.routeTo = function (savingsAccountId, transactionId, accountTransfer, transferId) {
                 if (accountTransfer) {
-                    location.path('/viewaccounttransfers/' + transferId);
+                    location.path('/credit-provider/KADSWEF/viewaccounttransfers/' + transferId);
                 } else {
-                    location.path('/viewsavingtrxn/' + savingsAccountId + '/trxnId/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewsavingtrxn/' + savingsAccountId + '/trxnId/' + transactionId);
                 }
             };
 
@@ -32910,23 +32910,23 @@
             }
 
             scope.viewCharge = function (id){
-                location.path('/savings/'+scope.savingaccountdetails.id+'/viewcharge/'+id).search({'status':scope.savingaccountdetails.status.value});
+                location.path('/credit-provider/KADSWEF/savings/'+scope.savingaccountdetails.id+'/viewcharge/'+id).search({'status':scope.savingaccountdetails.status.value});
             }
 
             scope.clickEvent = function (eventName, accountId) {
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editsavingaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editsavingaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/savingaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/savingaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/reject');
                         break;
                     case "withdrawnbyclient":
-                        location.path('/savingaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.savingsResource.delete({accountId: accountId}, {}, function (data) {
@@ -32936,19 +32936,19 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/savingaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/undoapproval');
                         break;
                     case "activate":
-                        location.path('/savingaccount/' + accountId + '/activate');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/activate');
                         break;
                     case "deposit":
-                        location.path('/savingaccount/' + accountId + '/deposit');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/deposit');
                         break;
                     case "withdraw":
-                        location.path('/savingaccount/' + accountId + '/withdrawal');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/withdrawal');
                         break;
                     case "addcharge":
-                        location.path('/savingaccounts/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/savingaccounts/' + accountId + '/charges');
                         break;
                     case "calculateInterest":
                         resourceFactory.savingsResource.save({accountId: accountId, command: 'calculateInterest'}, {}, function (data) {
@@ -32961,21 +32961,21 @@
                         });
                         break;
                     case "applyAnnualFees":
-                        location.path('/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
+                        location.path('/credit-provider/KADSWEF/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
                         break;
                     case "transferFunds":
                         if (scope.savingaccountdetails.clientId) {
-                            location.path('/accounttransfers/fromsavings/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromsavings/' + accountId);
                         }
                         break;
                     case "close":
-                        location.path('/savingaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/close');
                         break;
                     case "assignSavingsOfficer":
-                        location.path('/assignsavingsofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignsavingsofficer/' + accountId);
                         break;
                     case "unAssignSavingsOfficer":
-                        location.path('/unassignsavingsofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/unassignsavingsofficer/' + accountId);
                         break;
                     case "enableWithHoldTax":
                         var changes = {
@@ -32994,7 +32994,7 @@
                         });
                         break;
                     case "postInterestAsOn":
-                        location.path('/savingaccount/' + accountId + '/postInterestAsOn');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/postInterestAsOn');
                         break;
 
                 }
@@ -33353,7 +33353,7 @@
             };
 
             scope.modifyTransaction = function (accountId, transactionId) {
-                location.path('/savingaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
+                location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
             };
 
             scope.transactionSort = {
@@ -33418,7 +33418,7 @@
                     formData.transactionDate = dateFilter(new Date(), scope.df);
                     resourceFactory.savingsTrxnsResource.save(params, formData, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     });
                 };
                 $scope.cancel = function () {
@@ -33633,12 +33633,12 @@
                     }
                 }
                 resourceFactory.sharesAccount.save(this.formData, function (data) {
-                    location.path('/viewshareaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewshareaccount/' + data.resourceId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewclient/' + scope.clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
             }
         }
     });
@@ -33723,12 +33723,12 @@
                     }
                 }
                 resourceFactory.sharesAccount.put({shareAccountId: routeParams.accountId}, this.formData, function (data) {
-                    location.path('/viewshareaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewshareaccount/' + data.resourceId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewshareaccount/' + routeParams.accountId);
+                location.path('/credit-provider/KADSWEF/viewshareaccount/' + routeParams.accountId);
             }
         }
     });
@@ -33907,7 +33907,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewshareaccount/' + routeParams.accountId);
+                location.path('/credit-provider/KADSWEF/viewshareaccount/' + routeParams.accountId);
             };
 
             scope.submit = function () {
@@ -33925,12 +33925,12 @@
                     }
                     resourceFactory.savingsResource.update({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewsavingaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "deletesavingcharge") {
                     resourceFactory.savingsResource.delete({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewsavingaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "paycharge" || scope.action == "waive" || scope.action == "inactivate") {
                     params = {accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, command: scope.action};
@@ -33940,7 +33940,7 @@
                         this.formData.inactivationOnDate = dateFilter(this.formData.inactivationOnDate, scope.df);
                     }
                     resourceFactory.savingsResource.save(params, this.formData, function (data) {
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     });
                 } else {
                     params.shareAccountId = scope.accountId;
@@ -33987,7 +33987,7 @@
                         this.formData.requestedDate = dateFilter(this.formData.requestedDate, scope.df);
                     }
                     resourceFactory.sharesAccount.save(params, this.formData, function (data) {
-                        location.path('/viewshareaccount/' + data.resourceId);
+                        location.path('/credit-provider/KADSWEF/viewshareaccount/' + data.resourceId);
                     });
                 }
             };
@@ -34011,9 +34011,9 @@
 
             scope.routeTo = function (savingsAccountId, transactionId, accountTransfer, transferId) {
                 if (accountTransfer) {
-                    location.path('/viewaccounttransfers/' + transferId);
+                    location.path('/credit-provider/KADSWEF/viewaccounttransfers/' + transferId);
                 } else {
-                    location.path('/viewsavingtrxn/' + savingsAccountId + '/trxnId/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewsavingtrxn/' + savingsAccountId + '/trxnId/' + transactionId);
                 }
             };
 
@@ -34032,20 +34032,20 @@
             }
 
             scope.viewCharge = function (id){
-                location.path('/savings/'+scope.shareaccountdetails.id+'/viewcharge/'+id).search({'status':scope.shareaccountdetails.status.value});
+                location.path('/credit-provider/KADSWEF/savings/'+scope.shareaccountdetails.id+'/viewcharge/'+id).search({'status':scope.shareaccountdetails.status.value});
             }
 
             scope.clickEvent = function (eventName, accountId) {
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editshareaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editshareaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/shareaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/shareaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/reject');
                         break;
                     case "delete":
                         resourceFactory.savingsResource.delete({accountId: accountId}, {}, function (data) {
@@ -34055,34 +34055,34 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/shareaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/undoapproval');
                         break;
                     case "activate":
-                        location.path('/shareaccount/' + accountId + '/activate');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/activate');
                         break;
                     case "applyadditionalshares":
-                        location.path('/shareaccount/' + accountId + '/applyadditionalshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/applyadditionalshares');
                         break;
                     case "approveadditionalshares":
-                        location.path('/shareaccount/' + accountId + '/approveadditionalshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/approveadditionalshares');
                         break;
                     case "rejectadditionalshares":
-                        location.path('/shareaccount/' + accountId + '/rejectadditionalshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/rejectadditionalshares');
                         break;
                     case "redeemshares":
-                        location.path('/shareaccount/' + accountId + '/redeemshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/redeemshares');
                         break;
                     case "addcharge":
-                        location.path('/shareaccount/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/charges');
                         break;
                     case "close":
-                        location.path('/shareaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/close');
                         break;
                     case "assignSavingsOfficer":
-                        location.path('/assignshareofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignshareofficer/' + accountId);
                         break;
                     case "unAssignSavingsOfficer":
-                        location.path('/unassignshareofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/unassignshareofficer/' + accountId);
                         break;
 
                 }
@@ -34319,7 +34319,7 @@
             };
 
             scope.modifyTransaction = function (accountId, transactionId) {
-                location.path('/savingaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
+                location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
             };
 
             scope.transactionSort = {
@@ -34355,7 +34355,7 @@
     mifosX.controllers = _.extend(module, {
         AccountNumberPreferencesController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewaccountnumberpreferences/' + id);
+                location.path('/credit-provider/KADSWEF/viewaccountnumberpreferences/' + id);
             }
 
             if (!scope.searchCriteria.anp) {
@@ -34407,13 +34407,13 @@
             }
 
             scope.cancel = function(){
-                location.path('/accountnumberpreferences');
+                location.path('/credit-provider/KADSWEF/accountnumberpreferences');
             }
 
             scope.submit = function(){
                 resourceFactory.accountNumberResources.save(scope.formData,function (data) {
                     scope.resourceId = data.resourceId;
-                    location.path('/viewaccountnumberpreferences/' + scope.resourceId );
+                    location.path('/credit-provider/KADSWEF/viewaccountnumberpreferences/' + scope.resourceId );
                 });
             }
         }
@@ -34428,7 +34428,7 @@
 
             scope.submit = function () {
                 resourceFactory.codeResources.save(this.formData, function (data) {
-                    location.path('/viewcode/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcode/' + data.resourceId);
                 });
             };
         }
@@ -34607,7 +34607,7 @@
             scope.codes = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewcode/' + id);
+                location.path('/credit-provider/KADSWEF/viewcode/' + id);
             }
 
             if (!scope.searchCriteria.codes) {
@@ -34684,7 +34684,7 @@
                     scope.formData.multiRow = scope.formData.multiRow || false;
                     scope.formData.columns = scope.columns;
                     resourceFactory.DataTablesResource.save(this.formData, function (data) {
-                        location.path('/viewdatatable/' + data.resourceIdentifier);
+                        location.path('/credit-provider/KADSWEF/viewdatatable/' + data.resourceIdentifier);
                     });
                 }
             };
@@ -34769,7 +34769,7 @@
                     }
                 }
                 resourceFactory.hookResources.save(this.formData, function (data) {
-                    location.path('/viewhook/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewhook/' + data.resourceId);
                 });
             };
         }
@@ -34830,7 +34830,7 @@
                 }
                 this.formData.reportParameters = scope.temp;
                 resourceFactory.reportsResource.save(this.formData, function (data) {
-                    location.path('/system/viewreport/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/system/viewreport/' + data.resourceId);
                 });
             };
         }
@@ -34843,7 +34843,7 @@
     mifosX.controllers = _.extend(module, {
         DataTableController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewdatatable/' + id);
+                location.path('/credit-provider/KADSWEF/viewdatatable/' + id);
             };
 
             if (!scope.searchCriteria.datatables) {
@@ -35088,11 +35088,11 @@
                 });
 
             scope.cancel = function(){
-                location.path('/accountnumberpreferences');
+                location.path('/credit-provider/KADSWEF/accountnumberpreferences');
             }
             scope.submit = function(){
                 resourceFactory.accountNumberResources.put({accountNumberFormatId:scope.resourceId},scope.formData,function(data){
-                    location.path('/viewaccountnumberpreferences/' + data.resourceId );
+                    location.path('/credit-provider/KADSWEF/viewaccountnumberpreferences/' + data.resourceId );
                 });
             }
         }
@@ -35124,7 +35124,7 @@
                     //scope.codevalueerror = true;
                     resourceFactory.codeValueResource.save({codeId: routeParams.id}, this.newEle, function (data) {
                         scope.stat = false;
-                        location.path('/viewcode/' + routeParams.id);
+                        location.path('/credit-provider/KADSWEF/viewcode/' + routeParams.id);
                     });
                 } else if (!scope.newEle.name) {
                     scope.codevalueerror = true;
@@ -35143,7 +35143,7 @@
             scope.deleteCv = function (id) {
                 resourceFactory.codeValueResource.remove({codeId: routeParams.id, codevalueId: id}, {}, function (data) {
                     scope.stat = false;
-                    location.path('/viewcode/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewcode/' + routeParams.id);
                 });
             };
         }
@@ -35290,7 +35290,7 @@
                 if (scope.formData.changeColumns.length == 0) delete scope.formData.changeColumns;
 
                 resourceFactory.DataTablesResource.update({datatablename: routeParams.tableName}, this.formData, function (data) {
-                    location.path('/viewdatatable/' + data.resourceIdentifier);
+                    location.path('/credit-provider/KADSWEF/viewdatatable/' + data.resourceIdentifier);
                 });
             };
         }
@@ -35382,7 +35382,7 @@
                 }
 
                 resourceFactory.hookResources.update({'hookId': scope.hookId}, this.formData, function (data) {
-                    location.path('/viewhook/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewhook/' + data.resourceId);
                 });
             };
         }
@@ -35469,7 +35469,7 @@
                     }
                 }
                 resourceFactory.reportsResource.update({id: routeParams.id}, this.formData, function (data) {
-                    location.path('/system/viewreport/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/system/viewreport/' + data.resourceId);
                 });
             };
         }
@@ -35491,12 +35491,12 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewschedulerjob/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewschedulerjob/' + routeParams.id);
             }
 
             scope.submit = function () {
                 resourceFactory.jobsResource.update({jobId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewschedulerjob/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewschedulerjob/' + data.resourceId);
                 });
             };
         }
@@ -35562,7 +35562,7 @@
             scope.updateSurvey = function(){
                 scope.updateSequenceNumber();
                 resourceFactory.surveyResource.update({surveyId : routeParams.id},scope.formData,function(data){
-                    location.path('/viewsurvey/'+data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsurvey/'+data.resourceId);
                 });
             }
         }
@@ -35778,7 +35778,7 @@
 
 
             scope.routeTo = function(id, relationId) {
-                location.path('/editentitymapping/'+id + '/' +relationId);
+                location.path('/credit-provider/KADSWEF/editentitymapping/'+id + '/' +relationId);
             }
 
 
@@ -35799,7 +35799,7 @@
             scope.hooks = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewhook/' + id);
+                location.path('/credit-provider/KADSWEF/viewhook/' + id);
             }
 
             if (!scope.searchCriteria.hooks) {
@@ -35884,17 +35884,17 @@
 
             scope.cancel = function () {
                 if (scope.fromEntity == 'client') {
-                    location.path('/viewclient/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'group') {                    
-                    location.path('/viewgroup/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'center') {                    
-                    location.path('/viewcenter/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'loan') {                    
-                    location.path('/viewloanaccount/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'savings') {
-                    location.path('/viewsavingaccount/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'office') {
-                    location.path('/viewoffice/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewoffice/' + routeParams.entityId).search({});
                 };
             };
             scope.submit = function () {
@@ -36041,17 +36041,17 @@
             scope.createSurvey = function(){
                 scope.updateSequenceNumber();
                 resourceFactory.surveyResource.save(scope.formData,function(data){
-                    location.path('/viewsurvey/'+data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsurvey/'+data.resourceId);
                 });
             }
 
             scope.routeTo = function(id){
-                location.path('/viewsurvey/'+id);
+                location.path('/credit-provider/KADSWEF/viewsurvey/'+id);
             };
 
             scope.activateOrDeactivateSurvey = function(id, commandParam){
                 resourceFactory.surveyResource.activateOrDeactivate({surveyId: id, command:commandParam},function(data){
-                    location.path('/surveys');
+                    location.path('/credit-provider/KADSWEF/surveys');
                 });
             };
         }
@@ -36066,7 +36066,7 @@
             scope.reports = [];
 
             scope.routeTo = function (id) {
-                location.path('/system/viewreport/' + id);
+                location.path('/credit-provider/KADSWEF/system/viewreport/' + id);
             };
 
             if (!scope.searchCriteria.manrep) {
@@ -36145,7 +36145,7 @@
             };
 
             scope.routeTo = function (id){
-                location.path('/viewschedulerjob/'+id);
+                location.path('/credit-provider/KADSWEF/viewschedulerjob/'+id);
             };
 
             scope.runJobSelected = function (jobId, checkbox) {
@@ -36221,17 +36221,17 @@
             });
 
             scope.cancel = function(){
-                location.path('/accountnumberpreferences');
+                location.path('/credit-provider/KADSWEF/accountnumberpreferences');
             }
 
             scope.editPreferences = function(){
-                location.path('/editaccountnumberpreferences/'+ scope.resourceId);
+                location.path('/credit-provider/KADSWEF/editaccountnumberpreferences/'+ scope.resourceId);
             }
 
             var DeleteCtrl = function($scope, $uibModalInstance) {
                 $scope.delete = function () {
                     resourceFactory.accountNumberResources.delete({accountNumberFormatId:scope.resourceId},function(data){
-                        location.path('/accountnumberpreferences');
+                        location.path('/credit-provider/KADSWEF/accountnumberpreferences');
                     });
                     $uibModalInstance.close('delete');
                 };
@@ -36323,7 +36323,7 @@
                 $scope.delete = function () {
                     resourceFactory.codeResources.delete({codeId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/codes');
+                        location.path('/credit-provider/KADSWEF/codes');
                     });
                 };
                 $scope.cancel = function () {
@@ -36403,7 +36403,7 @@
                 $scope.delete = function () {
                     resourceFactory.DataTablesResource.delete({datatablename: routeParams.tableName}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/datatables');
+                        location.path('/credit-provider/KADSWEF/datatables');
                     });
                 };
                 $scope.cancel = function () {
@@ -36435,7 +36435,7 @@
                 $scope.delete = function () {
                     resourceFactory.hookResources.delete({hookId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/hooks');
+                        location.path('/credit-provider/KADSWEF/hooks');
                         // added dummy request param because Content-Type header gets removed
                         // if the request does not contain any data (a request body)
                     });
@@ -36468,7 +36468,7 @@
                 $scope.delete = function () {
                     resourceFactory.reportsResource.delete({id: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/reports');
+                        location.path('/credit-provider/KADSWEF/reports');
                     });
                 };
                 $scope.cancel = function () {
@@ -36647,7 +36647,7 @@
                 this.formData.mappers = scope.mappers;
                 this.formData.text = CKEDITOR.instances.templateeditor.getData();
                 resourceFactory.templateResource.save(this.formData, function (data) {
-                    location.path('/viewtemplate/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtemplate/' + data.resourceId);
                 });
             };
 
@@ -36800,7 +36800,7 @@
                 this.formData.mappers = scope.mappers;
                 this.formData.text = CKEDITOR.instances.templateeditor.getData();
                 resourceFactory.templateResource.update({templateId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewtemplate/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtemplate/' + data.resourceId);
                 });
             }
 
@@ -36815,7 +36815,7 @@
     mifosX.controllers = _.extend(module, {
         TemplateController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewtemplate/' + id);
+                location.path('/credit-provider/KADSWEF/viewtemplate/' + id);
             };
 
             if (!scope.searchCriteria.templates) {
@@ -36854,7 +36854,7 @@
                 $scope.delete = function () {
                     resourceFactory.templateResource.delete({templateId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/templates');
+                        location.path('/credit-provider/KADSWEF/templates');
                         // added dummy request param because Content-Type header gets removed
                         // if the request does not contain any data (a request body)
                     });
@@ -37035,7 +37035,7 @@
             scope.users = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewuser/' + id);
+                location.path('/credit-provider/KADSWEF/viewuser/' + id);
             };
 
             /* -----Throws error on test-----
@@ -37138,7 +37138,7 @@
                 $scope.delete = function () {
                     resourceFactory.userListResource.delete({userId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/users');
+                        location.path('/credit-provider/KADSWEF/users');
                         // added dummy request param because Content-Type header gets removed
                         // if the request does not contain any data (a request body)
                     });
