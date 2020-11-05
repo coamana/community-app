@@ -32,7 +32,7 @@
                     </ul>
                 </li>
                 <li uib-dropdown is-open="li.accounting.status.isopen"
-                ng-mouseenter="li.accounting.status.isopen = true" ng-mouseleave="li.accounting.status.isopen = false">
+                ng-mouseenter="li.accounting.status.isopen = true" ng-mouseleave="li.accounting.status.isopen = false" has-permission='READ_ACCOUNT'>
                     <a ng-class="{ activate: isActive('acc') }" href="#/credit-provider/KADSWEF/accounting">
                         <i class="fa fa-money"></i> {{ 'label.anchor.accounting' | translate }}
                     </a>
