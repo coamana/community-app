@@ -47,7 +47,8 @@
     "requirejs": "2.3.6"
   },
   "scripts": {
-    "test": "grunt test --verbose"
+    "test": "grunt test --verbose",
+    "start": "grunt serve:dist --force"
   },
   "engines": {
     "node": ">=0.8.0"
