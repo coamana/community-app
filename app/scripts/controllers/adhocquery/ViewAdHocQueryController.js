@@ -20,7 +20,7 @@
                 $scope.delete = function () {
                     resourceFactory.adHocQueryResource.delete({adHocId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/adhocquery');
+                        location.path('/credit-provider/KADSWEF/adhocquery');
                         // added dummy request param because Content-Type header gets removed
                         // if the request does not contain any data (a request body)
                     });

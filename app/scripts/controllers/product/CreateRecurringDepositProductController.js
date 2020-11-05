@@ -133,7 +133,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/recurringdepositproducts');
+                location.path('/credit-provider/KADSWEF/recurringdepositproducts');
             };
 
             scope.submit = function () {
@@ -187,7 +187,7 @@
                 this.formData.charts.push(copyChartData(scope.chart));//add chart details
 
                 resourceFactory.recurringDepositProductResource.save(this.formData, function (data) {
-                    location.path('/viewrecurringdepositproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + data.resourceId);
                 });
             }
 

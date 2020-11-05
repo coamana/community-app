@@ -24,7 +24,7 @@
 
             scope.submit = function () {
                 resourceFactory.officeToGLAccountMappingResource.update({mappingId: routeParams.mappingId},this.formData, function (data) {
-                    location.path('/viewfinancialactivitymapping/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfinancialactivitymapping/' + data.resourceId);
                 });
             };
         }

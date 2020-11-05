@@ -31,7 +31,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.active = this.formData.active || false;
                 resourceFactory.rateResource.update({rateId: routeParams.rateId}, this.formData, function (data) {
-                    location.path('/viewrate/' + routeParams.rateId);
+                    location.path('/credit-provider/KADSWEF/viewrate/' + routeParams.rateId);
                 });
             };
         }

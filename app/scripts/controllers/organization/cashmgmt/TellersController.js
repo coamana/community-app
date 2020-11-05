@@ -11,15 +11,15 @@
             });
 
             scope.routeTo = function (id) {
-                location.path('/viewtellers/' + id);
+                location.path('/credit-provider/KADSWEF/viewtellers/' + id);
             };
 
             scope.routeToEdit = function (id) {
-                location.path('/viewtellers/' + id);
+                location.path('/credit-provider/KADSWEF/viewtellers/' + id);
             };
 
             scope.routeToCashiers = function (id) {
-                location.path('/tellers/' + id + '/cashiers/');
+                location.path('/credit-provider/KADSWEF/tellers/' + id + '/cashiers/');
             };
 
             scope.routeToDelete = function(id){
@@ -28,12 +28,12 @@
                         resourceFactory.tellerResource.getAllTellers(function (data) {
                             scope.tellers = data;
                         });
-                        location.path('/tellers');
+                        location.path('/credit-provider/KADSWEF/tellers');
                     });
             };
             /*scope.delete = function (tellerId, cashierId) {
                 resourceFactory.tellerCashierResource.delete({tellerId: tellerId, cashierId: cashierId}, function (data) {
-                    location.path('/tellers/' + tellerId + "/cashiers/");
+                    location.path('/credit-provider/KADSWEF/tellers/' + tellerId + "/cashiers/");
                 });
 
             };*/

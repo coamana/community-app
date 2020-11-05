@@ -43,7 +43,7 @@
                     }
                 }
                 resourceFactory.savingsChargeResource.save({accountId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + routeParams.id);
                 });
             };
         }

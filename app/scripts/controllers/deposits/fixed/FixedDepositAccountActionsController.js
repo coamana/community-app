@@ -199,7 +199,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewfixeddepositaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + routeParams.id);
             };
 
             scope.submit = function () {
@@ -227,7 +227,7 @@
                     }
                     params.savingsId = scope.accountId;
                     resourceFactory.fixedDepositTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewfixeddepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                     });
                 } else if (scope.action == "editsavingcharge") {
                     if (this.formData.feeOnMonthDayFullDate) {
@@ -238,12 +238,12 @@
                     }
                     resourceFactory.savingsResource.update({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewfixeddepositaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "deletesavingcharge") {
                     resourceFactory.savingsResource.delete({accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData,
                         function (data) {
-                            location.path('/viewfixeddepositaccount/' + data.savingsId);
+                            location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                         });
                 } else if (scope.action == "paycharge" || scope.action == "waive") {
                     params = {accountId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, command: scope.action};
@@ -251,7 +251,7 @@
                         this.formData.dueDate = dateFilter(this.formData.dueDate, scope.df);
                     }
                     resourceFactory.savingsResource.save(params, this.formData, function (data) {
-                        location.path('/viewfixeddepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                     });
                 } else {
                     params.accountId = scope.accountId;
@@ -302,7 +302,7 @@
                     }
 
                     resourceFactory.fixedDepositAccountResource.save(params, this.formData, function (data) {
-                        location.path('/viewfixeddepositaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                     });
                 }
             };

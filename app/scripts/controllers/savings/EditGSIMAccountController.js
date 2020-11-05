@@ -125,7 +125,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
+                location.path('/credit-provider/KADSWEF/viewgsimaccount/' + scope.groupId+'/'+scope.gsimAccountNumber);
             }
 
             scope.submit = function () {
@@ -152,7 +152,7 @@
                 }
 
                 resourceFactory.gsimResource.update({'parentAccountId':  scope.parentAccountId}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                 });
             };
         }

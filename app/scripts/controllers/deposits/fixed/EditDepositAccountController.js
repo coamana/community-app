@@ -205,7 +205,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountId);
             }
 
             scope.changeMaturityInstruction = function(){
@@ -240,7 +240,7 @@
                 this.formData = removeEmptyValues(this.formData);
 
                 resourceFactory.fixedDepositAccountResource.update({'accountId': scope.accountId}, this.formData, function (data) {
-                    location.path('/viewfixeddepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + data.savingsId);
                 });
             };
 

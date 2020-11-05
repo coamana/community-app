@@ -23,7 +23,7 @@
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 resourceFactory.groupResource.save({groupId: routeParams.id, command: 'close'}, this.formData, function (data) {
-                    location.path('/viewgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.resourceId);
                 });
             };
         }

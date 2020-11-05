@@ -55,9 +55,9 @@
                 this.formData.fromOfficeId = scope.transfer.fromClient.officeId;
                 resourceFactory.accountTransferResource.save(this.formData, function (data) {
                     if (params.fromAccountType == 1) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     } else if (params.fromAccountType == 2) {
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     }
                 });
             };

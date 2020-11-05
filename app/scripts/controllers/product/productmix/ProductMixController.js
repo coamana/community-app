@@ -3,7 +3,7 @@
         ProductMixController: function (scope, resourceFactory, location) {
             scope.productmixes = [];
             scope.routeTo = function (id) {
-                location.path('/viewproductmix/' + id);
+                location.path('/credit-provider/KADSWEF/viewproductmix/' + id);
             };
             resourceFactory.loanProductResource.getAllLoanProducts({associations: 'productMixes'}, function (data) {
                 scope.productmixes = data;

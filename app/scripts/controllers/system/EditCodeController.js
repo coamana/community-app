@@ -22,7 +22,7 @@
                     //scope.codevalueerror = true;
                     resourceFactory.codeValueResource.save({codeId: routeParams.id}, this.newEle, function (data) {
                         scope.stat = false;
-                        location.path('/viewcode/' + routeParams.id);
+                        location.path('/credit-provider/KADSWEF/viewcode/' + routeParams.id);
                     });
                 } else if (!scope.newEle.name) {
                     scope.codevalueerror = true;
@@ -41,7 +41,7 @@
             scope.deleteCv = function (id) {
                 resourceFactory.codeValueResource.remove({codeId: routeParams.id, codevalueId: id}, {}, function (data) {
                     scope.stat = false;
-                    location.path('/viewcode/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewcode/' + routeParams.id);
                 });
             };
         }

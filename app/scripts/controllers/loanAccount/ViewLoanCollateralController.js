@@ -18,7 +18,7 @@
                 $scope.delete = function () {
                     resourceFactory.loanResource.delete({ resourceType: 'collaterals', loanId: scope.loanId, resourceId: scope.collateralId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewloanaccount/' + scope.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                     });
                 };
                 $scope.cancel = function () {

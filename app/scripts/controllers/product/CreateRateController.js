@@ -23,7 +23,7 @@
             scope.submit = function () {
                 this.formData.locale = scope.optlang.code;
                 resourceFactory.rateResource.save(this.formData, function (data) {
-                    location.path('/rates/');
+                    location.path('/credit-provider/KADSWEF/rates/');
                 },function(error){
                     scope.rateError = true;
 

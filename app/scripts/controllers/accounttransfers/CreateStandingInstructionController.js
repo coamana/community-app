@@ -64,7 +64,7 @@
                 this.formData.fromClientId = scope.standinginstruction.fromClient.id;
                 this.formData.fromOfficeId = scope.standinginstruction.fromClient.officeId;
                 resourceFactory.standingInstructionResource.save(this.formData, function (data) {
-                    location.path('/viewclient/' + data.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + data.clientId);
                 });
             };
         }

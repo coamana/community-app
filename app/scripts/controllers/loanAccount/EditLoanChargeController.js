@@ -9,14 +9,14 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
 
             scope.submit = function () {
                 this.formData.locale = scope.optlang.code;
                 resourceFactory.loanResource.put({resourceType: 'charges', resourceId: scope.chargeId, loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 

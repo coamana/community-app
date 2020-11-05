@@ -52,7 +52,7 @@
                 this.formData.loanProducts = scope.selectedloanproducts ;
                 this.formData.definitions = scope.definitions ;
                 resourceFactory.provisioningcriteria.post(this.formData, function (data) {
-                    location.path('/viewprovisioningcriteria/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewprovisioningcriteria/' + data.resourceId);
                 });
             };
 

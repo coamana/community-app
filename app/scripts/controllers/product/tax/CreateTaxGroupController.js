@@ -35,7 +35,7 @@
                 scope.copyForSubmit();
                 this.formData.dateFormat = scope.df;
                 resourceFactory.taxgroup.save(this.formData, function (data) {
-                    location.path('/viewtaxgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtaxgroup/' + data.resourceId);
                 });
             };
         }

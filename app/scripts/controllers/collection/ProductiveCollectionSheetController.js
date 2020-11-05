@@ -207,7 +207,7 @@
                     }
 
                     if (centerIdArray.length === submittedStaffId.length) {
-                        location.path('/entercollectionsheet');
+                        location.path('/credit-provider/KADSWEF/entercollectionsheet');
                     }
 
                     if (centerIdArray.length-1 === submittedStaffId.length) {

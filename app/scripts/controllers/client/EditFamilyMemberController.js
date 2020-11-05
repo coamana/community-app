@@ -39,7 +39,7 @@
 
             scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
             scope.updateClientMember=function()
@@ -58,7 +58,7 @@
                 resourceFactory.familyMember.put({clientId:clientId,clientFamilyMemberId:familyMemberId},scope.formData,function(data)
                 {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
 
 
                 })

@@ -19,7 +19,7 @@
 
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.data.accountNo);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.data.accountNo);
             };
 
             scope.submit = function () {
@@ -28,7 +28,7 @@
                 this.formData.fromSavingsOfficerId = scope.data.fieldOfficerId || "";
                 this.formData.assignmentDate = dateFilter(this.formData.assignmentDate, scope.df);
                 resourceFactory.savingsResource.save({accountId: routeParams.id, command: 'assignSavingsOfficer'}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + scope.data.accountNo);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.data.accountNo);
                 });
             };
 

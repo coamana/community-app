@@ -205,7 +205,7 @@
                     delete scope.formData.datatables;
                 }
                 resourceFactory.groupResource.save(this.formData, function (data) {
-                    location.path('/viewgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.resourceId);
                 });
             };
         }

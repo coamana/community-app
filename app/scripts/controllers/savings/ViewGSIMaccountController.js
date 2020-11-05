@@ -114,7 +114,7 @@
             });
 
             scope.routeToSaving = function (id) {
-                location.path('/viewsavingaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + id);
             };
             console.log("outer"+parentGSIMId);
 
@@ -122,16 +122,16 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editgsimaccount/' + parentGSIMId+'/'+gsimChildAccountId+'/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/editgsimaccount/' + parentGSIMId+'/'+gsimChildAccountId+'/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "approve":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/approve/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/approve/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "reject":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/reject/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/reject/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "withdrawnbyclient":
-                        location.path('/savingaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.savingsResource.delete({accountId: accountId}, {}, function (data) {
@@ -141,19 +141,19 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/undoapproval/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/undoapproval/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "activate":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/activate/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/activate/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "deposit":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimDeposit/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimDeposit/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "withdraw":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimWithdrawal/'+scope.groupId+'/'+scope.gsimAccountNumber);
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+  '/gsimWithdrawal/'+scope.groupId+'/'+scope.gsimAccountNumber);
                         break;
                     case "addcharge":
-                        location.path('/savingaccounts/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/savingaccounts/' + accountId + '/charges');
                         break;
                     case "calculateInterest":
                         resourceFactory.savingsResource.save({accountId: accountId, command: 'calculateInterest'}, {}, function (data) {
@@ -166,21 +166,21 @@
                         });
                         break;
                     case "applyAnnualFees":
-                        location.path('/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
+                        location.path('/credit-provider/KADSWEF/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
                         break;
                     case "transferFunds":
                         if (scope.savingaccountdetails.clientId) {
-                            location.path('/accounttransfers/fromsavings/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromsavings/' + accountId);
                         }
                         break;
                     case "close":
-                        location.path('/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/close');
+                        location.path('/credit-provider/KADSWEF/gsimaccount/'+parentGSIMId +'/'+gsimChildAccountId+ '/close');
                         break;
                     case "assignSavingsOfficer":
-                        location.path('/assignsavingsofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignsavingsofficer/' + accountId);
                         break;
                     case "unAssignSavingsOfficer":
-                        location.path('/unassignsavingsofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/unassignsavingsofficer/' + accountId);
                         break;
                     case "enableWithHoldTax":
                         var changes = {
@@ -199,7 +199,7 @@
                         });
                         break;
                     case "postInterestAsOn":
-                        location.path('/savingaccount/' + accountId + '/postInterestAsOn');
+                        location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/postInterestAsOn');
                         break;
                 }
             };

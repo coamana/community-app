@@ -8,7 +8,7 @@
             scope.type = typeReport;
 
             scope.routeTo = function (report) {
-                location.path('/run_report/' + report.report_name).search({reportId: report.report_id, type: report.report_type});
+                location.path('/credit-provider/KADSWEF/run_report/' + report.report_name).search({reportId: report.report_id, type: report.report_type});
             };
 
             if (!scope.searchCriteria.reports) {

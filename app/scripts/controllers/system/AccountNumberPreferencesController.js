@@ -2,7 +2,7 @@
     mifosX.controllers = _.extend(module, {
         AccountNumberPreferencesController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewaccountnumberpreferences/' + id);
+                location.path('/credit-provider/KADSWEF/viewaccountnumberpreferences/' + id);
             }
 
             if (!scope.searchCriteria.anp) {

@@ -28,7 +28,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/dividends/' + routeParams.productId);
+                location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId);
             };
 
             scope.submit = function () {
@@ -40,7 +40,7 @@
                         this.formData.dividendPeriodEndDate = dateFilter(this.formData.dividendPeriodEndDate, scope.df);
                     }
                     resourceFactory.shareproductdividendresource.save({productId: routeParams.productId},this.formData, function (data) {
-                        location.path('/dividends/' + routeParams.productId);
+                        location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId);
                     });
             };
         }

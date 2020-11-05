@@ -25,7 +25,7 @@
                 }
 
                 resourceFactory.floatingrates.save(this.formData, function (data) {
-                    location.path('/viewfloatingrate/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewfloatingrate/' + data.resourceId);
                 });
             } ;
         }

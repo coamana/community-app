@@ -12,7 +12,7 @@
 
             scope.postDividends = function () {
                 resourceFactory.shareproductdividendresource.approve({productId: routeParams.productId, dividendId: routeParams.dividendId}, function (data) {
-                    location.path('/dividends/' + routeParams.productId);
+                    location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId);
                 });
             };
 

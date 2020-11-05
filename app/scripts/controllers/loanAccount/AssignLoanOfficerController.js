@@ -18,7 +18,7 @@
             });
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.loanId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
             };
 
             scope.submit = function () {
@@ -27,7 +27,7 @@
                 this.formData.fromLoanOfficerId = scope.data.loanOfficerId || "";
                 this.formData.assignmentDate = dateFilter(this.formData.assignmentDate, scope.df);
                 resourceFactory.loanResource.save({command: 'assignloanofficer', loanId: scope.loanId}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 

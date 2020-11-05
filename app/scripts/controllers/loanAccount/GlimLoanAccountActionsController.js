@@ -539,7 +539,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
             };
 
             scope.addTrancheAmounts = function(){
@@ -632,25 +632,25 @@
                     }
                     params.loanId = scope.accountId;
                     resourceFactory.loanTrxnsResource.save(params, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "waivecharge") {
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'waive'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "paycharge") {
                     this.formData.transactionDate = dateFilter(this.formData.transactionDate, scope.df);
                     resourceFactory.LoanAccountResource.save({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId, 'command': 'pay'}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editcharge") {
                     this.formData.dueDate = dateFilter(this.formData.dueDate, scope.df);
                     resourceFactory.LoanAccountResource.update({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 } else if (scope.action === "editdisbursedate") {
                     this.formData.expectedDisbursementDate = dateFilter(this.formData.expectedDisbursementDate, scope.df);
@@ -673,7 +673,7 @@
                         });
                     }
                     resourceFactory.LoanEditDisburseResource.update({loanId: routeParams.id, disbursementId: routeParams.disbursementId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }else if(scope.action === "adddisbursedetails" || scope.action === "deletedisbursedetails") {
                     this.formData.disbursementData = [];
@@ -688,12 +688,12 @@
 
                     this.formData.expectedDisbursementDate = dateFilter(scope.expectedDisbursementDate, scope.df);
                     resourceFactory.LoanAddTranchesResource.update({loanId: routeParams.id}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
                 else if (scope.action == "deleteloancharge") {
                     resourceFactory.LoanAccountResource.delete({loanId: routeParams.id, resourceType: 'charges', chargeId: routeParams.chargeId}, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }  else if(scope.action == "Approve"){
                     this.formData.expectedDisbursementDate = dateFilter(scope.expectedDisbursementDate, scope.df);
@@ -715,25 +715,25 @@
                 else if(scope.action == "glimApprove")
                 {
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:'approve'},this.formData,function (data) {
-                        location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                        location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
                     });
                 }
 
                 else if(scope.action == "glimDisburse"){
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:'disburse'},this.formData,function (data) {
-                        location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                        location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
                     });
                 }else if(scope.action == "undoapproval"){
 
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:'undoapproval'},scope.formData,function (data) {
 
-                        location.path('/viewloanaccount/' + scope.accountId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
                     });
 
                 }else if(scope.action == "undodisbursal"){
 
                     resourceFactory.glimLoan.post({glimId: scope.glimId,command:"undodisbursal"},scope.formData,function (data) {
-                        location.path('/viewloanaccount/' + scope.accountId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
                     });
                 }
                 else  if(scope.action=="glimrepayment")
@@ -755,7 +755,7 @@
 
                     resourceFactory.glimLoan.save({glimId: scope.glimId,command:'glimrepayment'}, this.formData, function (data) {
 
-                        location.path('/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
+                        location.path('/credit-provider/KADSWEF/viewglimaccount/' +scope.groupId+"/" +routeParams.id +"/"+routeParams.glimId);
 
                     });
                 }
@@ -763,7 +763,7 @@
                 {
                     params.glimId = scope.glimId;
                     resourceFactory.glimLoan.save(params, this.formData, function (data) {
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 }
             };

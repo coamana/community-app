@@ -28,7 +28,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.openingDate = reqDate;
                 resourceFactory.officeResource.update({'officeId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewoffice/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewoffice/' + data.resourceId);
                 });
             };
         }

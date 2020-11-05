@@ -20,7 +20,7 @@
             });
 
             scope.routeTo = function (id) {
-                location.path('/view_close_accounting/' + id);
+                location.path('/credit-provider/KADSWEF/view_close_accounting/' + id);
             };
 
             scope.submit = function () {
@@ -29,7 +29,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.closingDate = reqDate;
                 resourceFactory.accountingClosureResource.save(this.formData, function (data) {
-                    location.path('/view_close_accounting/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/view_close_accounting/' + data.resourceId);
                 });
             }
 

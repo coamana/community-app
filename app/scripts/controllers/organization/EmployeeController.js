@@ -3,7 +3,7 @@
         EmployeeController: function (scope, resourceFactory, location) {
             scope.employees = [];
             scope.routeTo = function (id) {
-                location.path('/viewemployee/' + id);
+                location.path('/credit-provider/KADSWEF/viewemployee/' + id);
             };
 
             if (!scope.searchCriteria.employees) {

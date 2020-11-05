@@ -140,7 +140,7 @@
                 this.formData.mappers = scope.mappers;
                 this.formData.text = CKEDITOR.instances.templateeditor.getData();
                 resourceFactory.templateResource.update({templateId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewtemplate/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtemplate/' + data.resourceId);
                 });
             }
 

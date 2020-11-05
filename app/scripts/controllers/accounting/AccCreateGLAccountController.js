@@ -69,7 +69,7 @@
 
             scope.submit = function () {
                 resourceFactory.accountCoaResource.save(this.formData, function (data) {
-                    location.path('/viewglaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewglaccount/' + data.resourceId);
                 });
             };
         }

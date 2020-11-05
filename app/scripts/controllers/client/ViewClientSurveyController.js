@@ -18,7 +18,7 @@
             };
 
             scope.routeTo = function(){
-            	location.path('/survey/'+scope.clientId);
+            	location.path('/credit-provider/KADSWEF/survey/'+scope.clientId);
             };
 
         }

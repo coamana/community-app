@@ -43,7 +43,7 @@
                     }
                 }
                 resourceFactory.savingsChargeResource.save({accountId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewfixeddepositaccount/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccount/' + routeParams.id);
                 });
             };
         }

@@ -2,7 +2,7 @@
     mifosX.controllers = _.extend(module, {
         FixedDepositProductController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewfixeddepositproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewfixeddepositproduct/' + id);
             };
 
             if (!scope.searchCriteria.fdp) {

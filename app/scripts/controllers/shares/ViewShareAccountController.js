@@ -12,9 +12,9 @@
 
             scope.routeTo = function (savingsAccountId, transactionId, accountTransfer, transferId) {
                 if (accountTransfer) {
-                    location.path('/viewaccounttransfers/' + transferId);
+                    location.path('/credit-provider/KADSWEF/viewaccounttransfers/' + transferId);
                 } else {
-                    location.path('/viewsavingtrxn/' + savingsAccountId + '/trxnId/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewsavingtrxn/' + savingsAccountId + '/trxnId/' + transactionId);
                 }
             };
 
@@ -33,20 +33,20 @@
             }
 
             scope.viewCharge = function (id){
-                location.path('/savings/'+scope.shareaccountdetails.id+'/viewcharge/'+id).search({'status':scope.shareaccountdetails.status.value});
+                location.path('/credit-provider/KADSWEF/savings/'+scope.shareaccountdetails.id+'/viewcharge/'+id).search({'status':scope.shareaccountdetails.status.value});
             }
 
             scope.clickEvent = function (eventName, accountId) {
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editshareaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editshareaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/shareaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/shareaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/reject');
                         break;
                     case "delete":
                         resourceFactory.savingsResource.delete({accountId: accountId}, {}, function (data) {
@@ -56,34 +56,34 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/shareaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/undoapproval');
                         break;
                     case "activate":
-                        location.path('/shareaccount/' + accountId + '/activate');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/activate');
                         break;
                     case "applyadditionalshares":
-                        location.path('/shareaccount/' + accountId + '/applyadditionalshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/applyadditionalshares');
                         break;
                     case "approveadditionalshares":
-                        location.path('/shareaccount/' + accountId + '/approveadditionalshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/approveadditionalshares');
                         break;
                     case "rejectadditionalshares":
-                        location.path('/shareaccount/' + accountId + '/rejectadditionalshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/rejectadditionalshares');
                         break;
                     case "redeemshares":
-                        location.path('/shareaccount/' + accountId + '/redeemshares');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/redeemshares');
                         break;
                     case "addcharge":
-                        location.path('/shareaccount/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/charges');
                         break;
                     case "close":
-                        location.path('/shareaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/shareaccount/' + accountId + '/close');
                         break;
                     case "assignSavingsOfficer":
-                        location.path('/assignshareofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignshareofficer/' + accountId);
                         break;
                     case "unAssignSavingsOfficer":
-                        location.path('/unassignshareofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/unassignshareofficer/' + accountId);
                         break;
 
                 }
@@ -320,7 +320,7 @@
             };
 
             scope.modifyTransaction = function (accountId, transactionId) {
-                location.path('/savingaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
+                location.path('/credit-provider/KADSWEF/savingaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
             };
 
             scope.transactionSort = {

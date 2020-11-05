@@ -54,7 +54,7 @@
             };
 
             scope.routeTo = function (id){
-                location.path('/viewschedulerjob/'+id);
+                location.path('/credit-provider/KADSWEF/viewschedulerjob/'+id);
             };
 
             scope.runJobSelected = function (jobId, checkbox) {

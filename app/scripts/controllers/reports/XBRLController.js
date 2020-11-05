@@ -103,7 +103,7 @@
                         var parser = new DOMParser();
                         var xmlDoc = parser.parseFromString(data, "text/xml");
                         $rootScope.xmlData = xmlDoc;
-                        location.path('/xbrlreport');
+                        location.path('/credit-provider/KADSWEF/xbrlreport');
                     }) .catch( function onError(response) {
                         console.log("Error Detected: ", response.data)
                     });

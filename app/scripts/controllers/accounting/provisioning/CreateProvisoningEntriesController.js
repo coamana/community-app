@@ -11,7 +11,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.date = dateFilter(this.submitteddate, scope.df);
                 resourceFactory.provisioningentries.post(this.formData, function (data) {
-                    location.path('/viewprovisioningentry/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewprovisioningentry/' + data.resourceId);
 
                 });
             };

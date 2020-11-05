@@ -14,7 +14,7 @@
             scope.submit = function () {
                 this.formData.isCashPayment = this.formData.isCashPayment || false;
                 resourceFactory.paymentTypeResource.update({paymentTypeId: routeParams.id},this.formData, function (data) {
-                    location.path('/viewpaymenttype/');
+                    location.path('/credit-provider/KADSWEF/viewpaymenttype/');
                 });
             };
 

@@ -57,7 +57,7 @@
 
             scope.submit = function () {
                 resourceFactory.provisioningentries.createJournals({entryId: routeParams.entryId}, this.formData, function (data) {
-                    location.path('/viewprovisioningentries/');
+                    location.path('/credit-provider/KADSWEF/viewprovisioningentries/');
                 });
             };
         }

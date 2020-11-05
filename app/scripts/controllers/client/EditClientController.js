@@ -136,7 +136,7 @@
                 }
 
                 resourceFactory.clientResource.update({'clientId': routeParams.id}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }

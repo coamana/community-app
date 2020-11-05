@@ -16,7 +16,7 @@
                 }
             });
             scope.routeTo = function (id) {
-                location.path('/viewsavingaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + id);
             };
             resourceFactory.runReportsResource.get({reportSource: 'GroupSummaryCounts', genericResultSet: 'false', R_groupId: routeParams.id}, function (data) {
                 scope.summary = data[0];
@@ -44,7 +44,7 @@
                 $scope.delete = function () {
                     resourceFactory.centerResource.delete({centerId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('activate');
-                        location.path('/centers');
+                        location.path('/credit-provider/KADSWEF/centers');
                     });
 
                 };

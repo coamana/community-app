@@ -225,7 +225,7 @@
                 $rootScope.$broadcast("OnUserPreLogout");
                 scope.currentSession = sessionManager.clear();
                 scope.resetPassword = false;
-                location.path('/').replace();
+                location.path('/credit-provider/KADSWEF/').replace();
             };
 
             scope.langs = mifosX.models.Langs;
@@ -283,37 +283,37 @@
             };
 
             keyboardManager.bind('ctrl+shift+n', function () {
-                location.path('/nav/offices');
+                location.path('/credit-provider/KADSWEF/nav/offices');
             });
             keyboardManager.bind('ctrl+shift+i', function () {
-                location.path('/tasks');
+                location.path('/credit-provider/KADSWEF/tasks');
             });
             keyboardManager.bind('ctrl+shift+o', function () {
-                location.path('/entercollectionsheet');
+                location.path('/credit-provider/KADSWEF/entercollectionsheet');
             });
             keyboardManager.bind('ctrl+shift+c', function () {
-                location.path('/createclient');
+                location.path('/credit-provider/KADSWEF/createclient');
             });
             keyboardManager.bind('ctrl+shift+g', function () {
-                location.path('/creategroup');
+                location.path('/credit-provider/KADSWEF/creategroup');
             });
             keyboardManager.bind('ctrl+shift+q', function () {
-                location.path('/createcenter');
+                location.path('/credit-provider/KADSWEF/createcenter');
             });
             keyboardManager.bind('ctrl+shift+f', function () {
-                location.path('/freqposting');
+                location.path('/credit-provider/KADSWEF/freqposting');
             });
             keyboardManager.bind('ctrl+shift+e', function () {
-                location.path('/accounts_closure');
+                location.path('/credit-provider/KADSWEF/accounts_closure');
             });
             keyboardManager.bind('ctrl+shift+j', function () {
-                location.path('/journalentry');
+                location.path('/credit-provider/KADSWEF/journalentry');
             });
             keyboardManager.bind('ctrl+shift+a', function () {
-                location.path('/accounting');
+                location.path('/credit-provider/KADSWEF/accounting');
             });
             keyboardManager.bind('ctrl+shift+r', function () {
-                location.path('/reports/all');
+                location.path('/credit-provider/KADSWEF/reports/all');
             });
             keyboardManager.bind('ctrl+s', function () {
                 document.getElementById('save').click();

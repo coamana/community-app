@@ -21,7 +21,7 @@
                 this.formData.startDate = reqDate;
                 this.formData.endDate = endDate;
                 resourceFactory.tellerResource.save(this.formData, function (data) {
-                    location.path('/viewtellers/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewtellers/' + data.resourceId);
 
                 });
             };

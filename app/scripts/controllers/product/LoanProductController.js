@@ -4,7 +4,7 @@
             scope.products = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewloanproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewloanproduct/' + id);
             };
 
             if (!scope.searchCriteria.loanP) {

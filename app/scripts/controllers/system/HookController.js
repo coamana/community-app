@@ -4,7 +4,7 @@
             scope.hooks = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewhook/' + id);
+                location.path('/credit-provider/KADSWEF/viewhook/' + id);
             }
 
             if (!scope.searchCriteria.hooks) {
