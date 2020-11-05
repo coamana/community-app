@@ -101,6 +101,7 @@ NPM_CMD="node /root/.nvm/versions/node/v10.14.2/lib/node_modules/npm"
 # ----------
 
 echo Handling node.js deployment.
+eval chown -R asmau ./*
 
 # 1. KuduSync
 if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
@@ -116,7 +117,6 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
   #eval $NPM_CMD cache clean --force
   echo "Running $NPM_CMD install --production"
-  eval chown -R asmau ./*
   eval npm install --production
   eval npm audit fix
   exitWithMessageOnError "npm failed"
