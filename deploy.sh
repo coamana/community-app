@@ -67,41 +67,38 @@ fi
 # Node Helpers
 # ------------
 
-NPM_CMD="node /root/.nvm/versions/node/v10.14.2/lib/node_modules/npm"
+selectNodeVersion () {
+  if [[ -n "$KUDU_SELECT_NODE_VERSION_CMD" ]]; then
+    SELECT_NODE_VERSION="$KUDU_SELECT_NODE_VERSION_CMD \"$DEPLOYMENT_SOURCE\" \"$DEPLOYMENT_TARGET\" \"$DEPLOYMENT_TEMP\""
+    eval $SELECT_NODE_VERSION
+    exitWithMessageOnError "select node version failed"
 
-# selectNodeVersion () {
-#   if [[ -n "$KUDU_SELECT_NODE_VERSION_CMD" ]]; then
-#     SELECT_NODE_VERSION="$KUDU_SELECT_NODE_VERSION_CMD \"$DEPLOYMENT_SOURCE\" \"$DEPLOYMENT_TARGET\" \"$DEPLOYMENT_TEMP\""
-#     eval $SELECT_NODE_VERSION
-#     exitWithMessageOnError "select node version failed"
-
-#     if [[ -e "$DEPLOYMENT_TEMP/__nodeVersion.tmp" ]]; then
-#       NODE_EXE=`cat "$DEPLOYMENT_TEMP/__nodeVersion.tmp"`
-#       exitWithMessageOnError "getting node version failed"
-#     fi
+    if [[ -e "$DEPLOYMENT_TEMP/__nodeVersion.tmp" ]]; then
+      NODE_EXE=`cat "$DEPLOYMENT_TEMP/__nodeVersion.tmp"`
+      exitWithMessageOnError "getting node version failed"
+    fi
     
-#     if [[ -e "$DEPLOYMENT_TEMP/__npmVersion.tmp" ]]; then
-#       NPM_JS_PATH=`cat "$DEPLOYMENT_TEMP/__npmVersion.tmp"`
-#       exitWithMessageOnError "getting npm version failed"
-#     fi
+    if [[ -e "$DEPLOYMENT_TEMP/__npmVersion.tmp" ]]; then
+      NPM_JS_PATH=`cat "$DEPLOYMENT_TEMP/__npmVersion.tmp"`
+      exitWithMessageOnError "getting npm version failed"
+    fi
 
-#     if [[ ! -n "$NODE_EXE" ]]; then
-#       NODE_EXE=node
-#     fi
+    if [[ ! -n "$NODE_EXE" ]]; then
+      NODE_EXE=node
+    fi
 
-#     NPM_CMD="\"$NODE_EXE\" \"$NPM_JS_PATH\""
-#   else
-#     NPM_CMD=npm
-#     NODE_EXE=node
-#   fi
-# }
+    NPM_CMD="\"$NODE_EXE\" \"$NPM_JS_PATH\""
+  else
+    NPM_CMD=npm
+    NODE_EXE=node
+  fi
+}
 
 ##################################################################################################################################
 # Deployment
 # ----------
 
 echo Handling node.js deployment.
-eval chown -R asmau ./*
 
 # 1. KuduSync
 if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
@@ -110,7 +107,7 @@ if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
 fi
 
 # 2. Select node version
-#selectNodeVersion
+selectNodeVersion
 
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
