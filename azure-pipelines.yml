@@ -14,3 +14,7 @@
     #testFramework: 'Mocha' # Optional. Options: mocha, jasmine
     #srcFiles: # Optional
     testFiles: 'test/*.js' # Required when enableCodeCoverage == True
+    azureSubscription: 'Microsoft Azure Sponsorship'
+    appName: 'amanamarketmf'
+    package: '$(System.DefaultWorkingDirectory)'
+    #customWebConfig: '-Handler iisnode -NodeStartFile server.js -appType node'
