@@ -48,7 +48,7 @@
   },
   "scripts": {
     "test": "grunt test --verbose",
-    "start": "grunt deploy"
+    "start": "grunt deploy --force"
   },
   "engines": {
     "node": ">=0.8.0"
