@@ -67,7 +67,7 @@ fi
 # Node Helpers
 # ------------
 
-#NPM_CMD="node /opt/nodejs/10.5.2/bin/npm"
+NPM_CMD="npm"
 
 selectNodeVersion () {
   if [[ -n "$KUDU_SELECT_NODE_VERSION_CMD" ]]; then
@@ -109,7 +109,7 @@ if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
 fi
 
 # 2. Select node version
-selectNodeVersion
+#selectNodeVersion
 
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
