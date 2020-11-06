@@ -18,6 +18,7 @@
             if(!scope.islogofoldernamefetched && $rootScope.tenantIdentifier && $rootScope.tenantIdentifier != "default"){
                 scope.islogofoldernamefetched = true;
                 $http.get('scripts/config/LogoConfig.json').then(function onSuccess(response) {
+                    console.log({response})
                     var datas = response.data;
                     for(var i in datas){
                         var data = datas[i];
