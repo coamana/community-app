@@ -2,6 +2,9 @@
 # Run the Grunt JavaScript task runner
 - task: Grunt@0
   inputs:
+    azureSubscription: 'Microsoft Azure Sponsorship'
+    appName: 'amanamarketmf'
+    package: '$(System.DefaultWorkingDirectory)'
     gruntFile: 'Gruntfile.js' 
     #targets: # Optional
     #arguments: # Optional
@@ -14,3 +17,5 @@
     #testFramework: 'Mocha' # Optional. Options: mocha, jasmine
     #srcFiles: # Optional
     testFiles: 'test/*.js' # Required when enableCodeCoverage == True
+
+    #customWebConfig: '-Handler iisnode -NodeStartFile server.js -appType node'
