@@ -78,7 +78,6 @@ module.exports = function(grunt) {
             port: process.env.PORT, 
             open: true,
             keepalive: true,
-            livereload: 35729,
             base: '<%= mifosx.dist%>/community-app'
         }
     }
