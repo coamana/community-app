@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         },
       dist: {
         options: {
-            port: process.env.PORT,
+            port: '${PORT}',
             hostname: '0.0.0.0',
             open: true,
             keepalive: true,
