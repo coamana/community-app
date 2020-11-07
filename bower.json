@@ -42,7 +42,6 @@
   "resolutions": {
     "angular": "1.7.9",
     "d3": "3.5.12",
-    "angular-translate": "^2.18.2",
-    "angular-resource": "^1.7.9"
+    "angular-translate": "^2.18.2"
   }
 }

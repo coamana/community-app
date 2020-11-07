@@ -292,8 +292,8 @@ module.exports = function(grunt) {
                       '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/routes-initialTasks-webstorage-configuration.js',
                       '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/controllers/controllers.js',
                       '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/filters/filters.js',
-                      '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/models/models.js',
-                      '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/config/UIConfig.json'
+                      '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/models/models.js'
+                      //'<%= mifosx.dist %>/<%=mifosx.target%>/scripts/config/UIConfig.json'
               ]
           },
           ext : {
@@ -445,7 +445,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['prod', 'connect:dist:options:keepalive']);
+      return grunt.task.run(['prod', 'connect:dist']);
     }
 
     grunt.task.run([

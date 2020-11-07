@@ -45,10 +45,12 @@
     "karma-requirejs": "1.1.0",
     "karma-script-launcher": "1.0.0",
     "load-grunt-tasks": "^5.1.0",
-    "requirejs": "2.3.6"
+    "requirejs": "2.3.6",
+    "bower": "1.8.8"
   },
   "dependencies": {
     "compass": "^0.1.1",
+    "bower": "1.8.8",
     "grunt": "^1.3.0",
     "grunt-cli": "^1.3.2",
     "load-grunt-tasks": "^5.1.0",
