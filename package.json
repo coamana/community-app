@@ -47,6 +47,11 @@
     "load-grunt-tasks": "5.1.0",
     "requirejs": "2.3.6"
   },
+  "dependencies": {
+    "compass": "^0.1.1",
+    "grunt": "^1.3.0",
+    "grunt-cli": "^1.3.2"
+  },
   "scripts": {
     "test": "grunt test --verbose",
     "build": "grunt deploy --force",
@@ -59,10 +64,5 @@
     "type": "git",
     "url": "https://github.com/coamana/community-app.git"
   },
-  "homepage": "https://github.com/coamana/community-app",
-  "dependencies": {
-    "compass": "^0.1.1",
-    "grunt": "^1.3.0",
-    "grunt-cli": "^1.3.2"
-  }
+  "homepage": "https://github.com/coamana/community-app"
 }
