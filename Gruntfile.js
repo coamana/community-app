@@ -60,6 +60,7 @@ module.exports = function(grunt) {
         options: {
             port:  9002,
             hostname: 'localhost',
+            keepalive: true,
             livereload: 35729,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
         },
@@ -432,7 +433,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['prod', 'connect:keepalive']);
+      return grunt.task.run(['prod', 'connect']);
     }
 
     grunt.task.run([
