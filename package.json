@@ -54,8 +54,8 @@
   },
   "scripts": {
     "test": "grunt test --verbose",
-    "build": "npm install --save-dev load-grunt-tasks",
-    "start": "./node_modules/grunt-cli/bin/grunt serve:dist --force"
+    "build": "grunt uglify",
+    "start": "grunt serve:dist --force"
   },
   "engines": {
     "node": ">=0.8.0"
