@@ -44,7 +44,7 @@
     "karma-phantomjs2-launcher": "^0.1.6",
     "karma-requirejs": "1.1.0",
     "karma-script-launcher": "1.0.0",
-    "load-grunt-tasks": "5.1.0",
+    "load-grunt-tasks": "^5.1.0",
     "requirejs": "2.3.6"
   },
   "dependencies": {
@@ -55,7 +55,7 @@
   "scripts": {
     "test": "grunt test --verbose",
     "build": "grunt uglify",
-    "start": "grunt serve:dist --force"
+    "start": "grunt deploy; grunt serve:dist --force"
   },
   "engines": {
     "node": ">=0.8.0"
