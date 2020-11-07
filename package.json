@@ -50,7 +50,7 @@
   "scripts": {
     "test": "grunt test --verbose",
     "build": "grunt uglify",
-    "postinstall": "echo starting grunt; ./node_modules/grunt-cli/bin/grunt serve:dist --force"
+    "start": "echo starting grunt; ./node_modules/grunt-cli/bin/grunt serve:dist --force"
   },
   "engines": {
     "node": ">=0.8.0"
