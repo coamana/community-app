@@ -74,7 +74,7 @@ module.exports = function(grunt) {
         },
       dist: {
         options: {
-            port: '0',
+            port: 0,
             //useAvailablePort: true,
             hostname: '*',
             open: true,
