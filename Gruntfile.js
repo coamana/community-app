@@ -78,7 +78,6 @@ module.exports = function(grunt) {
             protocol: 'https',
             useAvailablePort: true,
             hostname: '*',
-            open: true,
             keepalive: true,
             base: '<%= mifosx.dist%>/community-app'
         }
