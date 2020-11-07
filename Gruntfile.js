@@ -75,8 +75,7 @@ module.exports = function(grunt) {
         },
       dist: {
         options: {
-            port: process.env.PORT,
-            hostname: 'https://amanamarket-kadswef.herokuapp.com'
+            hostname: 'https://amanamarket-kadswef.herokuapp.com',
             open: true,
             keepalive: true,
             base: '<%= mifosx.dist%>/community-app'
