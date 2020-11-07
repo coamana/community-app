@@ -8,7 +8,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+@import url(../bower-components/bootstrap/dist/css/bootstrap.min.css);
 @import url(../bower_components/angular-bootstrap/ui-bootstrap-csp.css);
 @import url(../bower_components/chosen/chosen.css);
 @import url(../bower_components/ng-scrollbar/dist/ng-scrollbar.css);
