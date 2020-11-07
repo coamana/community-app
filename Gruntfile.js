@@ -61,6 +61,7 @@ module.exports = function(grunt) {
             port:  9002,
             hostname: 'localhost',
             livereload: 35729,
+            keepalive: true,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
         },
         livereload: {
@@ -428,8 +429,21 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-gh-pages')
   // Run development server using grunt serve
-  grunt.registerTask('serve', ['clean:server', 'copy:server', 'compass:dev', 'connect:livereload', 'watch']);
+  //grunt.registerTask('serve', ['clean:server', 'copy:server', 'compass:dev', 'connect:livereload', 'watch']);
 
+    grunt.registerTask('serve', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['prod', 'connect']);
+    }
+
+    grunt.task.run([
+      'clean:server', 
+      'copy:server', 
+      'compass:dev', 
+      'connect:livereload', 
+      'watch'
+    ]);
+  });
   // Validate JavaScript and HTML files
   grunt.registerTask('validate', ['jshint:all', 'validation']);
 

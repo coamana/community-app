@@ -48,7 +48,8 @@
   },
   "scripts": {
     "test": "grunt test --verbose",
-    "start": "grunt prod --force"
+    "build": "grunt uglify",
+    "start": "grunt serve:dist --force"
   },
   "engines": {
     "node": ">=0.8.0"
