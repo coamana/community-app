@@ -444,7 +444,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['prod', 'connect:dist']);
+      return grunt.task.run(['prod', 'connect:dist:options:keepalive']);
     }
 
     grunt.task.run([
