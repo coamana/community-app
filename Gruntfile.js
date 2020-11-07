@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -60,6 +61,7 @@ module.exports = function(grunt) {
         options: {
             port:  9002,
             hostname: 'localhost',
+            keepalive: true,
             livereload: 35729,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
         },
@@ -67,23 +69,18 @@ module.exports = function(grunt) {
             options: {
                 base: [
                     '.tmp',
-                    '<%= mifosx.app %>'
+                    '<%= mifosx.app%>'
                 ]
             }
         },
-        dist: {
-            options: {
-
-                base: [
-                    '.tmp/dist',
-                    '<%= mifosx.app %>'
-                ],
-            port:  8080,
-            hostname: 'amanamarketmf.azurewebsites.net',
-            open:'http://<%= connect.dist.options.hostname %>:<%= connect.dist.options.port %>?baseApiUrl=https://demo.mifos.io'
-        },
-        keepalive: true,
-      }
+      dist: {
+        options: {
+            port: process.env.PORT, 
+            open: true,
+            keepalive: true,
+            base: '<%= mifosx.dist%>/community-app'
+        }
+    }
     },
     // w3c html validation
     validation: {
@@ -445,7 +442,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['prod', 'connect:dist:keepalive']);
+      return grunt.task.run(['prod', 'connect:dist']);
     }
 
     grunt.task.run([
