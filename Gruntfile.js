@@ -59,8 +59,8 @@ module.exports = function(grunt) {
      // The actual grunt server settings
     connect: {
         options: {
-            port:  process.env.PORT || 9002,
-            hostname: process.env.HOSTNAME || 'localhost',
+            port:  process.env.PORT,
+            hostname: '0.0.0.0',
             keepalive: true,
             livereload: 35729,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
