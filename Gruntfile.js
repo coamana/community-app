@@ -60,7 +60,7 @@ module.exports = function(grunt) {
     connect: {
         options: {
             port:  process.env.PORT || 9002,
-            hostname: 'amanamarket-kadswef.herokuapp.com',
+            hostname: process.env.HOSTNAME || 'localhost',
             keepalive: true,
             livereload: 35729,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
