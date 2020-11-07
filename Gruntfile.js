@@ -3,7 +3,6 @@
 module.exports = function(grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
-  var PORT = process.env.PORT || 9999;
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -75,8 +74,8 @@ module.exports = function(grunt) {
         },
       dist: {
         options: {
-            port: '${PORT}',
-            hostname: '0.0.0.0',
+            port: '?',
+            hostname: '*',
             open: true,
             keepalive: true,
             base: '<%= mifosx.dist%>/community-app'
