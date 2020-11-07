@@ -76,7 +76,7 @@
   },
   "scripts": {
     "test": "grunt test --verbose",
-    "build": "grunt uglify",
+    "build": "grunt deploy --force",
     "start": "grunt serve:dist --force"
   },
   "engines": {
