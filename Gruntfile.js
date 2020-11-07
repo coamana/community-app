@@ -78,8 +78,8 @@ module.exports = function(grunt) {
                     '.tmp/dist',
                     '<%= mifosx.app %>'
                 ],
-            port:  9000,
-            hostname: 'localhost',
+            port:  8080,
+            hostname: 'amanamarketmf.azurewebsites.net',
             open:'http://<%= connect.dist.options.hostname %>:<%= connect.dist.options.port %>?baseApiUrl=https://demo.mifos.io'
         },
         keepalive: true,
