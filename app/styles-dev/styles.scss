@@ -7,7 +7,7 @@ $state-success-text:#1abc9c;
 @import "./main/custom_mixins";
 
 /* Load External Stylesheets */
-
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../bower_components/fontawesome/scss/font-awesome";
