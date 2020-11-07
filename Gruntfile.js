@@ -61,7 +61,6 @@ module.exports = function(grunt) {
             port:  9002,
             hostname: 'localhost',
             livereload: 35729,
-            keepalive: true,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
         },
         livereload: {
@@ -71,7 +70,20 @@ module.exports = function(grunt) {
                     '<%= mifosx.app %>'
                 ]
             }
-        }
+        },
+        dist: {
+            options: {
+
+                base: [
+                    '.tmp/dist',
+                    '<%= mifosx.app %>'
+                ],
+            port:  9000,
+            hostname: 'localhost',
+            open:'http://<%= connect.dist.options.hostname %>:<%= connect.dist.options.port %>?baseApiUrl=https://demo.mifos.io'
+        },
+        keepalive: true,
+      }
     },
     // w3c html validation
     validation: {
@@ -433,7 +445,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['prod', 'connect']);
+      return grunt.task.run(['prod', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
