@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         },
       dist: {
         options: {
-            hostname: 'https://amanamarket-kadswef.herokuapp.com',
+            hostname: '0.0.0.0',
             open: true,
             keepalive: true,
             base: '<%= mifosx.dist%>/community-app'
