@@ -70,20 +70,7 @@ module.exports = function(grunt) {
                     '<%= mifosx.app %>'
                 ]
             }
-        },
-        dist: {
-            options: {
-
-                base: [
-                    '.tmp/dist',
-                    '<%= mifosx.app %>'
-                ],
-            port:  9000,
-            hostname: 'localhost',
-            open:'http://<%= connect.dist.options.hostname %>:<%= connect.dist.options.port %>?baseApiUrl=https://demo.mifos.io'
-        },
-        keepalive: true,
-      }
+        }
     },
     // w3c html validation
     validation: {
@@ -445,7 +432,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['prod', 'connect:dist:keepalive']);
+      return grunt.task.run(['prod', 'connect:keepalive']);
     }
 
     grunt.task.run([
