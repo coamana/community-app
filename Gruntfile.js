@@ -59,8 +59,8 @@ module.exports = function(grunt) {
      // The actual grunt server settings
     connect: {
         options: {
-            port:  9002,
-            hostname: 'localhost',
+            port:  process.env.PORT || 9002,
+            hostname: 'amanamarket-kadswef.herokuapp.com',
             keepalive: true,
             livereload: 35729,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'

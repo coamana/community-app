@@ -77,7 +77,7 @@
   "scripts": {
     "test": "grunt test --verbose",
     "build": "grunt uglify",
-    "start": "npm install; grunt serve:dist --force"
+    "start": "grunt serve:dist --force"
   },
   "engines": {
     "node": ">=0.8.0"
