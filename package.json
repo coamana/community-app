@@ -79,7 +79,7 @@
   "scripts": {
     "test": "grunt test --verbose",
     "build": "bower install",
-    "start": "grunt serve --force"
+    "start": "grunt serve:dist --force"
   },
   "engines": {
     "node": ">=0.8.0"
