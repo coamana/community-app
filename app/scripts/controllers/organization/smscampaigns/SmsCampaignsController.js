@@ -17,7 +17,7 @@
             scope.formParams.limit = scope.smsCampaignsPerPage;
 
             scope.routeTo = function (id) {
-                location.path('/viewsmscampaign/' + id);
+                location.path('/credit-provider/KADSWEF/viewsmscampaign/' + id);
             };
 
             if (!scope.searchCriteria.criterias) {

@@ -60,17 +60,17 @@
 
             scope.cancel = function () {
                 if (scope.fromEntity == 'client') {
-                    location.path('/viewclient/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'group') {                    
-                    location.path('/viewgroup/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'center') {                    
-                    location.path('/viewcenter/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'loan') {                    
-                    location.path('/viewloanaccount/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'savings') {
-                    location.path('/viewsavingaccount/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + routeParams.entityId).search({});
                 } else if (scope.fromEntity == 'office') {
-                    location.path('/viewoffice/' + routeParams.entityId).search({});
+                    location.path('/credit-provider/KADSWEF/viewoffice/' + routeParams.entityId).search({});
                 };
             };
             scope.submit = function () {

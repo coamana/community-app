@@ -15,7 +15,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.transferDate = dateFilter(this.formData.transferDate, scope.df);
                 resourceFactory.clientResource.save({clientId: routeParams.id, command: 'proposeTransfer'}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }

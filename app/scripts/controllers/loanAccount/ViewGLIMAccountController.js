@@ -9,7 +9,7 @@
             scope.productName="";
             scope.buttons={};
             scope.routeToLoan = function (id) {
-                location.path('/viewloanaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + id);
             };
 
             var parentglimid=0;
@@ -100,25 +100,25 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "addloancharge":
-                        location.path('/addloancharge/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addloancharge/' + accountId);
                         break;
                     case "addcollateral":
-                        location.path('/addcollateral/' + accountId);
+                        location.path('/credit-provider/KADSWEF/addcollateral/' + accountId);
                         break;
                     case "assignloanofficer":
-                        location.path('/assignloanofficer/' + accountId);
+                        location.path('/credit-provider/KADSWEF/assignloanofficer/' + accountId);
                         break;
                     case "modifyapplication":
-                        location.path('/editloanaccount/' + parentglimid);
+                        location.path('/credit-provider/KADSWEF/editloanaccount/' + parentglimid);
                         break;
                     case "approve":
-                        location.path('/glimloanaccount/' + routeParams.id + '/glimApprove/'+accountId +'/'+scope.groupId);   //accountid is glimId and  routerparamsid is child loanid
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/glimApprove/'+accountId +'/'+scope.groupId);   //accountid is glimId and  routerparamsid is child loanid
                         break;
                     case "reject":
-                        location.path('/glimloanaccount/' + routeParams.id +'/reject/'+accountId+'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id +'/reject/'+accountId+'/'+scope.groupId);
                         break;
                     case "withdrawnbyclient":
-                        location.path('/loanaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.LoanAccountResource.delete({loanId: accountId}, {}, function (data) {
@@ -128,63 +128,63 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/glimloanaccount/' + routeParams.id + '/undoapproval/'+ accountId +'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/undoapproval/'+ accountId +'/'+scope.groupId);
                         break;
                     case "disburse":
-                        location.path('/glimloanaccount/' + routeParams.id + '/glimDisburse/'+accountId+'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/glimDisburse/'+accountId+'/'+scope.groupId);
                         break;
                     case "disbursetosavings":
-                        location.path('/loanaccount/' + accountId + '/disbursetosavings');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/disbursetosavings');
                         break;
                     case "undodisbursal":
-                        location.path('/glimloanaccount/'+ routeParams.id + '/undodisbursal/'+ accountId +'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/'+ routeParams.id + '/undodisbursal/'+ accountId +'/'+scope.groupId);
                         break;
                     case "makerepayment":
-                        location.path('/glimloanaccount/' + routeParams.id + '/glimrepayment/'+accountId+'/'+scope.groupId);
+                        location.path('/credit-provider/KADSWEF/glimloanaccount/' + routeParams.id + '/glimrepayment/'+accountId+'/'+scope.groupId);
                         break;
                     case "prepayment":
-                        location.path('/loanaccount/' + accountId + '/prepayloan');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/prepayloan');
                         break;
                     case "waiveinterest":
-                        location.path('/loanaccount/' + accountId + '/waiveinterest');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/waiveinterest');
                         break;
                     case "writeoff":
-                        location.path('/loanaccount/' + accountId + '/writeoff');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/writeoff');
                         break;
                     case "recoverypayment":
-                        location.path('/loanaccount/' + accountId + '/recoverypayment');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverypayment');
                         break;
                     case "close-rescheduled":
-                        location.path('/loanaccount/' + accountId + '/close-rescheduled');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close-rescheduled');
                         break;
                     case "transferFunds":
                         if (scope.loandetails.clientId) {
-                            location.path('/accounttransfers/fromloans/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromloans/' + accountId);
                         }
                         break;
                     case "close":
-                        location.path('/loanaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/close');
                         break;
                     case "createguarantor":
-                        location.path('/guarantor/' + accountId);
+                        location.path('/credit-provider/KADSWEF/guarantor/' + accountId);
                         break;
                     case "listguarantor":
-                        location.path('/listguarantors/' + accountId);
+                        location.path('/credit-provider/KADSWEF/listguarantors/' + accountId);
                         break;
                     case "recoverguarantee":
-                        location.path('/loanaccount/' + accountId + '/recoverguarantee');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/recoverguarantee');
                         break;
                     case "unassignloanofficer":
-                        location.path('/loanaccount/' + accountId + '/unassignloanofficer');
+                        location.path('/credit-provider/KADSWEF/loanaccount/' + accountId + '/unassignloanofficer');
                         break;
                     case "loanscreenreport":
-                        location.path('/loanscreenreport/' + accountId);
+                        location.path('/credit-provider/KADSWEF/loanscreenreport/' + accountId);
                         break;
                     case "reschedule":
-                        location.path('/loans/' +accountId + '/reschedule');
+                        location.path('/credit-provider/KADSWEF/loans/' +accountId + '/reschedule');
                         break;
                     case "adjustrepaymentschedule":
-                        location.path('/adjustrepaymentschedule/'+accountId) ;
+                        location.path('/credit-provider/KADSWEF/adjustrepaymentschedule/'+accountId) ;
                         break ;
                     case "foreclosure":
                         location.path('loanforeclosure/' + accountId);

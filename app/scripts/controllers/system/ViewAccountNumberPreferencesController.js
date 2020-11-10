@@ -12,17 +12,17 @@
             });
 
             scope.cancel = function(){
-                location.path('/accountnumberpreferences');
+                location.path('/credit-provider/KADSWEF/accountnumberpreferences');
             }
 
             scope.editPreferences = function(){
-                location.path('/editaccountnumberpreferences/'+ scope.resourceId);
+                location.path('/credit-provider/KADSWEF/editaccountnumberpreferences/'+ scope.resourceId);
             }
 
             var DeleteCtrl = function($scope, $uibModalInstance) {
                 $scope.delete = function () {
                     resourceFactory.accountNumberResources.delete({accountNumberFormatId:scope.resourceId},function(data){
-                        location.path('/accountnumberpreferences');
+                        location.path('/credit-provider/KADSWEF/accountnumberpreferences');
                     });
                     $uibModalInstance.close('delete');
                 };

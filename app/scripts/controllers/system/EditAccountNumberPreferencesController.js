@@ -15,11 +15,11 @@
                 });
 
             scope.cancel = function(){
-                location.path('/accountnumberpreferences');
+                location.path('/credit-provider/KADSWEF/accountnumberpreferences');
             }
             scope.submit = function(){
                 resourceFactory.accountNumberResources.put({accountNumberFormatId:scope.resourceId},scope.formData,function(data){
-                    location.path('/viewaccountnumberpreferences/' + data.resourceId );
+                    location.path('/credit-provider/KADSWEF/viewaccountnumberpreferences/' + data.resourceId );
                 });
             }
         }

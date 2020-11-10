@@ -7,7 +7,7 @@
             scope.searchResults = [];
             scope.showClosed = false;
             scope.routeTo = function (id) {
-                location.path('/viewclient/' + id);
+                location.path('/credit-provider/KADSWEF/viewclient/' + id);
             };
 
             scope.clientsPerPage = 15;

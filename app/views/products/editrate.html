@@ -1,8 +1,8 @@
 <div class="col-md-12" ng-controller="EditRateController">
     <api-validate></api-validate>
     <ul class="breadcrumb">
-        <li><a href="#/products">{{'label.anchor.products' | translate}}</a></li>
-        <li><a href="#/rates">{{'label.anchor.rates' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/products">{{'label.anchor.products' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/rates">{{'label.anchor.rates' | translate}}</a></li>
         <li class="active">{{'label.anchor.editcharge' | translate}}</li>
     </ul>
     <form name="editrateform" novalidate class="form-horizontal well" rc-submit="submit()">
@@ -47,7 +47,7 @@
             </div>
 
             <div class="col-md-offset-3">
-                <a id="cancel" href="#/viewrate/{{formData.id}}" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
+                <a id="cancel" href="#/credit-provider/KADSWEF/viewrate/{{formData.id}}" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
                 <button id="save" type="submit" class="btn btn-primary" has-permission='UPDATE_RATE'>{{'label.button.save' | translate}}</button>
             </div>
         </fieldset>

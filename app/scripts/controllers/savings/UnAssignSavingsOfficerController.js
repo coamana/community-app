@@ -12,7 +12,7 @@
             });*/
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountNo);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountNo);
             };
 
             scope.submit = function () {
@@ -21,7 +21,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.unassignedDate = dateFilter(this.formData.unassignedDate, scope.df);
                 resourceFactory.savingsResource.save({accountId: routeParams.id, command:'unassignSavingsOfficer'}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + scope.accountNo);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountNo);
                 });
 
             };

@@ -28,13 +28,13 @@
             }
 
             scope.cancel = function(){
-                location.path('/accountnumberpreferences');
+                location.path('/credit-provider/KADSWEF/accountnumberpreferences');
             }
 
             scope.submit = function(){
                 resourceFactory.accountNumberResources.save(scope.formData,function (data) {
                     scope.resourceId = data.resourceId;
-                    location.path('/viewaccountnumberpreferences/' + scope.resourceId );
+                    location.path('/credit-provider/KADSWEF/viewaccountnumberpreferences/' + scope.resourceId );
                 });
             }
         }

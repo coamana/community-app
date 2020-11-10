@@ -64,7 +64,7 @@
                 this.formData.reschedulingType = rescheduleId;
 
                 resourceFactory.holValueResource.update({holId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewholiday/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewholiday/' + routeParams.id);
                 });
             };
         }

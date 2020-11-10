@@ -15,7 +15,7 @@
             scope.formData = {};
 
             scope.routeTo = function (id) {
-                location.path('/viewtransactions/' + id);
+                location.path('/credit-provider/KADSWEF/viewtransactions/' + id);
             };
 
             resourceFactory.accountCoaResource.getAllAccountCoas({
@@ -128,7 +128,7 @@
                 scope.transactions = paginatorService.paginate(fetchFunction, 14);
                 scope.isCollapsed = false;
                 scope.isValid = true;
-                scope.path = "#/viewloanaccount/" + scope.formData.loanaccountId;
+                scope.path = "#/credit-provider/KADSWEF/viewloanaccount/" + scope.formData.loanaccountId;
             }
 
             if(location.search().savingsId != null){
@@ -137,7 +137,7 @@
                 scope.transactions = paginatorService.paginate(fetchFunction, 14);
                 scope.isCollapsed = false;
                 scope.isValid = true;
-                scope.path = "#/viewsavingaccount/" + scope.formData.savingsaccountId;
+                scope.path = "#/credit-provider/KADSWEF/viewsavingaccount/" + scope.formData.savingsaccountId;
             }
         }
     });

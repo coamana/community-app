@@ -388,12 +388,12 @@
                     this.formData.allowPartialPeriodInterestCalcualtion = false;
                 }
                 resourceFactory.loanResource.put({loanId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + routeParams.id);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + routeParams.id);
             }
         }
     });

@@ -197,7 +197,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewsavingaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.accountId);
             }
 
             scope.submit = function () {
@@ -229,7 +229,7 @@
                 this.formData = removeEmptyValues(this.formData);
 
                 resourceFactory.recurringDepositAccountResource.update({'accountId': scope.accountId}, this.formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                 });
             };
 

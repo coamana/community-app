@@ -46,7 +46,7 @@
                     }
                 }
                 resourceFactory.savingsChargeResource.save({accountId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewsavingaccount/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + routeParams.id);
                 });
             };
         }

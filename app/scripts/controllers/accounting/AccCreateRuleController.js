@@ -108,7 +108,7 @@
                 }
 
                 resourceFactory.accountingRulesResource.save(accountingRule, function (data) {
-                    location.path('/viewaccrule/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewaccrule/' + data.resourceId);
                 });
             }
 

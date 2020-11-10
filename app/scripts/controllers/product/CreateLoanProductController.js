@@ -259,7 +259,7 @@
             };
 
             scope.cancel = function () {
-                location.path('/loanproducts');
+                location.path('/credit-provider/KADSWEF/loanproducts');
             };
 
 
@@ -439,7 +439,7 @@
                     delete this.formData.recalculationRestFrequencyNthDayType;
                 }
                 resourceFactory.loanProductResource.save(this.formData, function (data) {
-                    location.path('/viewloanproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewloanproduct/' + data.resourceId);
                 });
             };
         }

@@ -25,7 +25,7 @@
                     this.formData.dueDate = dateFilter(scope.date.specificduedate, scope.df);
                 }
                 resourceFactory.clientChargesResource.save({clientId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewclient/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + routeParams.id);
                 });
             };
         }

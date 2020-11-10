@@ -14,7 +14,7 @@
             });
 
             $scope.cancel = function () {
-                location.path('#/externalservicesCB/CreditBureau');
+                location.path('#/credit-provider/KADSWEF/externalservicesCB/CreditBureau');
             };
 
 
@@ -22,7 +22,7 @@
 
                 resourceFactory.addOrgCreditBureau.save({ocbId: $scope.creditBureauId},$scope.formData,function (data) {
 
-                    location.path('/externalservicesCB/CreditBureau');
+                    location.path('/credit-provider/KADSWEF/externalservicesCB/CreditBureau');
                 });
 
             };

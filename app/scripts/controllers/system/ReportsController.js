@@ -4,7 +4,7 @@
             scope.reports = [];
 
             scope.routeTo = function (id) {
-                location.path('/system/viewreport/' + id);
+                location.path('/credit-provider/KADSWEF/system/viewreport/' + id);
             };
 
             if (!scope.searchCriteria.manrep) {

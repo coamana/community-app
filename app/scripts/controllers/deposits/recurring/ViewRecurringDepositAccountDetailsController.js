@@ -19,16 +19,16 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editrecurringdepositaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editrecurringdepositaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/recurringdepositaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/recurringdepositaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/reject');
                         break;
                     case "withdrawnbyclient":
-                        location.path('/recurringdepositaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.recurringDepositAccountResource.delete({accountId: accountId}, {}, function (data) {
@@ -38,19 +38,19 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/recurringdepositaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/undoapproval');
                         break;
                     case "activate":
-                        location.path('/recurringdepositaccount/' + accountId + '/activate');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/activate');
                         break;
                     case "deposit":
-                        location.path('/recurringdepositaccount/' + accountId + '/deposit');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/deposit');
                         break;
                     case "withdraw":
-                        location.path('/recurringdepositaccount/' + accountId + '/withdrawal');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/withdrawal');
                         break;
                     case "addcharge":
-                        location.path('/recurringdepositaccount/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/charges');
                         break;
                     case "calculateInterest":
                         resourceFactory.recurringDepositAccountResource.save({accountId: accountId, command: 'calculateInterest'}, {}, function (data) {
@@ -63,18 +63,18 @@
                         });
                         break;
                     /*case "applyAnnualFees":
-                        location.path('/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
+                        location.path('/credit-provider/KADSWEF/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
                         break;
                     case "transferFunds":
                         if (scope.savingaccountdetails.clientId) {
-                            location.path('/accounttransfers/fromsavings/' + accountId);
+                            location.path('/credit-provider/KADSWEF/accounttransfers/fromsavings/' + accountId);
                         }
                         break;*/
                     case "close":
-                        location.path('/recurringdepositaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/close');
                         break;
                     case "prematureClose":
-                        location.path('/recurringdepositaccount/' + accountId + '/prematureClose');
+                        location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/prematureClose');
                         break;
                     case "enableWithHoldTax":
                         var changes = {
@@ -320,9 +320,9 @@
 
             scope.routeTo = function (accountId, transactionId, accountTransfer, transferId) {
                 if (accountTransfer) {
-                    location.path('/viewaccounttransfers/' + transferId);
+                    location.path('/credit-provider/KADSWEF/viewaccounttransfers/' + transferId);
                 } else {
-                    location.path('/viewrecurringdepositaccounttrxn/' + accountId + '/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccounttrxn/' + accountId + '/' + transactionId);
                 }
             };
 
@@ -364,7 +364,7 @@
             };
 
             scope.modifyTransaction = function (accountId, transactionId) {
-                location.path('/recurringdepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
+                location.path('/credit-provider/KADSWEF/recurringdepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
             };
 
             scope.incentives = function(index){

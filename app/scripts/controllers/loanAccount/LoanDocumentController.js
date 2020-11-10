@@ -15,7 +15,7 @@
                         if (!scope.$$phase) {
                             scope.$apply();
                         }
-                        location.path('/viewloanaccount/' + scope.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                     });
             };
         }

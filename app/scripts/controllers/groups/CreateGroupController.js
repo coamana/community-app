@@ -133,10 +133,10 @@
             };
 
             if(routeParams.centerId) {
-            	scope.cancel = '#/viewcenter/' + routeParams.centerId
+            	scope.cancel = '#/credit-provider/KADSWEF/viewcenter/' + routeParams.centerId
             	scope.centerid = routeParams.centerId;
         	}else {
-        		scope.cancel = "#/groups"
+        		scope.cancel = "#/credit-provider/KADSWEF/groups"
         	}
 
             //return input type
@@ -205,7 +205,7 @@
                     delete scope.formData.datatables;
                 }
                 resourceFactory.groupResource.save(this.formData, function (data) {
-                    location.path('/viewgroup/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + data.resourceId);
                 });
             };
         }

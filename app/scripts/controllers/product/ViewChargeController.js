@@ -17,7 +17,7 @@
                 $scope.delete = function () {
                     resourceFactory.chargeResource.delete({chargeId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/charges');
+                        location.path('/credit-provider/KADSWEF/charges');
                     });
                 };
                 $scope.cancel = function () {

@@ -6,7 +6,7 @@
             var idToNodeMap = {};
 
             scope.routeTo = function (id) {
-                location.path('/viewoffice/' + id);
+                location.path('/credit-provider/KADSWEF/viewoffice/' + id);
             };
 
             if (!scope.searchCriteria.offices) {

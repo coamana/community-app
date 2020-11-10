@@ -2,7 +2,7 @@
     mifosX.controllers = _.extend(module, {
         RecurringDepositProductController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewrecurringdepositproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + id);
             };
 
             if (!scope.searchCriteria.rdp) {

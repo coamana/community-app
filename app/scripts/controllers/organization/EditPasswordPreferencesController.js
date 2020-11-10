@@ -13,7 +13,7 @@
 
             scope.submit = function(){
                 resourceFactory.passwordPrefResource.put(scope.formData, function(data){
-                    location.path('/organization/');
+                    location.path('/credit-provider/KADSWEF/organization/');
                 });
             }
         }

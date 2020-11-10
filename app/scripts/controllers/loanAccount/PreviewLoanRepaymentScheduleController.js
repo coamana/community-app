@@ -9,14 +9,14 @@
                 scope.data = data;
             });
             scope.reject = function(){
-                location.path('/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
             };
             scope.approve = function(){
-                location.path('/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
             };
 
             scope.back = function () {
-                location.path('/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/viewreschedulerequest/'+scope.requestId);
             };
         }
     });

@@ -33,7 +33,7 @@
                 $scope.delete = function () {
                     resourceFactory.DataTablesResource.delete({datatablename: routeParams.tableName}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/datatables');
+                        location.path('/credit-provider/KADSWEF/datatables');
                     });
                 };
                 $scope.cancel = function () {

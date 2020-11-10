@@ -83,7 +83,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.active = this.formData.active || false;
                 resourceFactory.centerResource.save(this.formData, function (data) {
-                    location.path('/viewcenter/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + data.resourceId);
                 });
             };
         }

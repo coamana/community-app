@@ -75,12 +75,12 @@
                     }
                 }
                 resourceFactory.sharesAccount.put({shareAccountId: routeParams.accountId}, this.formData, function (data) {
-                    location.path('/viewshareaccount/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewshareaccount/' + data.resourceId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewshareaccount/' + routeParams.accountId);
+                location.path('/credit-provider/KADSWEF/viewshareaccount/' + routeParams.accountId);
             }
         }
     });

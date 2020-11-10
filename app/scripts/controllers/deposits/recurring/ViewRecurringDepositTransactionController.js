@@ -14,7 +14,7 @@
                 var formData = {dateFormat: scope.df, locale: scope.optlang.code, transactionAmount: 0};
                 formData.transactionDate = dateFilter(new Date(), scope.df);
                 resourceFactory.recurringDepositTrxnsResource.save(params, formData, function (data) {
-                    location.path('/viewrecurringdepositaccount/' + data.savingsId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositaccount/' + data.savingsId);
                 });
             };
         }

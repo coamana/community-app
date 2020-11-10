@@ -43,7 +43,7 @@
                 $scope.transactionnumber = id.transactionId;
                 $scope.redirect = function () {
                     $uibModalInstance.close('delete');
-                    location.path('/viewtransactions/' + id.transactionId);
+                    location.path('/credit-provider/KADSWEF/viewtransactions/' + id.transactionId);
                 };
                 $scope.cancel = function () {
                     $uibModalInstance.dismiss('cancel');

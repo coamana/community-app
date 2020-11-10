@@ -4,7 +4,7 @@
             scope.taxcomponents = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewtaxcomponent/' + id);
+                location.path('/credit-provider/KADSWEF/viewtaxcomponent/' + id);
             };
 
 

@@ -60,7 +60,7 @@
                     }
                 }
                 resourceFactory.surveyScorecardResource.post({surveyId: scope.surveyData.id}, this.formData, function (data) {
-                    location.path('/clients/survey/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/clients/survey/' + scope.clientId);
                 });
             };
             scope.isAnyResponse = function(){
@@ -74,9 +74,9 @@
 
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/clients/survey/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/clients/survey/' + scope.clientId);
                 } else {
-                    location.path('/clients');
+                    location.path('/credit-provider/KADSWEF/clients');
                 }
             }
 

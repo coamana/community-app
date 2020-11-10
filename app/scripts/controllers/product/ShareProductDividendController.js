@@ -8,7 +8,7 @@
             });
 
             scope.routeTo = function (id, status) {
-                location.path('/dividends/' + routeParams.productId+'/dividend/'+id+"/"+status);
+                location.path('/credit-provider/KADSWEF/dividends/' + routeParams.productId+'/dividend/'+id+"/"+status);
                 scope.saveSC();
             };
 

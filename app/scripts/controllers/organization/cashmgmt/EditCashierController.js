@@ -56,7 +56,7 @@
                 this.formData.startDate = reqDate;
                 this.formData.endDate = endDate;
                 resourceFactory.tellerCashierResource.update({'tellerId': routeParams.tellerId,'cashierId':routeParams.id}, this.formData, function (data) {
-                    location.path('/tellers/' + scope.cashier.tellerId+'/cashiers');
+                    location.path('/credit-provider/KADSWEF/tellers/' + scope.cashier.tellerId+'/cashiers');
 
                 });
             };

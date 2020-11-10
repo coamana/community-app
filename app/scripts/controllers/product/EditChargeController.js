@@ -151,7 +151,7 @@
                 this.formData.active = this.formData.active || false;
                 this.formData.penalty = this.formData.penalty || false;
                 resourceFactory.chargeResource.update({chargeId: routeParams.id}, this.formData, function (data) {
-                    location.path('/viewcharge/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcharge/' + data.resourceId);
                 });
             };
         }

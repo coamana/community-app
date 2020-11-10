@@ -26,7 +26,7 @@
 
             scope.routeTo=function()
             {
-                location.path('/viewclient/'+clientId);
+                location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
             }
 
             scope.addClientMember=function()
@@ -42,7 +42,7 @@
                 resourceFactory.familyMembers.post({clientId:clientId},scope.formData,function(data)
                 {
 
-                    location.path('/viewclient/'+clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/'+clientId);
 
 
                 })

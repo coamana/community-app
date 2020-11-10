@@ -50,18 +50,18 @@
             });
 
             scope.reject = function(){
-                location.path('/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/rejectreschedulerequest/'+scope.requestId);
             };
             scope.approve = function(){
-                location.path('/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/approvereschedulerequest/'+scope.requestId);
             };
 
             scope.cancel = function () {
-                location.path('/loans/' + scope.loanId + '/reschedule/');
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/reschedule/');
             };
 
             scope.submit = function () {
-                location.path('/loans/' + scope.loanId + '/previewloanrepaymentschedule/'+scope.requestId);
+                location.path('/credit-provider/KADSWEF/loans/' + scope.loanId + '/previewloanrepaymentschedule/'+scope.requestId);
             };
 
         }

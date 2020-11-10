@@ -21,7 +21,7 @@
                 $scope.delete = function () {
                     resourceFactory.loanProductResource.delete({loanProductId: routeParams.id, resourceType: 'productmix'}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/productmix');
+                        location.path('/credit-provider/KADSWEF/productmix');
                     });
                 };
                 $scope.cancel = function () {
@@ -78,7 +78,7 @@
                 }
                 final.restrictedProducts = temp;
                 resourceFactory.loanProductResource.put({loanProductId: routeParams.id, resourceType: 'productmix'}, final, function (data) {
-                    location.path('/viewproductmix/' + routeParams.id);
+                    location.path('/credit-provider/KADSWEF/viewproductmix/' + routeParams.id);
                 });
             };
 

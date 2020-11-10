@@ -33,7 +33,7 @@
                 $scope.delete = function () {
                     resourceFactory.savingsResource.delete({ resourceType: 'charges', accountId: scope.savingId, chargeId: scope.chargeId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewsavingaccount/' + scope.savingId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.savingId);
                     });
                 };
                 $scope.cancel = function () {
@@ -42,7 +42,7 @@
             };
             scope.waiveCharge = function () {
                 resourceFactory.savingsResource.save({ resourceType: 'charges', accountId: scope.savingId, chargeId: scope.chargeId}, {}, function (data) {
-                    location.path('/viewsavingaccount/' + scope.savingId);
+                    location.path('/credit-provider/KADSWEF/viewsavingaccount/' + scope.savingId);
                 });
             };
 

@@ -76,7 +76,7 @@
                     }
                 }
                 resourceFactory.reportsResource.update({id: routeParams.id}, this.formData, function (data) {
-                    location.path('/system/viewreport/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/system/viewreport/' + data.resourceId);
                 });
             };
         }

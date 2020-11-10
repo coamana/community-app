@@ -56,7 +56,7 @@
                 $scope.delete = function () {
                     resourceFactory.accountCoaResource.delete({glAccountId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/accounting_coa');
+                        location.path('/credit-provider/KADSWEF/accounting_coa');
                     });
                 };
                 $scope.cancel = function () {

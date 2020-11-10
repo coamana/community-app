@@ -8,7 +8,7 @@
             scope.isTreeView = false;
 
             scope.routeTo = function (id) {
-                location.path('/viewglaccount/' + id);
+                location.path('/credit-provider/KADSWEF/viewglaccount/' + id);
             };
 
             if (!scope.searchCriteria.acoa) {

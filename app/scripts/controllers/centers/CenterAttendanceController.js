@@ -32,7 +32,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.calendarId = id;
                 resourceFactory.centerMeetingResource.save({centerId: routeParams.centerId, calendarId: routeParams.calendarId}, this.formData, function (data) {
-                    location.path('/viewcenter/' + routeParams.centerId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + routeParams.centerId);
                 }, function(response){
                     if(!response.status) {
                         scope.errorStatus = "Attendance already exist";

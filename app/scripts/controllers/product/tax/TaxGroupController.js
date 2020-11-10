@@ -4,7 +4,7 @@
             scope.taxgroups = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewtaxgroup/' + id);
+                location.path('/credit-provider/KADSWEF/viewtaxgroup/' + id);
             };
 
 

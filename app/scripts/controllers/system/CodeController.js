@@ -4,7 +4,7 @@
             scope.codes = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewcode/' + id);
+                location.path('/credit-provider/KADSWEF/viewcode/' + id);
             }
 
             if (!scope.searchCriteria.codes) {

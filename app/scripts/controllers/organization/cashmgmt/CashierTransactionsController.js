@@ -8,7 +8,7 @@
             scope.cashierTransactions = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewcashiertxns/' + id);
+                location.path('/credit-provider/KADSWEF/viewcashiertxns/' + id);
             };
 
             scope.routeToAllocate = function () {
@@ -21,7 +21,7 @@
 
             scope.routeToTxn = function(){
                 route.reload();
-                location.path('/tellers/' + routeParams.tellerId + "/cashiers/" + routeParams.cashierId  +"/txns/" +  scope.formData.currencyCode);
+                location.path('/credit-provider/KADSWEF/tellers/' + routeParams.tellerId + "/cashiers/" + routeParams.cashierId  +"/txns/" +  scope.formData.currencyCode);
 
             };
 

@@ -1,9 +1,9 @@
 <div ng-controller="NewGLIMAccountController">
     <ul class="breadcrumb">
-        <li><a href="#/viewgroup/{{group.id}}"><strong>{{group.name}}</strong></a></li>
-        <li ng-show="centerEntity"><a href="#/viewcenter/{{groupId}}"><strong>'{{groupName}}'</strong></a></li>
-        <li ng-show="groupName&&!centerEntity"><a href="#/viewgroup/{{groupId}}"><strong>'{{groupName}}'</strong></a></li>
-        <li ng-show="clientName"><a href="#/viewclient/{{clientId}}"><strong>'{{clientName}}'</strong></a></li>
+        <li><a href="#/credit-provider/KADSWEF/viewgroup/{{group.id}}"><strong>{{group.name}}</strong></a></li>
+        <li ng-show="centerEntity"><a href="#/credit-provider/KADSWEF/viewcenter/{{groupId}}"><strong>'{{groupName}}'</strong></a></li>
+        <li ng-show="groupName&&!centerEntity"><a href="#/credit-provider/KADSWEF/viewgroup/{{groupId}}"><strong>'{{groupName}}'</strong></a></li>
+        <li ng-show="clientName"><a href="#/credit-provider/KADSWEF/viewclient/{{clientId}}"><strong>'{{clientName}}'</strong></a></li>
         <li class="active">{{'label.anchor.glimloanapplication' | translate}}</li>
     </ul>
     <div class="container-fluid">

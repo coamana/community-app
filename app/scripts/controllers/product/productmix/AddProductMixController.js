@@ -63,7 +63,7 @@
                 }
                 final.restrictedProducts = temp;
                 resourceFactory.loanProductResource.save({loanProductId: productId, resourceType: 'productmix'}, final, function (data) {
-                    location.path('/viewproductmix/' + data.productId);
+                    location.path('/credit-provider/KADSWEF/viewproductmix/' + data.productId);
                 });
             };
 
