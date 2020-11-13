@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       credential_file: process.env['HOME']+'/.azure/creds.json' // the location and name of your Azure credentials stored as JSON
     },
     directory: 'dist/community-app', // the directory of data you wish to deploy
-    website_name: 'amanamarketmf' // your Azure Website name
+    website_name: 'coamanamf' // your Azure Website name
      },
     // Project settings
     mifosx: {
