@@ -75,12 +75,12 @@ module.exports = function(grunt) {
       dist: {
         options: {
             port: process.env.PORT,
-            protocol: 'https',
+            protocol: 'http',
             useAvailablePort: true,
             hostname: '*',
             keepalive: true,
             livereload: 35729,
-            // open: true,
+            open: true,
             //open:'http://amanamarket-kadswef.herokuapp.com?baseApiUrl=https://demo.mifos.io',
             base: '<%= mifosx.dist%>/community-app'
         }
