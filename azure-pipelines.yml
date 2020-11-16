@@ -3,7 +3,7 @@
 - task: Grunt@0
   inputs:
     azureSubscription: 'Microsoft Azure Sponsorship'
-    appName: 'amanamarketmf'
+    appName: 'coamanamf'
     package: '$(System.DefaultWorkingDirectory)'
     gruntFile: 'Gruntfile.js' 
     #targets: # Optional
