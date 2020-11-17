@@ -455,15 +455,15 @@
                     delete scope.formData.datatables;
                 }
                 resourceFactory.loanResource.save(this.formData, function (data) {
-                    location.path('/viewloanaccount/' + data.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                 });
             };
 
             scope.cancel = function () {
                 if (scope.groupId) {
-                    location.path('/viewgroup/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.groupId);
                 } else if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 }
             }
         }

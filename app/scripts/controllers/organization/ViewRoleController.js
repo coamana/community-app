@@ -57,7 +57,7 @@
                     $scope.disableRoles = function () {
                         resourceFactory.roleResource.disableRoles({roleId: routeParams.id, command: 'disable'}, function (data) {
                             $uibModalInstance.close('disableRoles');
-                            location.href = '#/admin/roles';
+                            location.href = '#/credit-provider/KADSWEF/admin/roles';
                         });
                     };
                     $scope.cancelDisableRole = function () {
@@ -76,7 +76,7 @@
                     $scope.enableRoles = function () {
                         resourceFactory.roleResource.enableRoles({roleId: routeParams.id, command: 'enable'}, function (data) {
                             $uibModalInstance.close('enableRoles');
-                            location.href = '#/admin/roles';
+                            location.href = '#/credit-provider/KADSWEF/admin/roles';
                         });
                     };
                     $scope.cancelEnableRole = function () {
@@ -95,7 +95,7 @@
                     $scope.deleteRoles = function () {
                         resourceFactory.roleResource.deleteRoles({roleId: routeParams.id}, function(data){
                             $uibModalInstance.close('deleteRoles');
-                            location.href = '#/admin/roles';
+                            location.href = '#/credit-provider/KADSWEF/admin/roles';
                         });
                     };
                     $scope.cancelDeleteRole = function () {

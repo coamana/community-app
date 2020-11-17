@@ -20,7 +20,7 @@
             });
 
             $scope.cancel = function () {
-                location.path('/externalservices');
+                location.path('/credit-provider/KADSWEF/externalservices');
             };
 
         }

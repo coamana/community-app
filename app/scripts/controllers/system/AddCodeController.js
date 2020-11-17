@@ -4,7 +4,7 @@
 
             scope.submit = function () {
                 resourceFactory.codeResources.save(this.formData, function (data) {
-                    location.path('/viewcode/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewcode/' + data.resourceId);
                 });
             };
         }

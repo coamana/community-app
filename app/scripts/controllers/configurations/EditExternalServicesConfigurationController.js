@@ -26,14 +26,14 @@
             });
 
             $scope.cancel = function () {
-                location.path('/externalservices/'+ $scope.externalServicesType);
+                location.path('/credit-provider/KADSWEF/externalservices/'+ $scope.externalServicesType);
             };
 
             $scope.submit = function () {
 
                 //scope.formData1 = {  scope.name : scope.formData.value};
                 resourceFactory.externalServicesResource.put({id: $scope.externalServicesType}, this.formData, function (data) {
-                    location.path('/externalservices' );
+                    location.path('/credit-provider/KADSWEF/externalservices' );
                 });
             };
         }

@@ -164,7 +164,7 @@
                         newholiday.offices.push(temp);
                     }
                     resourceFactory.holValueResource.save(newholiday, function (data) {
-                        location.path('/holidays');
+                        location.path('/credit-provider/KADSWEF/holidays');
                     });
                 }
             };

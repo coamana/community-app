@@ -45,7 +45,7 @@
                 if(noErrors){
                     delete scope.errorDetails;
                     resourceFactory.journalEntriesResource.save({command:"defineOpeningBalance"}, this.formData, function (data) {
-                        location.path('/viewtransactions/' + data.transactionId);
+                        location.path('/credit-provider/KADSWEF/viewtransactions/' + data.transactionId);
                     });
                 }
             }

@@ -359,7 +359,7 @@
                     }
 
                     if(scope.response.failed.length === 0 ){
-                        location.path('/viewgroup/' + scope.group.id);
+                        location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);
                     }
                 });
             };
@@ -367,12 +367,12 @@
             /* Cancel button action */
             scope.cancel = function () {
                 if (scope.clientId) {
-                    location.path('/viewclient/' + scope.clientId);
+                    location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                 } else if (scope.centerEntity) {
-                    location.path('/viewcenter/' + scope.groupId);
+                    location.path('/credit-provider/KADSWEF/viewcenter/' + scope.groupId);
                 }
                 if (scope.group.id) {
-                    location.path('/viewgroup/' + scope.group.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);
                 }
             };
         } // End of GLIMAccountController

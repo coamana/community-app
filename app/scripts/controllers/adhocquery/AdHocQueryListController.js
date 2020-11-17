@@ -4,7 +4,7 @@
             scope.adhocquerys = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewadhocquery/' + id);
+                location.path('/credit-provider/KADSWEF/viewadhocquery/' + id);
             };
             
             resourceFactory.adHocQueryResource.getAllAdHocQuery(function (data) {

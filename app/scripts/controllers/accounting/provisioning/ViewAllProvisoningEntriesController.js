@@ -3,16 +3,16 @@
         ViewAllProvisoningEntriesController: function (scope, routeParams, paginatorService, resourceFactory, location, $uibModal) {
 
             scope.routeTo = function (id) {
-                location.path('/viewprovisioningentry/' + id);
+                location.path('/credit-provider/KADSWEF/viewprovisioningentry/' + id);
             };
 
             scope.viewJournals = function (id) {
-                location.path('/viewprovisioningjournalentry/' + id);
+                location.path('/credit-provider/KADSWEF/viewprovisioningjournalentry/' + id);
             };
 
             scope.recreate = function (id) {
                 resourceFactory.provisioningentries.reCreateProvisioningEntries({entryId: id}, this.formData, function (data) {
-                    location.path('/viewprovisioningentry/'+id);
+                    location.path('/credit-provider/KADSWEF/viewprovisioningentry/'+id);
                 });
             };
 

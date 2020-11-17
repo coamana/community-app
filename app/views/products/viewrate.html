@@ -1,13 +1,13 @@
 <div class="content-container" ng-controller="ViewRateController">
     <ul class="breadcrumb">
-        <li><a href="#/products">{{'label.anchor.products' | translate}}</a></li>
-        <li><a href="#/rates">{{'label.anchor.rates' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/products">{{'label.anchor.products' | translate}}</a></li>
+        <li><a href="#/credit-provider/KADSWEF/rates">{{'label.anchor.rates' | translate}}</a></li>
         <li class="active">{{rate.name}}</li>
     </ul>
     <div class="card well">
         <h3 class="bolder">{{rate.name}}
             <div class="btn-group pull-right">
-                <a href="#/editrate/{{rate.id}}" class="btn btn-primary" has-permission='UPDATE_RATE'><i class="icon-edit icon-white"></i>{{'label.button.edit' | translate}}</a>
+                <a href="#/credit-provider/KADSWEF/editrate/{{rate.id}}" class="btn btn-primary" has-permission='UPDATE_RATE'><i class="icon-edit icon-white"></i>{{'label.button.edit' | translate}}</a>
 
             </div>
         </h3>

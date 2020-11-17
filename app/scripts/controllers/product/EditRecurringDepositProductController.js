@@ -198,7 +198,7 @@
             }
 
             scope.cancel = function () {
-                location.path('/viewrecurringdepositproduct/' + routeParams.productId);
+                location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + routeParams.productId);
             };
 
             scope.submit = function () {
@@ -252,7 +252,7 @@
                 this.formData.charts.push(copyChartData(scope.chart));//add chart details
                 this.formData = removeEmptyValues(this.formData);
                 resourceFactory.recurringDepositProductResource.update({productId: routeParams.productId}, this.formData, function (data) {
-                    location.path('/viewrecurringdepositproduct/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewrecurringdepositproduct/' + data.resourceId);
                 });
             }
 

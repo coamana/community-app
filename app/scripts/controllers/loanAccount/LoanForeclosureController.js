@@ -67,12 +67,12 @@
                     note: this.formData.note
                 };
                 resourceFactory.loanTrxnsResource.save({loanId: routeParams.id, command: 'foreclosure'}, scope.foreclosureFormData, function(data) {
-                    location.path('/viewloanaccount/' + scope.accountId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
                 });
             };
 
             scope.cancel = function () {
-                location.path('/viewloanaccount/' + scope.accountId);
+                location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.accountId);
             };
         }
     });

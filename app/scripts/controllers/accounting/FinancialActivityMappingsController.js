@@ -7,7 +7,7 @@
             });
 
             scope.routeTo = function (resourceId){
-                location.path('/viewfinancialactivitymapping/' + resourceId);
+                location.path('/credit-provider/KADSWEF/viewfinancialactivitymapping/' + resourceId);
             };
         }
     });

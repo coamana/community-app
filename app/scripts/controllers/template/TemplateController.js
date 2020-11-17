@@ -2,7 +2,7 @@
     mifosX.controllers = _.extend(module, {
         TemplateController: function (scope, resourceFactory, location) {
             scope.routeTo = function (id) {
-                location.path('/viewtemplate/' + id);
+                location.path('/credit-provider/KADSWEF/viewtemplate/' + id);
             };
 
             if (!scope.searchCriteria.templates) {

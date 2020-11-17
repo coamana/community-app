@@ -126,7 +126,7 @@
                 $scope.delete = function () {
                     resourceFactory.smsCampaignResource.delete({campaignId: routeParams.campaignId}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/smscampaigns');
+                        location.path('/credit-provider/KADSWEF/smscampaigns');
                     });
                 };
                 $scope.cancel = function () {

@@ -4,7 +4,7 @@
             scope.shareproducts = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewshareproduct/' + id);
+                location.path('/credit-provider/KADSWEF/viewshareproduct/' + id);
             };
 
             if (!scope.searchCriteria.savingP) {

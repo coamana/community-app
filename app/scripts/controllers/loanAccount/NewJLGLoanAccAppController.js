@@ -257,7 +257,7 @@
                             }   
 
                         if(scope.response.failed.length === 0 ){
-                            location.path('/viewgroup/' + scope.group.id);    
+                            location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);    
                         }
 
                 });
@@ -268,7 +268,7 @@
             /* Cancel button action */
             scope.cancel = function () {
                 if (scope.group.id) {
-                    location.path('/viewgroup/' + scope.group.id);
+                    location.path('/credit-provider/KADSWEF/viewgroup/' + scope.group.id);
                 }
             };             
 

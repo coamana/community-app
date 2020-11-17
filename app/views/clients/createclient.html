@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <div class="content-container" ng-controller="CreateClientController">
    <ul class="breadcrumb">
-      <li ng-if="!groupid"><a href="#/clients">{{'label.anchor.clients' | translate}}</a></li>
-      <li ng-if="groupid"><a href="#/groups">{{'label.anchor.groups' | translate}}</a></li>
-      <li ng-if="groupid"><a href="#/viewgroup/{{groupid}}">{{'label.anchor.viewgroup' | translate}}</a></li>
+      <li ng-if="!groupid"><a href="#/credit-provider/KADSWEF/clients">{{'label.anchor.clients' | translate}}</a></li>
+      <li ng-if="groupid"><a href="#/credit-provider/KADSWEF/groups">{{'label.anchor.groups' | translate}}</a></li>
+      <li ng-if="groupid"><a href="#/credit-provider/KADSWEF/viewgroup/{{groupid}}">{{'label.anchor.viewgroup' | translate}}</a></li>
       <li class="active">{{'label.anchor.createclient' | translate}}</li>
    </ul>
    <wizard current-step="step" class="card well">

@@ -17,7 +17,7 @@
                 $scope.delete = function () {
                     resourceFactory.hookResources.delete({hookId: routeParams.id}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/hooks');
+                        location.path('/credit-provider/KADSWEF/hooks');
                         // added dummy request param because Content-Type header gets removed
                         // if the request does not contain any data (a request body)
                     });

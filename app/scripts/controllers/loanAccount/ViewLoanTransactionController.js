@@ -56,7 +56,7 @@
                     formData.transactionDate = dateFilter(new Date(), scope.df);
                     resourceFactory.loanTrxnsResource.save(params, formData, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewloanaccount/' + data.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + data.loanId);
                     });
                 };
                 $scope.cancel = function () {

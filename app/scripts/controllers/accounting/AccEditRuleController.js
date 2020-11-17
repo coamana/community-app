@@ -149,7 +149,7 @@
                 }
 
                 resourceFactory.accountingRulesResource.update({accountingRuleId: routeParams.id}, accountingRule, function (data) {
-                    location.path('/viewaccrule/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewaccrule/' + data.resourceId);
                 });
             }
 

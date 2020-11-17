@@ -1,8 +1,8 @@
 <div  class="content-container" ng-controller="ViewGSIMaccountController" >
     <div>
         <ul class="breadcrumb">
-            <li ng-show="groupLevel == 1"><a href="#/viewcenter/{{savingaccountdetails.groupId}}">{{savingaccountdetails.groupName}}</a>
-            <li ng-show="groupLevel == 2"><a href="#/viewgroup/{{savingaccountdetails.groupId}}">{{savingaccountdetails.groupName}}</a>
+            <li ng-show="groupLevel == 1"><a href="#/credit-provider/KADSWEF/viewcenter/{{savingaccountdetails.groupId}}">{{savingaccountdetails.groupName}}</a>
+            <li ng-show="groupLevel == 2"><a href="#/credit-provider/KADSWEF/viewgroup/{{savingaccountdetails.groupId}}">{{savingaccountdetails.groupName}}</a>
             <li class="active">{{savingaccountdetails.savingsProductName}}({{gsimAccountNumber}})</li>
         </ul>
     </div>
@@ -85,25 +85,25 @@
                                 <td class="pointer" data-ng-click="routeToSaving(savingaccount.id)">{{savingaccount.productName}}</td>
                                 <td class="pointer" data-ng-click="routeToSaving(savingaccount.id)">{{savingaccount.accountBalance | number}}</td>
                                 <td class="pointer" ng-if="savingaccount.status.active">
-                                    <a uib-tooltip="{{'label.button.deposit' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/deposit" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
+                                    <a uib-tooltip="{{'label.button.deposit' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/deposit" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
                                         <i class="fa fa-arrow-right "></i>
                                     </a>
 
-                                    <a uib-tooltip="{{'label.button.withdraw' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/withdrawal" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
+                                    <a uib-tooltip="{{'label.button.withdraw' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/withdrawal" class="btn btn-xs btn-primary ng-binding" ng-show="savingaccount.depositType.id == '100'">
                                         <i class="fa fa-arrow-left "></i>
                                     </a>
 
                                 </td>
                                 <td class="pointer" ng-if="savingaccount.status.submittedAndPendingApproval">
-                                    <a uib-tooltip="{{'label.button.approve' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/approve" class="btn btn-xs btn-primary ng-binding">
+                                    <a uib-tooltip="{{'label.button.approve' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/approve" class="btn btn-xs btn-primary ng-binding">
                                         <i class="fa fa-check "></i>
                                     </a>
                                 </td>
                                 <td class="pointer" ng-if="!savingaccount.status.submittedAndPendingApproval && !savingaccount.status.active">
-                                    <a uib-tooltip="{{'label.button.undoapproval' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/undoapproval" class="btn btn-xs btn-primary ng-binding">
+                                    <a uib-tooltip="{{'label.button.undoapproval' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/undoapproval" class="btn btn-xs btn-primary ng-binding">
                                         <i class="fa fa-undo "></i>
                                     </a>
-                                    <a uib-tooltip="{{'label.button.activate' | translate}}" ng-href="#/savingaccount/{{savingaccount.id}}/activate" class="btn btn-xs btn-primary ng-binding">
+                                    <a uib-tooltip="{{'label.button.activate' | translate}}" ng-href="#/credit-provider/KADSWEF/savingaccount/{{savingaccount.id}}/activate" class="btn btn-xs btn-primary ng-binding">
                                         <i class="fa fa-check-circle-o "></i>
                                     </a>
                                 </td>

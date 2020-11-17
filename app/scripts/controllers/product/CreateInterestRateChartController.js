@@ -97,7 +97,7 @@
 
             //back to deposit product view
             scope.cancel = function () {
-                location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + routeParams.productType);
+                location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + routeParams.productType);
             };
 
             /**
@@ -113,16 +113,16 @@
                 //update deposit product with new chart
                 if (routeParams.productType === 'fixeddepositproduct') {
                     resourceFactory.fixedDepositProductResource.update({productId: routeParams.productId}, scope.formData, function (data) {
-                        location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
+                        location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
                     });
                 } else if (routeParams.productType === 'recurringdepositproduct') {
                     resourceFactory.recurringDepositProductResource.update({productId: routeParams.productId}, scope.formData, function (data) {
-                        location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
+                        location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName + '/' + scope.productType);
                     });
                 }
 
                 //resourceFactory.interestRateChartResource.save(chartData, function (data) {
-                //  location.path('/interestratecharts/' + routeParams.productId + '/' + routeParams.productName);
+                //  location.path('/credit-provider/KADSWEF/interestratecharts/' + routeParams.productId + '/' + routeParams.productName);
                 //});
             }
 

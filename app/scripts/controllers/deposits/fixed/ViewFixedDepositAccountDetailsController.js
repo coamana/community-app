@@ -20,16 +20,16 @@
                 eventName = eventName || "";
                 switch (eventName) {
                     case "modifyapplication":
-                        location.path('/editfixeddepositaccount/' + accountId);
+                        location.path('/credit-provider/KADSWEF/editfixeddepositaccount/' + accountId);
                         break;
                     case "approve":
-                        location.path('/fixeddepositaccount/' + accountId + '/approve');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/approve');
                         break;
                     case "reject":
-                        location.path('/fixeddepositaccount/' + accountId + '/reject');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/reject');
                         break;
                     case "withdrawnbyclient":
-                        location.path('/fixeddepositaccount/' + accountId + '/withdrawnByApplicant');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/withdrawnByApplicant');
                         break;
                     case "delete":
                         resourceFactory.fixedDepositAccountResource.delete({accountId: accountId}, {}, function (data) {
@@ -39,13 +39,13 @@
                         });
                         break;
                     case "undoapproval":
-                        location.path('/fixeddepositaccount/' + accountId + '/undoapproval');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/undoapproval');
                         break;
                     case "activate":
-                        location.path('/fixeddepositaccount/' + accountId + '/activate');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/activate');
                         break;
                     case "addcharge":
-                        location.path('/fixeddepositaccount/' + accountId + '/charges');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/charges');
                         break;
                     case "calculateInterest":
                         resourceFactory.fixedDepositAccountResource.save({accountId: accountId, command: 'calculateInterest'}, {}, function (data) {
@@ -58,18 +58,18 @@
                         });
                         break;
                     /*          case "applyAnnualFees":
-                     location.path('/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
+                     location.path('/credit-provider/KADSWEF/savingaccountcharge/' + accountId + '/applyAnnualFees/' + scope.annualChargeId);
                      break;
                      case "transferFunds":
                      if (scope.savingaccountdetails.clientId) {
-                     location.path('/accounttransfers/fromsavings/'+accountId);
+                     location.path('/credit-provider/KADSWEF/accounttransfers/fromsavings/'+accountId);
                      }
                      break;*/
                     case "close":
-                        location.path('/fixeddepositaccount/' + accountId + '/close');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/close');
                         break;
                     case "prematureClose":
-                        location.path('/fixeddepositaccount/' + accountId + '/prematureClose');
+                        location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/prematureClose');
                         break;
                     case "enableWithHoldTax":
                         var changes = {
@@ -92,9 +92,9 @@
 
             scope.routeTo = function (accountId, transactionId, accountTransfer, transferId) {
                 if (accountTransfer) {
-                    location.path('/viewaccounttransfers/' + transferId);
+                    location.path('/credit-provider/KADSWEF/viewaccounttransfers/' + transferId);
                 } else {
-                    location.path('/viewfixeddepositaccounttrxn/' + accountId + '/' + transactionId);
+                    location.path('/credit-provider/KADSWEF/viewfixeddepositaccounttrxn/' + accountId + '/' + transactionId);
                 }
             };
 
@@ -318,7 +318,7 @@
             };
 
             scope.modifyTransaction = function (accountId, transactionId) {
-                location.path('/fixeddepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
+                location.path('/credit-provider/KADSWEF/fixeddepositaccount/' + accountId + '/modifytransaction?transactionId=' + transactionId);
             };
 
             scope.incentives = function(index){

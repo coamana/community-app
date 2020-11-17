@@ -31,7 +31,7 @@
                     formData.transactionDate = dateFilter(new Date(), scope.df);
                     resourceFactory.savingsTrxnsResource.save(params, formData, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewsavingaccount/' + data.savingsId);
+                        location.path('/credit-provider/KADSWEF/viewsavingaccount/' + data.savingsId);
                     });
                 };
                 $scope.cancel = function () {

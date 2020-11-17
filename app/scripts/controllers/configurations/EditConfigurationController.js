@@ -7,13 +7,13 @@
                 scope.formData = {value: data.value};
             });
             scope.cancel = function () {
-                location.path('/global');
+                location.path('/credit-provider/KADSWEF/global');
             };
 
 
             scope.submit = function () {
                 resourceFactory.configurationResource.update({resourceType: 'configurations', id: scope.configId}, this.formData, function (data) {
-                    location.path('/global');
+                    location.path('/credit-provider/KADSWEF/global');
                 });
             };
 

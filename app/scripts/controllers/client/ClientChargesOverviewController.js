@@ -6,7 +6,7 @@
             scope.chargesPerPage = 14;
 
             scope.routeToCharge = function (chargeId) {
-                location.path('/viewclient/' + scope.clientId + '/charges/' + chargeId);
+                location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId + '/charges/' + chargeId);
             };
 
             scope.getClientChargeResultsPage = function (pageNumber) {

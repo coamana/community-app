@@ -6,6 +6,15 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    //azure deployment settings
+    azureDeploy: {
+    options: {
+      credential_file: process.env['HOME']+'/.azure/creds.json' // the location and name of your Azure credentials stored as JSON
+    },
+    directory: 'dist/community-app', // the directory of data you wish to deploy
+    website_name: 'coamanamf' // your Azure Website name
+     },
     // Project settings
     mifosx: {
       // configurable paths
@@ -49,8 +58,9 @@ module.exports = function(grunt) {
      // The actual grunt server settings
     connect: {
         options: {
-            port:  9002,
+            port: 9002,
             hostname: 'localhost',
+            keepalive: true,
             livereload: 35729,
             open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
         },
@@ -58,10 +68,23 @@ module.exports = function(grunt) {
             options: {
                 base: [
                     '.tmp',
-                    '<%= mifosx.app %>'
+                    '<%= mifosx.app%>'
                 ]
             }
+        },
+      dist: {
+        options: {
+            port: process.env.PORT,
+            protocol: 'http',
+            useAvailablePort: true,
+            hostname: '*',
+            keepalive: true,
+            livereload: 35729,
+            open: true,
+            //open:'http://amanamarket-kadswef.herokuapp.com?baseApiUrl=https://demo.mifos.io',
+            base: '<%= mifosx.dist%>/community-app'
         }
+    }
     },
     // w3c html validation
     validation: {
@@ -270,8 +293,8 @@ module.exports = function(grunt) {
                       '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/routes-initialTasks-webstorage-configuration.js',
                       '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/controllers/controllers.js',
                       '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/filters/filters.js',
-                      '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/models/models.js',
-                      '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/config/UIConfig.json'
+                      '<%= mifosx.dist %>/<%=mifosx.target%>/scripts/models/models.js'
+                      //'<%= mifosx.dist %>/<%=mifosx.target%>/scripts/config/UIConfig.json'
               ]
           },
           ext : {
@@ -415,16 +438,31 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-azure-deploy');
+
   grunt.loadNpmTasks('grunt-gh-pages')
   // Run development server using grunt serve
-  grunt.registerTask('serve', ['clean:server', 'copy:server', 'compass:dev', 'connect:livereload', 'watch']);
+  //grunt.registerTask('serve', ['clean:server', 'copy:server', 'compass:dev', 'connect:livereload', 'watch']);
 
+    grunt.registerTask('serve', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['prod', 'connect:dist']);
+    }
+
+    grunt.task.run([
+      'clean:server', 
+      'copy:server', 
+      'compass:dev', 
+      'connect:livereload', 
+      'watch'
+    ]);
+  });
   // Validate JavaScript and HTML files
   grunt.registerTask('validate', ['jshint:all', 'validation']);
 
   // Default task(s).
   grunt.registerTask('default', ['clean', 'jshint', 'copy:dev']);
-  grunt.registerTask('prod', ['clean:dist', 'clean:server', 'compass:dist', 'copy:prod', 'copy:tests', 'concat', 'uglify:prod', 'devcode:dist', 'hashres','replace']);
+  grunt.registerTask('prod', ['clean:dist', 'clean:server', 'compass:dist', 'copy:prod', 'copy:tests', 'concat', 'uglify:prod', 'devcode:dist','replace']);
   grunt.registerTask('dev', ['clean', 'compass:dev' , 'copy:dev']);
   grunt.registerTask('test', ['karma']);
   grunt.registerTask('deploy', ['prod', 'gh-pages']);

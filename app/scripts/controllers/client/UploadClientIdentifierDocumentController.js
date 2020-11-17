@@ -13,7 +13,7 @@
                         if (!scope.$$phase) {
                           scope.$apply();
                         }
-                        location.path('/viewclient/' + scope.clientId);
+                        location.path('/credit-provider/KADSWEF/viewclient/' + scope.clientId);
                     });
             };
         }

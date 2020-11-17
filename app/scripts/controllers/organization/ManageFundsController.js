@@ -16,7 +16,7 @@
               {
                 scope.funderror[id] = false;
                 resourceFactory.fundsResource.update({fundId: id}, {'name': this.formData[id]}, function (data) {
-                    location.path('/managefunds');
+                    location.path('/credit-provider/KADSWEF/managefunds');
                 });
               } else {
                 scope.funderror[id] = true;
@@ -26,7 +26,7 @@
                 if (scope.newfund != undefined) {
                     scope.addfunderror = false;
                     resourceFactory.fundsResource.save({'name': scope.newfund}, function (data) {
-                        location.path('/managefunds');
+                        location.path('/credit-provider/KADSWEF/managefunds');
                     });
                 } else {
                     scope.addfunderror = true;

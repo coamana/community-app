@@ -15,7 +15,7 @@
                 $scope.delete = function () {
                     resourceFactory.officeToGLAccountMappingResource.delete({mappingId: routeParams.mappingId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/financialactivityaccountmappings');
+                        location.path('/credit-provider/KADSWEF/financialactivityaccountmappings');
                     });
                 };
                 $scope.cancel = function () {

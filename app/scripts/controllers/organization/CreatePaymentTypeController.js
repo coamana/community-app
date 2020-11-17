@@ -9,7 +9,7 @@
             scope.submit = function () {
                 this.formData.isCashPayment = this.formData.isCashPayment || false;
                 resourceFactory.paymentTypeResource.save(this.formData, function (data) {
-                    location.path('/viewpaymenttype/');
+                    location.path('/credit-provider/KADSWEF/viewpaymenttype/');
                 });
             };
 

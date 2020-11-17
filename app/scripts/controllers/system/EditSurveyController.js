@@ -55,7 +55,7 @@
             scope.updateSurvey = function(){
                 scope.updateSequenceNumber();
                 resourceFactory.surveyResource.update({surveyId : routeParams.id},scope.formData,function(data){
-                    location.path('/viewsurvey/'+data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewsurvey/'+data.resourceId);
                 });
             }
         }

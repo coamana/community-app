@@ -7,7 +7,7 @@
             scope.searchResults = [];
             scope.showClosed = false;
             scope.routeTo = function (id) {
-                location.path('/viewgroup/' + id);
+                location.path('/credit-provider/KADSWEF/viewgroup/' + id);
             };
 
             if (!scope.searchCriteria.groups) {

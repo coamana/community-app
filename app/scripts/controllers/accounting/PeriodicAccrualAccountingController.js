@@ -13,7 +13,7 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.tillDate = reqDate;
                 resourceFactory.periodicAccrualAccountingResource.run(this.formData, function (data) {
-                    location.path('/accounting');
+                    location.path('/credit-provider/KADSWEF/accounting');
                 });
             }
         }

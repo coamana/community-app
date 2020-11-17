@@ -134,7 +134,7 @@
                 if (scope.formData.changeColumns.length == 0) delete scope.formData.changeColumns;
 
                 resourceFactory.DataTablesResource.update({datatablename: routeParams.tableName}, this.formData, function (data) {
-                    location.path('/viewdatatable/' + data.resourceIdentifier);
+                    location.path('/credit-provider/KADSWEF/viewdatatable/' + data.resourceIdentifier);
                 });
             };
         }

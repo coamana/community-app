@@ -1,8 +1,8 @@
 <div ng-controller="MapCreditBureauToLpController">
     <div>
         <ul class="breadcrumb">
-            <li><a href="#/system">{{'label.anchor.system' | translate}}</a></li>
-            <li><a href="#/externalservices">{{'label.anchor.externalServices' | translate}}</a></li>
+            <li><a href="#/credit-provider/KADSWEF/system">{{'label.anchor.system' | translate}}</a></li>
+            <li><a href="#/credit-provider/KADSWEF/externalservices">{{'label.anchor.externalServices' | translate}}</a></li>
             <li class="active">{{'label.anchor.mapcblp' | translate}}</li>
         </ul>
 
@@ -70,7 +70,7 @@
             </div>
 
             <div class="col-md-offset-3">
-                <a id="cancel" ng-href="#/externalservicesCB/CreditBureau" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
+                <a id="cancel" ng-href="#/credit-provider/KADSWEF/externalservicesCB/CreditBureau" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
 
                 <button id="save" type="submit" ng-disabled="!MapCreditBureauToLpController.$valid" has-permission='UPDATE_EXTERNALSERVICES' class="btn btn-primary">{{
                     'label.button.save' | translate }}

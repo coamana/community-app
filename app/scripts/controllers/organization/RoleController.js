@@ -3,7 +3,7 @@
         RoleController: function (scope, resourceFactory, location) {
             scope.roles = [];
             scope.routeTo = function (id) {
-                location.path('/admin/viewrole/' + id);
+                location.path('/credit-provider/KADSWEF/admin/viewrole/' + id);
             };
 
             scope.RolesPerPage = 15;

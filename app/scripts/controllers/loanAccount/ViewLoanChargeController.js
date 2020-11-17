@@ -23,7 +23,7 @@
                 $scope.delete = function () {
                     resourceFactory.loanResource.delete({ resourceType: 'charges', loanId: scope.loanId, resourceId: scope.chargeId}, {}, function (data) {
                         $uibModalInstance.close('delete');
-                        location.path('/viewloanaccount/' + scope.loanId);
+                        location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                     });
                 };
                 $scope.cancel = function () {
@@ -32,7 +32,7 @@
             };
             scope.waiveCharge = function () {
                 resourceFactory.loanResource.save({ resourceType: 'charges', loanId: scope.loanId, resourceId: scope.chargeId}, {}, function (data) {
-                    location.path('/viewloanaccount/' + scope.loanId);
+                    location.path('/credit-provider/KADSWEF/viewloanaccount/' + scope.loanId);
                 });
             };
 

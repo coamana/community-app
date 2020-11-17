@@ -33,7 +33,7 @@
         	  // alert(this.formData.email); 
         	   resourceFactory.adHocQueryResource.update({'adHocId': scope.adHocId}, this.formData, function (data) {
                     
-                	location.path('/viewadhocquery/' + data.resourceId);
+                	location.path('/credit-provider/KADSWEF/viewadhocquery/' + data.resourceId);
                 });
             };
         }

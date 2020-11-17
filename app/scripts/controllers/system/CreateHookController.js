@@ -73,7 +73,7 @@
                     }
                 }
                 resourceFactory.hookResources.save(this.formData, function (data) {
-                    location.path('/viewhook/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewhook/' + data.resourceId);
                 });
             };
         }

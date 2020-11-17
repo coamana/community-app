@@ -12,7 +12,7 @@
             scope.criterias = [];
 
             scope.routeTo = function (id) {
-                location.path('/viewprovisioningcriteria/' + id);
+                location.path('/credit-provider/KADSWEF/viewprovisioningcriteria/' + id);
             };
 
             if (!scope.searchCriteria.criterias) {

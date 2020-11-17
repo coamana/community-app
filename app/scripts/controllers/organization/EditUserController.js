@@ -87,7 +87,7 @@
                     scope.formData.roles.push(scope.selectedRoles[i].id) ;
                 }
                 resourceFactory.userListResource.update({'userId': scope.userId}, this.formData, function (data) {
-                    location.path('/viewuser/' + data.resourceId);
+                    location.path('/credit-provider/KADSWEF/viewuser/' + data.resourceId);
                 });
             };
         }
