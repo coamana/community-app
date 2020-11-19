@@ -62,7 +62,7 @@ module.exports = function(grunt) {
             hostname: 'localhost',
             keepalive: true,
             livereload: 35729,
-            open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io'
+            open:'http://<%= connect.options.hostname %>:<%= connect.options.port %>?baseApiUrl=https://demo.mifos.io/credit-provider/KADSWEF/'
         },
         livereload: {
             options: {
